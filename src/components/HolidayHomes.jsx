@@ -86,10 +86,10 @@ export default function HolidayHomes() {
             </div>
             
             <div className="flex flex-col mt-[30px] gap-y-5">
-                <HotelBanner/>
-                <HotelBanner/>
-                <HotelBanner/>
-                <HotelBanner/>
+                <HotelBanner location='ECR,Chennai' hotel='Truliv Ipsum, Kovalam' altimg='TrulivIpsum' urlimg='/TrulivIpsum.png' />
+                <HotelBanner location='ECR,Chennai' hotel='Truliv Ipsum, Kovalam' altimg='TrulivIpsum' urlimg='/TrulivIpsum2.png' />
+                <HotelBanner location='ECR,Chennai' hotel='Truliv Ipsum, Kovalam' altimg='TrulivIpsum' urlimg='/TrulivIpsum3.png' />
+                <HotelBanner location='ECR,Chennai' hotel='Truliv Ipsum, Kovalam' altimg='TrulivIpsum' urlimg='/TrulivIpsum.png' />
 
             </div>
 

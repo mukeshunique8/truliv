@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-export default function HotelBanner() {
+export default function HotelBanner(props) {
   return (
 
 
@@ -8,12 +8,12 @@ export default function HotelBanner() {
 
         <div className=' '>
 
-        <Image className="rounded-xl" src="/TrulivIpsum.png" alt="hh1"  width={391}   height={216}   />
+        <Image className="rounded-xl" src={props.urlimg} alt={props.altimg}  width={391}   height={216}   />
         </div>
 
         <div className='drop-shadow-hhds flex flex-col justify-center gap-y-[5px] '> 
-            <h1 className='text-dbtxt text-2xl font-semibold '>Truliv Ipsum, Kovalam</h1>
-            <p className='text-gtxt text-[19px] font-normal'>ECR, Chennai</p>
+            <h1 className='text-dbtxt text-2xl font-semibold '>{props.hotel}</h1>
+            <p className='text-gtxt text-[19px] font-normal'>{props.location}</p>
           <Image className="" src="/starRating.svg" alt="hh1"  width={114}   height={24}   />
           <div className='flex gap-x-[30px] mt-[15px] '>
             <li className='flex justify-center gap-x-2 items-center'> 

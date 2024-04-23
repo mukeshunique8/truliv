@@ -155,7 +155,7 @@ import Btn1 from "../components/Btn1";
 import HouseCard from "../components/HouseCard";
 import BookingCoLiving from "./BookingCoLiving";
 import BookingHolidayHomes from "./BookingHolidayHomes";
-import { HouseContext } from "../contexts/HouseContext"; // Import the HouseContext
+import { HouseContext } from "../Contexts/HouseContext"; // Import the HouseContext
 
 export default function Navbar() {
   // Consume the HouseContext
@@ -252,14 +252,14 @@ export default function Navbar() {
             <HouseCard
               desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim molestiae sequi consectetur illo earum quis consequuntur tenetur, ratione laboriosam architecto quas beatae eaque at!"
               houseType="Co-Living Spaces"
-              urlImage="/coLivingSpaces.svg"
+              urlImage={houseType?"/coLivingSpaceSmall.svg":"/coLivingSpaces.svg"}
               alt="coLivingSpaces"
               handleHouse={handleHouse} // Pass down the handleHouse function
             />
             <HouseCard
               desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim molestiae sequi consectetur illo earum quis consequuntur tenetur, ratione laboriosam architecto quas beatae eaque at!"
               houseType="Holiday Homes"
-              urlImage="/holidayHomes.svg"
+              urlImage={houseType?"/holidayHomeSmall.svg":"/holidayHomes.svg"}
               alt="holidayHomes"
               handleHouse={handleHouse} // Pass down the handleHouse function
             />
@@ -267,8 +267,8 @@ export default function Navbar() {
 
           {/* Conditional rendering of booking component */}
           <div
-            onMouseEnter={() => setShowDescription(true)}
-            onMouseLeave={() => setShowDescription(false)}
+            // onMouseEnter={() => setShowDescription(true)}
+            // onMouseLeave={() => setShowDescription(false)}
             className="px-5 w-full flex flex-col justify-center items-center"
           >
             {showDescription && (

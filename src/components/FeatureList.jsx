@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import FeatureCard2 from "../components/FeatureCard2";
 import FeatureCard from "../components/FeatureCard";
-import { HouseContext } from "../contexts/HouseContext";
+import { HouseContext } from "../Contexts/HouseContext";
 
 export default function FeatureList() {
   const { houseType } = useContext(HouseContext);

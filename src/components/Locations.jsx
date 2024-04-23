@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import AreaCards from "../components/AreaCards";
 import AreaPhotos from "../components/AreaPhotos";
 import FeatureList from "../components/FeatureList";
-import { HouseContext } from "../contexts/HouseContext";
+import { HouseContext } from "../Contexts/HouseContext";
 import Image from "next/image";
 
 export default function Locations() {
@@ -41,7 +41,7 @@ export default function Locations() {
       
       {/*Location Cards Conditional rendering based on houseType */}
       {houseType === "Co-Living Spaces" && (
-        <div className="relative w-[1440px] pb-[175px] bg-sbg z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[33px]  flex-wrap flex  justify-evenly  bg-yellow-300-400  ">
+        <div className="relative w-[1440px] pb-[175px] bg-sbg z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[33px]  flex-wrap flex  justify-evenly   ">
 
         <AreaCards
             imgw="79"
@@ -105,7 +105,7 @@ export default function Locations() {
         
         )}
         {houseType === "Holiday Homes" && (
-       <div className="relative w-[1440px] pb-[175px] z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[20px]   flex-wrap flex  justify-evenly  bg-yellow-300-400  ">
+       <div className="relative w-[1440px] bg-sbg  pb-[175px] z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[20px]   flex-wrap flex  justify-evenly  bg-yellow-300-400  ">
 
        <AreaPhotos urlImage='/location1.png' altimg='location1'  />
        <AreaPhotos urlImage='/location2.png' altimg='location2'  />

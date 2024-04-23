@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { Select, ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { SingleDatepicker } from "chakra-dayzed-datepicker";
+
+// Define custom theme with orange color
+const theme = extendTheme({
+  colors: {
+    orange: {
+      500: "#FFA500", // Change this to your desired shade of orange
+    },
+  },
+  components: {
+    Datepicker: {
+      baseStyle: {
+        selected: {
+          bg: "orange.500", // Change the background color of the selected date to orange
+          color: "white", // Change the text color of the selected date to white
+        },
+      },
+    },
+  },
+});
+
+
 
 export default function BookingHolidayHomes() {
+  const [checkInDate, setCheckInDate] = useState(new Date());
+  const [checkOutDate, setCheckOutDate] = useState(new Date());
+
   return (
     <div className=" w-full bg-white rounded-2xl py-6 flex justify-around items-center">
       <div className="w-1/4  border-r  border-[#83838352] gap-x-3 flex justify-center items-center">
@@ -15,9 +41,9 @@ export default function BookingHolidayHomes() {
           />
         </div>
 
-        <div className="flex flex-col gap-y-[9.5px] justify-center items-start">
-          <p className="flex text-[18px] font-medium items-center justify-center text-center text-btxt">
-          Check In{" "}
+        <div className="flex flex-col gap-y-[9.5px] justify-center items-center">
+          <label htmlFor="check-in-input" className="flex text-[18px] font-medium items-center justify-center text-center text-btxt">
+            Check In{" "}
             <span>
               <Image
                 className="fle"
@@ -27,10 +53,13 @@ export default function BookingHolidayHomes() {
                 height={25}
               />{" "}
             </span>{" "}
-          </p>
-          <p className="text-[15px] font-normal text-[#838383]">
-          28/02/2024
-          </p>
+          </label>
+          <SingleDatepicker
+            id="check-in-input"
+            name="check-in-input"
+            date={checkInDate}
+            onDateChange={setCheckInDate}
+          />
         </div>
       </div>
 
@@ -45,22 +74,25 @@ export default function BookingHolidayHomes() {
           />
         </div>
 
-        <div className="flex flex-col gap-y-[9.5px] justify-center items-start">
-          <p className="flex text-[18px] font-medium items-center justify-center text-center text-btxt">
-          Check Out
+        <div className="flex flex-col gap-y-[9.5px] justify-center items-center">
+          <label htmlFor="check-out-input" className="flex text-[18px] font-medium items-center justify-center text-center text-btxt">
+            Check Out{" "}
             <span>
               <Image
                 className="fle"
                 src="/bookKeyDown.svg"
-                alt="bookKeyDown"
+                alt=""
                 width={25}
                 height={25}
               />{" "}
             </span>{" "}
-          </p>
-          <p className="text-[15px] font-normal text-[#838383]">
-          28/02/2024
-          </p>
+          </label>
+          <SingleDatepicker
+            id="check-out-input"
+            name="check-out-input"
+            date={checkOutDate}
+            onDateChange={setCheckOutDate}
+          />
         </div>
       </div>
 
@@ -76,21 +108,18 @@ export default function BookingHolidayHomes() {
         </div>
 
         <div className="flex flex-col gap-y-[9.5px] justify-center items-start">
-          <p className="flex text-[18px] font-medium items-center justify-center text-center text-btxt">
-          Guests
-            <span>
-              <Image
-                className="fle"
-                src="/bookKeyDown.svg"
-                alt="bookKeyDown"
-                width={25}
-                height={25}
-              />{" "}
-            </span>{" "}
-          </p>
-          <p className="text-[15px] font-normal text-[#838383]">
-          Pick Number of Guests
-          </p>
+          <Select className="border-ptxt text-center" variant='unstyled' placeholder='Pick Number of Guests'>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+            <option value='4'>4</option>
+            <option value='5'>5</option>
+            <option value='6'>6</option>
+            <option value='7'>7</option>
+            <option value='8'>8</option>
+            <option value='9'>9</option>
+            <option value='10'>10</option>
+          </Select>
         </div>
       </div>
 

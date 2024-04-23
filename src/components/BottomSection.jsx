@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Connections from '../components/Connections';
 import HowDoes from '../components/HowDoes';
-import { HouseContext } from "../contexts/HouseContext";
+import { HouseContext } from "../Contexts/HouseContext";
 import HolidayHomes from './HolidayHomes';
 
 export default function BottomSection() {
