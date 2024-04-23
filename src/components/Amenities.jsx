@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
+import { HouseContext } from "../contexts/HouseContext";
 
 export default function Amenities() {
+  // Consume the HouseContext
+  const { houseType } = useContext(HouseContext);
+
+  // Function to get the image source based on houseType
+  function getImageSrc() {
+    switch (houseType) {
+      case "Co-Living Spaces":
+        return "/coLivingAmenities.svg";
+      case "Holiday Homes":
+        return "/coLivingAmenities.svg";
+      default:
+        return "/amentitesGrp.svg";
+    }
+  }
+
+
+
+  
   return (
-    <div className=" w-full   flex flex-col justify-center items-center">
-      <div className="bg-wbg  px-[87px] w-[1440px] pt-[111px] flex flex-col justify-center items-center ">
+    <div className="w-full flex flex-col justify-center items-center">
+      <div className="bg-wbg px-[87px] w-[1440px] pt-[111px] flex flex-col justify-center items-center">
         <h2 className="w-full text-center text-5xl font-semibold text-btxt">
           Elevating Amenities
         </h2>
 
         <div className="flex w-full gap-x-7 mt-[49px]">
           <Image
-            className=""
-            src="/amentitesGrp.svg"
-            alt="amentitesGrp"
+            className="cursor-pointer"
+            src={getImageSrc()} // Set the image source dynamically based on houseType
+            alt="amenitiesImage"
             width={486}
             height={450}
           />

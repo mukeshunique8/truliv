@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.navBgBlur{
+    background: linear-gradient(180deg, #000 -4.84%, rgba(33, 33, 33, 0.00) 136.18%);
+}
+.houseHover{
+    filter: brightness(18%);
+-webkit-filter: brightness(18%);
+-moz-filter: brightness(18%);
+}
+.areaCard{
+    border-radius: 15px;
+border: 1px solid #6c29e9;
+background: #FFF;
+box-shadow: 0px 0px 12.2px 0px rgba(239, 91, 37, 0.35);
+}
+
 .centerElement{
     position: absolute;
     top: 50%;
@@ -17,10 +33,31 @@
 .ptxt{
     color:#E95F29 ;
 }
-
+.w2txt{
+    color: rgba(255, 255, 255, 0.80)
+}
+.dbtxt{
+    color: #110229;
+}
 
 /* Backgournds */
-
+.hhShadow{
+    border-radius: 10px;
+box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.25);
+}
+.hhShadow2{
+    border-radius: 30px;
+background: #FFF;
+box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.20);
+}
+.mapbox{
+    fill: #FFF;
+filter: drop-shadow(0px 0px 12.2px rgba(239, 91, 37, 0.35));
+}
+.lifeAT{
+    /* fill: #FFF; */
+filter: drop-shadow(0px 0px 12.2px rgba(239, 91, 37, 0.35));
+}
 .featCardbg{
     border-radius: 21px;
 background: rgba(255, 255, 255, 0.18);
