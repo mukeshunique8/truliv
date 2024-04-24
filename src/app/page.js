@@ -35,20 +35,21 @@
 
 // pages/page.js
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+import Header from "../components/Header";
 import Locations from "../components/Locations";
 import Amenities from '../components/Amenities'
 import Quotes from '../components/Quotes'
 import BottomSection from '../components/BottomSection'
 import LifeAtTruliv from '../components/LifeAtTruliv'
 import Footer from '../components/Footer'
-import { HouseProvider } from "../Contexts/HouseContext";
+import Navbar2 from "./colivingHomeComponents/Navbar2";
 
 export default function Home() {
   return (
-    <HouseProvider> {/* Wrap your content with the HouseProvider */}
+ 
       <div className="mx-auto w-full flex flex-col justify-center items-center">
-        <Navbar />
+        <Header />
+      
         <Locations />
         <Amenities />
         <Quotes />
@@ -56,6 +57,6 @@ export default function Home() {
         <LifeAtTruliv />
         <Footer />
       </div>
-    </HouseProvider>
+  
   );
 }

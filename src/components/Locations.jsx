@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import AreaCards from "../components/AreaCards";
 import AreaPhotos from "../components/AreaPhotos";
 import FeatureList from "../components/FeatureList";
+import Navbar2 from "../app/colivingHomeComponents/Navbar2";
 import { HouseContext } from "../Contexts/HouseContext";
 import Image from "next/image";
 
@@ -11,6 +12,7 @@ export default function Locations() {
    
   return (
     <div className="relative  mb-[500px]  w-full flex flex-col justify-center items-center">
+      
       {/* Location Font */}
 
       <div className="w-[1440px]   flex flex-col justify-center items-center ">
@@ -37,7 +39,7 @@ export default function Locations() {
       </div>
 
       {/* Location Cards */}
-
+      <Navbar2></Navbar2>
       
       {/*Location Cards Conditional rendering based on houseType */}
       {houseType === "Co-Living Spaces" && (

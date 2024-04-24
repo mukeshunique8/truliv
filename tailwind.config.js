@@ -25,7 +25,9 @@ module.exports = {
         wtxt: "#FFFFFF",
         stxt:"#FFF3EE",
         dbtxt:"#110229",
-        gtxt:"#8F90A6"
+        gtxt:"#8F90A6",
+        b1txt:"#1B1B1B",
+
       },
       backgroundColor:{
         pbg:"#E95F29",

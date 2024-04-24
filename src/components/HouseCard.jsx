@@ -10,7 +10,13 @@ export default function HouseCard(props) {
   // Function to handle house card click
   function handleHouse(type) {
     props.handleHouse(type); // Call the parent component's handleHouse function
-    setShowDescription(true); // Set showDescription to true when a card is clicked
+    setShowDescription(true);
+    setHouseType(type) 
+    
+     localStorage.setItem("houseType", type);
+ 
+   // Set showDescription to true when a card is clicked
+   console.log(houseType);
   }
 
   // Function to handle mouse enter event

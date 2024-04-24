@@ -1,30 +1,36 @@
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { Select, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
 
-// Define custom theme with orange color
-const theme = extendTheme({
-  colors: {
-    orange: {
-      500: "#FFA500", // Change this to your desired shade of orange
-    },
-  },
-  components: {
-    Datepicker: {
-      baseStyle: {
-        selected: {
-          bg: "orange.500", // Change the background color of the selected date to orange
-          color: "white", // Change the text color of the selected date to white
-        },
-      },
-    },
-  },
-});
-
+import { HouseContext } from "../Contexts/HouseContext";
 
 
 export default function BookingHolidayHomes() {
+  
+  
+  const { houseType, setHouseType } = useContext(HouseContext);
+
+
+  const router = useRouter()
+
+  function handleColiving(){
+     // Navigate to the respective page based on house type
+     
+    // setHouseType(houseType);
+    // localStorage.setItem("houseType", houseType);
+
+      router.push("/holidayhome"); // Navigate to coliving page
+    
+  }
+
+  
+    // if (type === "Holiday Homes") {
+    //   router.push("/holidayhome"); // Navigate to holidayhome page
+    // }
+
+
   const [checkInDate, setCheckInDate] = useState(new Date());
   const [checkOutDate, setCheckOutDate] = useState(new Date());
 
@@ -124,7 +130,9 @@ export default function BookingHolidayHomes() {
       </div>
 
       <div className="w-1/4 flex justify-center items-center">
-        <button className="justify-center rounded-[9px] text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg">
+        <button
+          onClick={handleColiving}
+        className="justify-center rounded-[9px] text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg">
           <span>
             <Image
               className=""

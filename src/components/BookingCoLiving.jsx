@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Select } from '@chakra-ui/react'
+import { HouseContext } from "../Contexts/HouseContext";
+
 
 export default function BookingCoLiving() {
+  const [showDescription, setShowDescription] = useState(false);
+  const { houseType, setHouseType } = useContext(HouseContext);
+
+
+  const router = useRouter()
+
+  function handleColiving(){
+    
+    // setHouseType(houseType);
+    // localStorage.setItem("houseType", houseType);
+
+      router.push("/coliving"); // Navigate to coliving page
+    
+  }
+
   return (
     <div className=" w-full my-6 flex justify-around items-center">
       <div className="w-1/4  border-r  border-[#83838352] gap-x-3 flex justify-center items-center">
@@ -18,7 +36,7 @@ export default function BookingCoLiving() {
 
         <div className="flex flex-col  justify-center items-start">
 
-        <Select className="text-center" variant='unstyled' placeholder='Select your Area'>
+        <Select sx={{bg:"brand.100"}} className="text-center " variant='unstyled' placeholder='Select your Area'>
   <option value='OMR'>OMR</option>
   <option value='Shenoy Nagar'>Shenoy Nagar</option>
   <option value='Anna Nagar'>Anna Nagar</option>
@@ -140,7 +158,7 @@ export default function BookingCoLiving() {
       </div>
 
       <div className="w-1/4 flex justify-center items-center">
-        <button className="justify-center rounded-[9px] text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg">
+        <button onClick={handleColiving} className="justify-center rounded-[9px] text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg">
           <span>
             <Image
               className=""
