@@ -4,7 +4,7 @@ export default function HotelBanner(props) {
   return (
 
 
-    <div className='drop-shadow-hhds bg-wtxt flex rounded-[30px]  p-4 gap-x-5'>
+    <div className='drop-shadow-hhds cursor-pointer bg-wtxt flex rounded-[30px]  p-4 gap-x-5'>
 
         <div className=' '>
 

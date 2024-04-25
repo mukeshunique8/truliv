@@ -1,19 +1,21 @@
 import React, { useState, useContext, useEffect } from "react";
 import SearchBtn from "../colivingHomeComponents/SearchBtn";
-import HouseType from "../colivingHomeComponents/HouseType";
 import { HouseContext } from "../../Contexts/HouseContext";
+import { useFilterContext } from "../../Contexts/FilterContext"; // Import the FilterContext
 import HotelBanner from "../../components/HotelBanner";
 import OccupancyCard from "./UIElements/OccupancyCard";
 import GenderRadio from "./UIElements/GenderRadio";
 import Amenities from "./UIElements/Amenities";
 import Services from "./UIElements/Services";
+import { useRouter } from "next/navigation";
+import { HOUSETYPE_DETAIL_ROUTE } from "../../routes/url"
+
 import PriceRange from "./UIElements/PriceRange";
 
 import { Select } from "@chakra-ui/react";
 import Image from "next/image";
 import { CloseButton } from "@chakra-ui/react";
-
-
+ 
 // Sample suggestions for different cities
 const citySuggestions = {
   Chennai: [
@@ -46,27 +48,55 @@ const citySuggestions = {
   ],
 };
 
-export default function SearchField() {
-  const { houseType, setHouseType } = useContext(HouseContext);
 
+export default function SearchField() {
+  const router = useRouter()
+  // function routeProperty(){
+  
+  //   router.push(HOUSETYPE_DETAIL_ROUTE("coliving/properties")); 
+  
+  // }
+  const { houseType, setHouseType } = useContext(HouseContext);
+  const { gender, setGender, occupancy, setOccupancy, amenities, setAmenities, services, setServices, priceRange, setPriceRange,houseTypeFiltered,setHouseTypeFiltered } = useFilterContext(); // Destructure the filter context values
+  // console.log("houseTypeFiltered:", houseTypeFiltered);
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  // useEffect(() => {
+  //   console.log("Gender:", gender);
+    console.log("Occupancy:", occupancy);
+  //   console.log("Amenities:", amenities);
+  //   console.log("Services:", services);
+  //   console.log("Price Range:", priceRange);
+  //   console.log("houseTypeFiltered:", houseTypeFiltered);
+  // }, [gender, occupancy, amenities, services, priceRange]);
 
   useEffect(() => {
     // Retrieve house type from local storage when component mounts
     const storedHouseType = localStorage.getItem("houseType");
     if (storedHouseType) {
       setHouseType(storedHouseType);
+      setHouseTypeFiltered(storedHouseType); // Set houseTypeFiltered with the stored value
     }
   }, []);
+  
+  console.log("houseTypeFiltered:", houseTypeFiltered);
+  console.log("Gender:", gender);
+  console.log("selectedLocations:", selectedLocations);
+  console.log("Occupancy:", occupancy);
+  console.log("Amenities:", amenities);
+  console.log("Services:", services);
+  console.log("Price Range:", priceRange);
+  console.log("houseTypeFiltered:", houseTypeFiltered);
 
-  useEffect(() => {
-    // Store house type in local storage when it changes
-    localStorage.setItem("houseType", houseType);
-  }, [houseType]);
+  // useEffect(() => {
+  //   // Store house type in local storage when it changes
+  //   localStorage.setItem("houseType", houseType);
+  //   setHouseTypeFiltered(houseType); // Update houseTypeFiltered when houseType changes
+  // }, [houseType, setHouseTypeFiltered]);
+  
 
   const handleCitySelect = (e) => {
     const city = e.target.value;
@@ -117,7 +147,7 @@ export default function SearchField() {
 
   return (
     <div className="bg-wbg w-[1440px] py-[18px] px-[50px] flex-col flex items-center justify-center">
-      <div className="mt-[38px] min-h-[66px] rounded-md border justify-center items-center border-gray-200 flex px-[20px] w-full">
+      <div className="mt-[38px] min-h-[66px] rounded-md border justify-center items-center border-[#E6E7E9]  flex px-[20px] w-full">
         <div className="w-2/12 border-r border-gtxt flex justify-center items-center">
           <Image
             className="cursor-pointer"
@@ -141,7 +171,7 @@ export default function SearchField() {
         </div>
 
         {selectedCity && (
-          <div className="w-3/12 relative flex justify-center items-center">
+          <div className="w-3/12 drop-shadow-card relative flex justify-center items-center">
             <input
               type="text"
               placeholder="Select Location"
@@ -189,10 +219,10 @@ export default function SearchField() {
 
       {/* HouseType */}
 
-      <div className="mt-[25px] rounded-md border justify-start text-center font-semibold text-[28px] text-[#333333] items-center border-gray-100 flex px-[20px] w-full">
+      <div className="mt-[25px] rounded-md  justify-start text-center font-semibold text-[28px] text-[#333333] items-center  flex px-[20px] w-full">
         <span className="text-ptxt mr-3">{houseType}</span>
-        <span>
-          {selectedLocations.length > 0 ? " : " + selectedLocations.join(", ") : ""}
+        <span className="font-light  text-lg">
+          {selectedLocations.length > 0 ? " @ " + selectedLocations.join(", ") : ""}
         </span>
       </div>
 
@@ -201,10 +231,10 @@ export default function SearchField() {
       <div className="w-full justify-center items-start gap-x-6 flex mt-6">
         {/* Filters */}
 
-        <div className="w-1/3  border  border-[#C8C8C8] rounded-[5px] px-[24px] py-[20px] flex flex-col gap-y-6">
+        <div className="w-1/3  border  border-[#E6E7E9]  rounded-[5px] px-[24px] py-[20px] flex flex-col gap-y-6">
           {/* Occupancy */}
 
-          <div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
+          <div className="flex flex-col items-start border-b border-[#E6E7E9]  gap-y-1">
             <div>
               <label className="font-semibold text-base leading-[30px]" htmlFor="occupancy">
                 Occupancy
@@ -238,16 +268,15 @@ export default function SearchField() {
           {/* PriceRange */}
 
           <div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
-            <div>
-              <label className="font-semibold text-base leading-[30px]" htmlFor="PriceRange">
-              PriceRange
-              </label>
-            </div>
-
-            <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
-              <PriceRange />
-            </div>
-          </div>
+    <div>
+      <label className="font-semibold text-base leading-[30px]" htmlFor="PriceRange">
+        PriceRange
+      </label>
+    </div>
+    <div className="flex mt-3 w-full flex-wrap justify-start gap-5 items-center">
+      <PriceRange />
+    </div>
+  </div>
 
           {/* Amenities */}
 
@@ -279,7 +308,7 @@ export default function SearchField() {
         </div>
 
         {/* Cards */}
-        <div className="w-2/3 bg-blue-400">
+        <div className="w-2/3">
           <div className="flex flex-col gap-y-5">
             <HotelBanner
               location="ECR,Chennai"
@@ -291,6 +320,17 @@ export default function SearchField() {
               location="ECR,Chennai"
               hotel="Truliv Ipsum, Kovalam"
               altimg="TrulivIpsum"
+              urlimg="/TrulivIpsum.png"
+            /><HotelBanner
+            location="ECR,Chennai"
+            hotel="Truliv Ipsum, Kovalam"
+            altimg="TrulivIpsum"
+            urlimg="/TrulivIpsum.png"
+          />
+            <HotelBanner
+              location="ECR,Chennai"
+              hotel="Truliv Ipsum, Kovalam"
+              altimg="TrulivIpsum"
               urlimg="/TrulivIpsum2.png"
             />
             <HotelBanner
@@ -298,8 +338,11 @@ export default function SearchField() {
               hotel="Truliv Ipsum, Kovalam"
               altimg="TrulivIpsum"
               urlimg="/TrulivIpsum3.png"
+              
             />
             <HotelBanner
+            className='cursor-pointer'
+            // onClick={routeProperty()}
               location="ECR,Chennai"
               hotel="Truliv Ipsum, Kovalam"
               altimg="TrulivIpsum"

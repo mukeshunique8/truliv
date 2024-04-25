@@ -2,10 +2,19 @@
 
 
 import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import {theme} from '../chakraTheme'
 import { HouseProvider } from "../Contexts/HouseContext";
+import { FilterProvider } from "../Contexts/FilterContext";
 
+
+const poppins = Poppins(
+  { subsets: ["latin"],
+  weight: [ '100','300','400','700','900'],
+variable:'--font-roboto' },
+  
+);
 
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -19,11 +28,13 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
       <HouseProvider> 
+        <FilterProvider>
       <ChakraProvider theme={theme}>
         {children}
         </ChakraProvider>
+        </FilterProvider>
       </HouseProvider>
       </body>
     </html>

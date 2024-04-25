@@ -39,7 +39,7 @@ export default function Locations() {
       </div>
 
       {/* Location Cards */}
-      <Navbar2></Navbar2>
+      
       
       {/*Location Cards Conditional rendering based on houseType */}
       {houseType === "Co-Living Spaces" && (

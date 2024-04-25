@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Select } from '@chakra-ui/react'
 import { HouseContext } from "../Contexts/HouseContext";
+import { HOUSETYPE_DETAIL_ROUTE} from "../routes/url"
 
 
 export default function BookingCoLiving() {
@@ -17,7 +18,7 @@ export default function BookingCoLiving() {
     // setHouseType(houseType);
     // localStorage.setItem("houseType", houseType);
 
-      router.push("/coliving"); // Navigate to coliving page
+      router.push(HOUSETYPE_DETAIL_ROUTE("coliving")); // Navigate to coliving page
     
   }
 

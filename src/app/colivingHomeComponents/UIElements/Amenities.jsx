@@ -1,9 +1,17 @@
-import React from 'react'
-import { Checkbox, CheckboxGroup, Stack } from '@chakra-ui/react'
+import React from 'react';
+import { Checkbox, CheckboxGroup, Stack } from '@chakra-ui/react';
+import { useFilterContext } from '../../../Contexts/FilterContext';
 
 export default function Amenities() {
+  const { amenities, setAmenities } = useFilterContext();
+
+  const handleAmenitySelect = (selectedAmenities) => {
+    setAmenities(selectedAmenities);
+  };
+
   return (
-    <CheckboxGroup colorScheme='green' defaultValue={[]}>
+    <CheckboxGroup colorScheme='green' defaultValue={amenities} onChange={handleAmenitySelect}>
+     
       <Stack spacing={[5, 10]} direction={['column', 'row']}>
 
         {/* First column */}

@@ -8,7 +8,7 @@ import { HouseContext } from "../../Contexts/HouseContext"; // Import the HouseC
 export default function Navbar() {
    // Consume the HouseContext
    const { houseType, setHouseType, showDescription, setShowDescription } = useContext(HouseContext);
-   console.log(houseType);
+  //  console.log(houseType);
 
   return (
     <div className="bg-[#232323] w-[1440px] py-[18px] pl-[41px] pr-[61px]   flex items-center justify-center " >
@@ -28,8 +28,8 @@ export default function Navbar() {
           </Link>
           </div>
           <div className="w-1/2 text-base flex justify-center  z-30 text-[#FFFFFF] ">
-            <ul className="flex space-x-[55px] items-center text-center">
-              <a className="flex text-center justify-center" href="">
+            <ul className="flex space-x-[55px]  items-center text-center">
+              <a className="hover:text-ptxt  transition-all 3s cursor-pointer flex text-center justify-center" href="">
                 Explore
                 <span>
                   <Image
@@ -41,8 +41,8 @@ export default function Navbar() {
                   />
                 </span>
               </a>
-              <a href="">About Us</a>
-              <a href="">Blog</a>
+              <a className="hover:text-ptxt  transition-all 3s cursor-pointer " href="">About Us</a>
+              <a className="hover:text-ptxt  transition-all 3s cursor-pointer " href="">Blog</a>
             </ul>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* right side NAV */}
         <div className="w-1/3   z-30  flex justify-end items-center">
           <ul className="flex justify-center items-center space-x-[40px]">
-            <a className=" text-base text-[#FFFFFF]" href="">
+            <a className=" text-base text-[#FFFFFF] hover:text-ptxt  transition-all 3s cursor-pointer" href="">
               Login
             </a>
             <a className="" href="">
@@ -60,7 +60,7 @@ export default function Navbar() {
         </div>
         {/* <button onClick={()=> setHouseType("TESTEDDDDDD")}>check</button> */}
 
-        <p className="text-4xl text-white"> This is {houseType}</p>
+        {/* <p className="text-4xl text-white"> This is {houseType}</p> */}
   
   
     </div>

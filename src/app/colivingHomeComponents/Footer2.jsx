@@ -1,89 +1,162 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 
+// List of PG locations
+const pgLocations = [
+  "Greater Noida",
+  "Indore",
+  "Visakhapatnam",
+  "Nungambakkam",
+  "Delhi",
+  "Pune",
+  "Manipal",
+  "Kota",
+  "Vadapalani",
+  "Bengaluru",
+  "Kochi",
+  "Mumbai",
+  "Guindy",
+  "Coimbatore",
+  "Ahmedabad",
+  "Gandhinagar",
+  "Anna Nagar",
+  "Vadodara",
+  "Gurgaon",
+  "Dehradun",
+  "Hyderabad",
+  "Vijayawada",
+  "Belgaum",
+  "Pallavaram",
+  "Urapakkam",
+];
+
+const menuItems = [
+  "About Us",
+  "Blogs",
+  "FAQs",
+  "COVID-19",
+ 
+  "Team",
+  "Privacy Policy",
+  "Refunds",
+  
+  "Investor Relations",
+  "Refer and Earn",
+  "House Rules",
+  "T&C",
+  "Careers",
+  "Partner With Us",
+  "Media",
+  "Contact Us",
+  "Cookie Policy"
+];
+
+
+const pgLocationsWithPrefix = pgLocations.map(
+  (location) => `PG in ${location}`
+);
 
 export default function Footer2() {
   return (
-    <div className="    w-full flex flex-col justify-center items-center">
-    
+    <div className="    w-full flex flex-col  justify-center items-center">
+      <div className="w-[1440px] bg-[#232728]  pt-[50px]flex flex-col justify-center items-center gap-y-4 px-[40px] py-[40px]   ">
+        {/* Top Footer */}
+        <div className=" w-full  border-b-[1px]   border-slate-400">
+          <h2 className="text-wtxt font-semibold text-lg">Popular Searches</h2>
 
-    <div className="w-[1440px] pb-[102px] pt-[306px] flex px-[30px]   ">
+          <div
+            className="pt-5  w-full pb-10"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(5, 1fr)",
+              gap: "1rem",
+            }}
+          >
+            {pgLocationsWithPrefix.map((location, index) => (
+              <a className="hover:text-ptxt hover:scale-110 transition-all 3s cursor-pointer text-wtxt" key={index}>{location}</a>
+            ))}
+          </div>
+        </div>
 
-        <div className='  flex flex-col items-start'>
-        <Image
-            className="cursor-pointer"
-            src="/trulivLogoFooter.svg"
-            alt="trulivLogoFooter"
-            width={235}
-            height={78}
-          />
-          <p className='leading-[31px] w-[468px] h-[177px] mt-[30px] text-center text-[14px] text-[#8F90A6] font-normal'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          {/* Social Icons */}
-          <div className='flex  gap-x-[32px]'>
+        {/* Bootom Footer */}
+        <div className=" mt-8  flex justify-center items-start w-full">
 
-      <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/facebook.svg"  alt="facebook" width={25}  height={25}     />
-      <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/twitter.svg"  alt="twitter" width={25}  height={25}     />
-      <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/instagram.svg"  alt="instagram" width={25}  height={25}     />
-      <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/linkedin.svg"  alt="linkedin" width={25}  height={25}     />
+          <div className="w-1/4 pt-[62px] flex items-center justify-start">
+          <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/TrulivLogo.svg"  alt="TrulivLogo" width={190}  height={35}     /> 
+
           </div>
 
-          <p className='mt-[40px] text-[#8F90A6] text-[13px]'>© 2023 . All rights reserved.</p>
+          <div
+            className="w-2/4   pb-10 "
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: "1rem",
+            }}
+          >
+            {menuItems.map((link,index)=>{
+              return               <a className="hover:text-ptxt hover:scale-110 transition-all 3s text-wtxt cursor-pointer" key={index}>{link}</a>
+            })}
 
+          </div>
+
+
+              <div className="w-1/4 pt-[62px] flex px-20 justify-evenly items-center">
+              <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/facebook.svg"  alt="facebook" width={25}  height={25}     />       
+               
+              <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/linkedin.svg"  alt="linkedin" width={25}  height={25}     />    
+              <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/instagram.svg"  alt="instagram" width={25}  height={25}     />        
+
+              </div>
+        
+
+          
         </div>
 
-        <div className='pl-[116px] pt-6 flex flex-col justify-start items-start'>
 
-            <h3 className='font-semibold text-[#110229] text-[20px] leading-9'>Take a tour</h3>
+              <div className="text-xs mt-10 text-slate-400 w-full  flex justify-between">
+                <p>Copyright © 2022 | All Rights Reserved by Dtwelve Spaces Pvt Ltd. | Sitemap</p>
+                <p>Images shown are for representational purposes only. Amenities depicted may <br /> or may not form a part of that individual property</p>
 
-            <ul className=' cursor-pointer pt-[13px] text-[#110229] text-[18px] flex flex-col justify-center font-normal items-center text-center leading-[52px]'>
-            <li>Porur</li>
-            <li>OMR</li>
-            <li>Shenoy Nagar</li>
-            <li>Nungambakkam</li>
-            <li>Saligramam</li>
-            </ul>
+              </div>
 
-        </div>
-
-        <div className='pt-6 pl-[56px] flex flex-col justify-start items-start'>
-
-            <h3 className='font-semibold text-[#110229] text-[20px] leading-9'>Our Company</h3>
-
-            <ul className='font-normal cursor-pointer text-center pt-[13px] flex flex-col justify-center items-center text-[#110229] text-[18px] leading-[52px]'>
-            <li>About Us</li>
-            <li>Agents</li>
-            <li>Blog</li>
-            <li>Media</li>
-            <li>Contact Us</li>
-            </ul>
-
-        </div>
-
-                    <div className=' pl-[70px]   pt-6 flex flex-col justify-start items-start'>
-
-            <h3 className='font-semibold text-[#110229] text-[20px] leading-9'>Subscribe</h3>
-
-            <p className='text-center flex px-4 justify-center items-center text-[#8F90A6] leading-[23px] text-[14px] pt-7'>Subscribe to get latest property, blog news from us</p>
-           
-           <div  className='bg-wbg mt-[25px] border-[#D0D0E3] border-2  w-full py-[18px] px-[18px] flex justify-between rounded-2xl text-center items-center'>
-            <input placeholder='Email address' className='border-none  text-[#8F90A6] text-[14px] leading-[23px]  ' type="email" htmlfor='email' />
-          <button className='flex  justify-center items-center bg-pbg rounded-[50%] w-[38px] h-[38px]'><Image  className="" src="/rightArrow.svg" alt="rightArrow"width={13}
-            height={13}
-          /></button>
-           </div>
-
-            </div>
-
-
-
+      </div>
     </div>
-
-
-
-
-
-   </div>
-  )
+  );
 }
+
+// // List of PG locations
+// const pgLocations = [
+//   "Greater Noida", "Indore", "Visakhapatnam", "Nungambakkam", "Delhi",
+//   "Pune", "Manipal", "Kota", "Vadapalani", "Bengaluru",
+//   "Kochi", "Mumbai", "Guindy", "Coimbatore", "Ahmedabad",
+//   "Gandhinagar", "Anna Nagar", "Vadodara", "Gurgaon", "Dehradun",
+//   "Hyderabad", "Vijayawada", "Belgaum", "Pallavaram", "Urapakkam",
+//   // Additional cities
+//   "New City 1", "New City 2", "New City 3",
+//   "New City 1", "New City 2", "New City 3"
+// ];
+
+// // Chunk the array into 5 subarrays
+// const chunkedLocations = pgLocations.reduce((resultArray, item, index) => {
+//   const chunkIndex = Math.floor(index / 5);
+
+//   if (!resultArray[chunkIndex]) {
+//     resultArray[chunkIndex] = []; // start a new chunk
+//   }
+
+//   resultArray[chunkIndex].push(item);
+//   return resultArray;
+// }, []);
+
+// <ul style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "1rem" }}>
+//       {chunkedLocations.map((chunk, index) => (
+//         <li key={index} style={{ listStyle: "none" }}>
+//           <ul>
+//             {chunk.map((location, subIndex) => (
+//               <li key={subIndex}>{location}</li>
+//             ))}
+//           </ul>
+//         </li>
+//       ))}
+//     </ul>

@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { Select, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SingleDatepicker } from "chakra-dayzed-datepicker";
+import { HOUSETYPE_DETAIL_ROUTE} from "../routes/url"
 
 import { HouseContext } from "../Contexts/HouseContext";
 
@@ -21,7 +22,7 @@ export default function BookingHolidayHomes() {
     // setHouseType(houseType);
     // localStorage.setItem("houseType", houseType);
 
-      router.push("/holidayhome"); // Navigate to coliving page
+      router.push(  HOUSETYPE_DETAIL_ROUTE('holidayhomes') ); 
     
   }
 
