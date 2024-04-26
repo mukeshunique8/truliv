@@ -64,8 +64,8 @@ export default function Header() {
 
         
         {/* Card Position */}
-        <div className="absolute z-10 w-[80%]  flex-col rounded-3xl housecardbg top-[343px] left-1/2 -translate-x-1/2 flex justify-center items-center ">
-          <div className=" flex space-x-5 px-5 py-6 ">
+        <div className="absolute z-10 w-[80%] pb-8 flex-col rounded-[40px] bg-red-400 housecardbg top-[343px] left-1/2 -translate-x-1/2 flex justify-center items-center ">
+          <div className=" flex justify-around w-full px-5 py-5 ">
             <HouseCard
               desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim molestiae sequi consectetur illo earum quis consequuntur tenetur, ratione laboriosam architecto quas beatae eaque at!"
               houseType="Co-Living Spaces"

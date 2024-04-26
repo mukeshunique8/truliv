@@ -61,14 +61,14 @@ export default function Footer() {
 
         </div>
 
-                    <div className=' pl-[70px]   pt-6 flex flex-col justify-start items-start'>
+                    <div className=' pl-[50px]   pt-6 flex flex-col justify-start items-start'>
 
             <h3 className='font-semibold text-[#110229] text-[20px] leading-9'>Subscribe</h3>
 
             <p className='text-center flex px-4 justify-center items-center text-[#8F90A6] leading-[23px] text-[14px] pt-7'>Subscribe to get latest property, blog news from us</p>
            
            <div  className='bg-wbg mt-[25px] border-[#D0D0E3] border-2  w-full py-[18px] px-[18px] flex justify-between rounded-2xl text-center items-center'>
-            <input placeholder='Email address' className='border-none  text-[#8F90A6] text-[14px] leading-[23px]  ' type="email" htmlfor='email' />
+            <input placeholder='Email address' className=' focus:border-orange-500   text-black text-[14px] leading-[23px]  ' type="email" htmlfor='email' />
           <button className='flex  justify-center items-center bg-pbg rounded-[50%] w-[38px] h-[38px]'><Image  className="" src="/rightArrow.svg" alt="rightArrow"width={13}
             height={13}
           /></button>

@@ -23,7 +23,7 @@ export default function BookingCoLiving() {
   }
 
   return (
-    <div className=" w-full my-6 flex justify-around items-center">
+    <div className="  w-[1100px] py-5 flex justify-between items-center">
       <div className="w-1/4  border-r  border-[#83838352] gap-x-3 flex justify-center items-center">
         <div className="flex  justify-center items-center">
           <Image

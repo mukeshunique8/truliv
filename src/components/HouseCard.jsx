@@ -2,6 +2,7 @@
 import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { HouseContext } from "../Contexts/HouseContext";
+import selectOrange from '../../public/selectOrange.svg'
 
 export default function HouseCard(props) {
   const [showDescription, setShowDescription] = useState(false);
@@ -16,7 +17,7 @@ export default function HouseCard(props) {
      localStorage.setItem("houseType", type);
  
    // Set showDescription to true when a card is clicked
-   console.log(houseType);
+  //  console.log(houseType);
   }
 
   // Function to handle mouse enter event
@@ -42,15 +43,21 @@ export default function HouseCard(props) {
         // Toggle image size when clicked
       }}
     >
-      <div className={`relative cursor-pointer border-none`}>
-        <Image
-          className={`w-full filter cursor-pointer ${houseType === props.houseType ? "shadow-2xl" : ""} ${showDescription ? "houseHover" : "brightness-75"}`}
-          src={props.urlImage}
-          alt={props.alt}
-          width={543}
-          height={323}
-        />
-      </div>
+     <div className={`relative cursor-pointer rounded-[30px] ${houseType === props.houseType ? " shadow-2xl" : ""}`}>
+  <div className="relative">
+    <Image
+      className={`w-full filter cursor-pointer ${houseType === props.houseType ? "" : ""} ${showDescription ? "houseHover" : "brightness-75"}`}
+      src={props.urlImage}
+      alt={props.alt}
+      width={543}
+      height={323}
+    />
+    {houseType === props.houseType && ( // Render the gradient overlay only if houseType matches props.houseType
+      <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 rounded-[30px]" />
+    )}
+  </div>
+</div>
+
 
       <div className="absolute cursor-pointer bottom-16 px-4 left-10">
         <p className={`text-[#FFFFFF] cursor-pointer text-4xl leading-[54px] font-bold ${showDescription ? "opacity-100 translate-y-0" : "opacity-100 translate-y-[40px]"} transition-all duration-700 ease-in-out`}>

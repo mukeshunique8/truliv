@@ -36,7 +36,7 @@ export default function BookingHolidayHomes() {
   const [checkOutDate, setCheckOutDate] = useState(new Date());
 
   return (
-    <div className=" w-full bg-white rounded-2xl py-6 flex justify-around items-center">
+    <div className=" w-[1100px] py-5 bg-white rounded-2xl  flex justify-around items-center">
       <div className="w-1/4  border-r  border-[#83838352] gap-x-3 flex justify-center items-center">
         <div className="flex  justify-center items-center">
           <Image
@@ -94,7 +94,10 @@ export default function BookingHolidayHomes() {
               />{" "}
             </span>{" "}
           </label>
+          
           <SingleDatepicker
+         
+            
             id="check-out-input"
             name="check-out-input"
             date={checkOutDate}

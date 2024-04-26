@@ -15,15 +15,15 @@ export default function Services() {
 
         {/* First column */}
         <Stack spacing={5} direction='column'>
-          <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Food & Beverages'>Food & Beverages</Checkbox>
-          <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Power Backup'>Power backup</Checkbox>
+          <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Laundry'>Laundry</Checkbox>
           <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='CCTV'>CCTV</Checkbox>
+          <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Power Backup'>Power backup</Checkbox>
           <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Biometric'>Biometric</Checkbox>
         </Stack>
 
         {/* Second column */}
         <Stack spacing={5} direction='column'>
-          <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Laundry'>Laundry</Checkbox>
+          <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Food & Beverages'>Food & Beverages</Checkbox>
           <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='HouseKeeping'>HouseKeeping</Checkbox>
           <Checkbox  sx={{color:"b.100"} } colorScheme='orange'   value='Workout Zone'>Workout Zone</Checkbox>
         </Stack>

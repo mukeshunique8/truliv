@@ -8,23 +8,75 @@ import {
   Stack,
   Select
 } from "@chakra-ui/react";
-import { SingleDatepicker } from "chakra-dayzed-datepicker";
 
 import Image from "next/image";
+import TimePicker from "../colivingHomeComponents/UIElements/TimePicker";
+import DatePicker from "../colivingHomeComponents/UIElements/DatePicker";
+import ExpectedMoveDate from "../colivingHomeComponents/UIElements/ExpectedMoveDate";
 
 import { FaToggleOn, FaToggleOff } from "react-icons/fa";
 import { IoIosCheckbox, IoIosCheckboxOutline } from "react-icons/io";
 import { color } from "framer-motion";
+
 export default function VisitForm() {
   const [value, setValue] = useState("");
   const [isActive, setIsActive] = useState(true);
   const [checked, setChecked] = useState(true);
   const [checkInDate, setCheckInDate] = useState(new Date());
+  const [activeButton, setActiveButton] = useState('visit');
 
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
+  };
+
+  const renderDateAndTimePickers = () => {
+    if (activeButton === 'visit') {
+      return (
+        <div className="flex w-full gap-x-4 text-[#1D273B]">
+          <div className="flex w-1/2 justify-start">
+            <DatePicker />
+          </div>
+          <div className="flex w-1/2  justify-start">
+            <TimePicker />
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="w-full flex text-[#1D273B] flex-col">
+          <ExpectedMoveDate />
+        </div>
+      );
+    }
+  };
+
+  const renderBottomButton = () => {
+    switch (activeButton) {
+      case 'reserve':
+        return (
+          <button className="text-base w-full rounded-md bg-ptxt text-wtxt font-medium py-4">
+            Reserve Now @ 3000/-
+          </button>
+        );
+      case 'book':
+        return (
+          <button className="text-base w-full rounded-md bg-ptxt text-wtxt font-medium py-4">
+            Book Now
+          </button>
+        );
+      default:
+        return (
+          <button className="text-base w-full rounded-md bg-ptxt text-wtxt font-medium py-4">
+            Schedule a Visit
+          </button>
+        );
+    }
+  };
 
   const toggleIcon = () => {
     setIsActive(!isActive);
   };
+
   const toggleCheckbox = () => {
     setChecked(!checked);
   };
@@ -32,17 +84,31 @@ export default function VisitForm() {
   return (
     <div className="w-full rounded-lg bg-[#FAFAFA]">
       <div className="flex w-full text-base">
-        <button className="w-1/3 p-[10px] bg-ptxt text-wtxt     ">
+        <button
+          className={`w-1/3 p-[10px] ${
+            activeButton === 'visit' ? 'bg-ptxt text-wtxt' : 'text-[#7A7A7A]'
+          }`}
+          onClick={() => handleButtonClick('visit')}
+        >
           Schedule a Visit
         </button>
-        <button className="w-1/3 p-[10px]  text-[#7A7A7A]     ">
+        <button
+          className={`w-1/3 p-[10px] ${
+            activeButton === 'reserve' ? 'bg-ptxt text-wtxt' : 'text-[#7A7A7A]'
+          }`}
+          onClick={() => handleButtonClick('reserve')}
+        >
           Reserve Now
         </button>
-        <button className="w-1/3 p-[10px]  text-[#7A7A7A]     ">
+        <button
+          className={`w-1/3 p-[10px] ${
+            activeButton === 'book' ? 'bg-ptxt text-wtxt' : 'text-[#7A7A7A]'
+          }`}
+          onClick={() => handleButtonClick('book')}
+        >
           Book Now
         </button>
       </div>
-
       <div className="mt-[27px] gap-y-5 flex flex-col px-5 ">
         <div className="flex justify-between gap-4">
           <Input sx={{ color: "b.100" }} placeholder="First Name" />
@@ -103,20 +169,8 @@ export default function VisitForm() {
           </div>
         </div>
 
-        <div className="w-full flex flex-col">
-        <label className="text-[#1D273B] pb-3" htmlFor="">
-        Expected Move-in Date
-                  </label>
-        <SingleDatepicker
-            id="check-in-input"
-            name="check-in-input"
-            date={checkInDate}
-            placeholder="dd/mm/yy"
-            onDateChange={setCheckInDate}
-            sx={{color:"b.100"}}
-          />
-
-        </div>
+        {/* Conditional rendering for Date and Time Picker or Expected Move Date */}
+        {renderDateAndTimePickers()}
 
         <div className=" flex justify-between items-center">
           <div className=" flex items-center">
@@ -182,11 +236,7 @@ export default function VisitForm() {
           </div>
         </div>
 
-        <div className="pb-6">
-          <button className="text-base w-full rounded-md bg-ptxt text-wtxt font-medium py-4">
-            Schedule a Visit
-          </button>
-        </div>
+        <div className="pb-6">{renderBottomButton()}</div>
       </div>
     </div>
   );

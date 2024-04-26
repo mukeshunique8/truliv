@@ -58,7 +58,7 @@ const pgLocationsWithPrefix = pgLocations.map(
 
 export default function Footer2() {
   return (
-    <div className="    w-full flex flex-col  justify-center items-center">
+    <div className=" bg-[#232728]   w-full flex flex-col  justify-center items-center">
       <div className="w-[1440px] bg-[#232728]  pt-[50px]flex flex-col justify-center items-center gap-y-4 px-[40px] py-[40px]   ">
         {/* Top Footer */}
         <div className=" w-full  border-b-[1px]   border-slate-400">

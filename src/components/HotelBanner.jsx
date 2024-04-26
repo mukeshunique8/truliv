@@ -1,10 +1,22 @@
 import React from 'react'
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
+
 export default function HotelBanner(props) {
+
+  // const router = useRouter()
+
+  // function routeProperty(){
+  //   router.push('/coliving/propertiesDetails')
+  // }
+
   return (
 
 
-    <div className='drop-shadow-hhds cursor-pointer bg-wtxt flex rounded-[30px]  p-4 gap-x-5'>
+    <div
+    
+    // onClick={routeProperty}
+    className='drop-shadow-hhds cursor-pointer bg-wtxt flex rounded-[30px]  p-4 gap-x-5'>
 
         <div className=' '>
 
@@ -15,7 +27,7 @@ export default function HotelBanner(props) {
             <h1 className='text-dbtxt text-2xl font-semibold '>{props.hotel}</h1>
             <p className='text-gtxt text-[19px] font-normal'>{props.location}</p>
           <Image className="" src="/starRating.svg" alt="hh1"  width={114}   height={24}   />
-          <div className='flex gap-x-[30px] mt-[15px] '>
+          <div className='flex flex-wrap gap-y-2 gap-x-[30px] mt-[15px] '>
             <li className='flex justify-center gap-x-2 items-center'> 
             <span>  <Image className="" src="/wifi2.svg" alt="wifi2"  width={20}   height={20}   /></span>
             Wi-fi</li>

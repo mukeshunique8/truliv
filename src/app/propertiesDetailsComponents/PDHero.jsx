@@ -1,6 +1,6 @@
 import React from "react";
-import LocationView from "../productDetailsComponents/LocationView";
-import VisitForm from "../productDetailsComponents/VisitForm";
+import LocationView from "../propertiesDetailsComponents/LocationView";
+import VisitForm from "../propertiesDetailsComponents/VisitForm";
 import Image from "next/image";
 
 export default function PDHero() {
@@ -19,7 +19,7 @@ export default function PDHero() {
               <div className="flex items-center">
                 <Image
                   className="mr-2"
-                  src="/locationOn.svg"
+                  src="/locationwhite.svg"
                   alt="location"
                   width={16}
                   height={16}

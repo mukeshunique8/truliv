@@ -10,8 +10,8 @@ export default function GenderRadio() {
   };
 
   return (
-    <RadioGroup onChange={handleGenderChange} value={gender}>
-      <Stack direction='row'>
+    <RadioGroup  onChange={handleGenderChange} value={gender}>
+      <Stack spacing={8} direction='row'>
         <Radio colorScheme='orange' value='Male'>
           Men
         </Radio>

@@ -16,7 +16,7 @@ export default function AvailableOccupancies() {
               <div className="flex items-center gap-x-2 justify-center">
                 <Image
                   className="mr-2"
-                  src="/furniture.svg"
+                  src="/furniture.png"
                   alt="furniture"
                   width={30}
                   height={30}
