@@ -11,7 +11,7 @@ export default function Navbar() {
   //  console.log(houseType);
 
   return (
-    <div className="bg-[#232323] w-[1440px] py-[18px] pl-[41px] pr-[61px]   flex items-center justify-center " >
+    <div id='Photos' className="bg-[#232323] w-[1440px] py-[18px] pl-[41px] pr-[61px]   flex items-center justify-center " >
          {/* Left side NAV */}
          <div className=" w-2/3  z-30 space-x-[80px] flex justify-between">
           <div className=" w-1/2 flex text-center ">

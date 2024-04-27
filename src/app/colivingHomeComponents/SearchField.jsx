@@ -7,7 +7,8 @@ import OccupancyCard from "./UIElements/OccupancyCard";
 import GenderRadio from "./UIElements/GenderRadio";
 import Amenities from "./UIElements/Amenities";
 import Services from "./UIElements/Services";
-import PropertyBanner from "./PropertyBanner";
+import CLPropertyBanner from "./CLPropertyBanner";
+import HHPropertyBanner from "./HHPropertyBanner";
 
 import PriceRange from "./UIElements/PriceRange";
 
@@ -87,7 +88,7 @@ export default function SearchField() {
     }
   }, []);
 
-  // console.log("houseTypeFiltered:", houseTypeFiltered);
+  console.log("houseTypeFiltered:", houseTypeFiltered);
   // console.log("Gender:", gender);
   // console.log("selectedLocations:", selectedLocations);
   // console.log("Occupancy:", occupancy);
@@ -328,53 +329,30 @@ export default function SearchField() {
 
         {/* Cards */}
         <div className="w-2/3">
-          <div className="flex flex-col gap-y-5">
-            {/* <HotelBanner
-              location="ECR,Chennai"
-              hotel="Truliv Ipsum, Kovalam"
-              altimg="TrulivIpsum"
-              urlimg="/TrulivIpsum.png"
-            />
-            <HotelBanner
-              location="ECR,Chennai"
-              hotel="Truliv Ipsum, Kovalam"
-              altimg="TrulivIpsum"
-              urlimg="/TrulivIpsum.png"
-            /><HotelBanner
-            location="ECR,Chennai"
-            hotel="Truliv Ipsum, Kovalam"
-            altimg="TrulivIpsum"
-            urlimg="/TrulivIpsum.png"
-          />
-            <HotelBanner
-              location="ECR,Chennai"
-              hotel="Truliv Ipsum, Kovalam"
-              altimg="TrulivIpsum"
-              urlimg="/TrulivIpsum2.png"
-            />
-            <HotelBanner
-              location="ECR,Chennai"
-              hotel="Truliv Ipsum, Kovalam"
-              altimg="TrulivIpsum"
-              urlimg="/TrulivIpsum3.png"
-              
-            />
-            <HotelBanner
-            className='cursor-pointer'
-            
-              location="ECR,Chennai"
-              hotel="Truliv Ipsum, Kovalam"
-              altimg="TrulivIpsum"
-              urlimg="/TrulivIpsum.png"
-            /> */}
+          
 
-            <PropertyBanner />
-            <PropertyBanner />
-            <PropertyBanner />
-            <PropertyBanner />
-            <PropertyBanner />
-            <PropertyBanner />
-          </div>
+          {houseType === 'Holiday Homes' &&
+          
+          <div className="flex flex-col gap-y-5">
+            <HHPropertyBanner />
+            <HHPropertyBanner />
+            <HHPropertyBanner />
+            <HHPropertyBanner />
+            <HHPropertyBanner />
+            <HHPropertyBanner />
+          </div>}
+
+           {houseType === 'Co-Living Spaces' &&
+          
+          <div className="flex flex-col gap-y-5">
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+          </div>}
+          
         </div>
       </div>
     </div>

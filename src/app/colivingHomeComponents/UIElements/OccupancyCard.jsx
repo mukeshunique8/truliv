@@ -21,7 +21,7 @@ export default function OccupancyCard({ occupancy }) {
       }`}
       onClick={toggleSelection}
     >
-      <p>{occupancy}</p>
+      <p className='cursor-pointer'>{occupancy}</p>
     </div>
   );
 }

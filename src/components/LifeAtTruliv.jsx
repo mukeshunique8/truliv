@@ -11,7 +11,7 @@ export default function LifeAtTruliv() {
         
 
 
-    <div className='w-1/2 z-10 pt-[170px] relative flex justify-center  '>
+    <div className='w-1/2 z-10 mb-[100px] pt-[170px] relative flex justify-center  '>
     <Image  className="" src="/lifeAtTruliv.svg" alt="lifeAtTruliv" width={396} height={665}/>
     <Image  className="absolute -z-10 bottom-0 left-0" src="/vectorMountain.svg" alt="vectorMountain" width={817} height={401}/>
     {/* <Image  className="absolute -z-10 top-[92px] right-0" src="/vectorStriped.svg" alt="vectorStriped" width={594} height={40}/> */}

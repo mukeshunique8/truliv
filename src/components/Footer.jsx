@@ -4,10 +4,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="    w-full flex flex-col justify-center items-center">
+    <div className=" bg-white   w-full flex flex-col justify-center items-center">
     
 
-    <div className="w-[1440px] pb-[102px] pt-[306px] flex px-[30px]   ">
+    <div className="w-[1440px] pb-[102px] pt-[206px] flex px-[30px]   ">
 
         <div className='  flex flex-col items-start'>
         <Image

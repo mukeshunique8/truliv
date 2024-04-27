@@ -1,20 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Btn1 from "./Btn1";
 import Image from "next/image";
-
+import Link from "next/link"; 
+import { HouseContext } from '../Contexts/HouseContext';  
 export default function Navbar() {
+
+  const { houseType, setHouseType, showDescription, setShowDescription } = useContext(HouseContext);
+  
+  function refreshHome(){
+    setHouseType(false)
+ 
+  }
   return (
     <div className="relative w-[1440px] h-[461px] flex justify-center items-start" >
          {/* Left side NAV */}
          <div className="w-1/2 pl-[60px] z-30 space-x-[80px] flex justify-center items-center">
           <div className="w-1/3 flex justify-center items-center text-center mt-[41px]">
+          <Link onClick={refreshHome} href="/">
+
             <Image
+            
               className="cursor-pointer"
               src="/Trulivlogo.svg"
               alt="NavLogo"
               width={150}
               height={28}
             />
+                 </Link>
           </div>
           <div className="w-2/3 text-base z-30 text-[#FFFFFF] mt-[42px]">
             <ul className="flex space-x-[55px] items-center text-center">

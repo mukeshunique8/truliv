@@ -73,7 +73,7 @@ export default function Footer2() {
             }}
           >
             {pgLocationsWithPrefix.map((location, index) => (
-              <a className="hover:text-ptxt hover:scale-110 transition-all 3s cursor-pointer text-wtxt" key={index}>{location}</a>
+              <a className="hover:text-ptxt hover: transition-all 3s cursor-pointer text-wtxt" key={index}>{location}</a>
             ))}
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Footer2() {
         <div className=" mt-8  flex justify-center items-start w-full">
 
           <div className="w-1/4 pt-[62px] flex items-center justify-start">
-          <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/TrulivLogo.svg"  alt="TrulivLogo" width={190}  height={35}     /> 
+          <Image className="hover:scale-105 transition-all 3s cursor-pointer"  src="/TrulivLogo.svg"  alt="TrulivLogo" width={190}  height={35}     /> 
 
           </div>
 
@@ -95,7 +95,7 @@ export default function Footer2() {
             }}
           >
             {menuItems.map((link,index)=>{
-              return               <a className="hover:text-ptxt hover:scale-110 transition-all 3s text-wtxt cursor-pointer" key={index}>{link}</a>
+              return               <a className="hover:text-ptxt hover: transition-all 3s text-wtxt cursor-pointer" key={index}>{link}</a>
             })}
 
           </div>
@@ -103,7 +103,7 @@ export default function Footer2() {
 
               <div className="w-1/4 pt-[62px] flex px-20 justify-evenly items-center">
               <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/facebook.svg"  alt="facebook" width={25}  height={25}     />       
-               
+           
               <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/linkedin.svg"  alt="linkedin" width={25}  height={25}     />    
               <Image className="hover:scale-110 transition-all 3s cursor-pointer"  src="/instagram.svg"  alt="instagram" width={25}  height={25}     />        
 
