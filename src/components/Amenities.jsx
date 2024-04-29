@@ -22,8 +22,8 @@ export default function Amenities() {
 
   
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div className="bg-wbg px-[87px] w-[1440px] pt-[111px] flex flex-col justify-center items-center">
+    <div className="w-full max-w-[1440px]  flex flex-col justify-center items-center">
+      <div className="bg-wbg px-[87px] max-w-[1440px] pt-[111px] flex flex-col justify-center items-center">
         <h2 className="w-full text-center text-5xl font-semibold text-btxt">
           Elevating Amenities
         </h2>
@@ -37,7 +37,7 @@ export default function Amenities() {
             height={450}
           />
 
-          <div className="bg-pbg w-full h-[450px] justify-center flex items-center text-center rounded-[21px]">
+          <div className="bg-pbg w-full justify-center flex items-center text-center rounded-[21px]">
             <ul className=" gap-y-[45px] px-[55px] py-[53px] text-[20px] grid grid-rows-5 grid-cols-2  gap-x-[60px] font-normal text-wtxt">
               <li className="flex items-center text-center gap-x-[20px]">
                 <span>

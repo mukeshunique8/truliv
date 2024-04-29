@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Quotes() {
   return (
-    <div className=" w-full  flex flex-col justify-center items-center  ">
-    <div className=" bg-[#FFF3EE] mt-[60px] flex flex-col items-center justify-center  w-[1440px] ">
+    <div className=" w-full max-w-[1440px]   flex flex-col justify-center items-center  ">
+    <div className=" bg-[#FFF3EE] mt-[60px] flex flex-col items-center justify-center  max-w-[1440px] ">
 
         <div className='relative bg-wbg rounded-md flex flex-col text-center mx-[275px] mt-[121px] mb-[75px]'>
             <p className='text-ptxt text-[22px] pt-[50px] font-semibold'>Pradhip Biswas</p>

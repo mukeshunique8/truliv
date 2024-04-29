@@ -29,7 +29,7 @@
 import React, { useState, useContext } from "react";
 
 import Navbar2 from '../../colivingHomeComponents/Navbar2'
-import Footer2 from '../../colivingHomeComponents/Footer2'
+import Footer from '../../../components/Footer'
 // import Footer2 from '../colivingHomeComponents/Footer2'
 import PDHero from './CLDetailsComponents/PDHero'
 import MiddleSection from './CLDetailsComponents/MiddleSection'
@@ -47,8 +47,9 @@ export default function page() {
       <NearbyProperties/>
 
       
-      <Footer2/>
-      
+      {/* <Footer2/> */}
+      <Footer textstyle='text-white' logo='/Trulivlogo.svg' bgstyle='bg-black text-white ' />
+      {/* bgcolor='bg-white' */}
       </div>
 
       

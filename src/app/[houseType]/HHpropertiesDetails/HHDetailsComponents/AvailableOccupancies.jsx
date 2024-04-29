@@ -78,7 +78,7 @@ export default function AvailableOccupancies() {
           </p>
         </div>
 
-        <div className="flex border-[1px] mt-6 px-[24px] py-[21px] w-[520px] justify-around rounded-[8px] ">
+        <div className="flex border-[1px] border-ptxt mt-6 px-[24px] py-[21px] w-[520px] justify-around rounded-[8px] ">
           <div className="flex flex-col border-r-[1px] pr-[45px] border-[#BFBFBF]">
             <p className="text-[#686A79] leading-[26px] text-[14px] ">
               Deposit

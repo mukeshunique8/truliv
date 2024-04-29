@@ -12,7 +12,12 @@ export default function Navbar() {
  
   }
   return (
-    <div className="relative w-[1440px] h-[461px] flex justify-center items-start" >
+    <div className="relative  max-w-[1440px] h-[461px] flex justify-center items-start" >
+      
+
+      <div className=' px-3  w-[1440px] flex justify-center items-start'>
+
+     
          {/* Left side NAV */}
          <div className="w-1/2 pl-[60px] z-30 space-x-[80px] flex justify-center items-center">
           <div className="w-1/3 flex justify-center items-center text-center mt-[41px]">
@@ -59,6 +64,9 @@ export default function Navbar() {
             </a>
           </ul>
         </div>
+
+        </div>
+
     </div>
   )
 }

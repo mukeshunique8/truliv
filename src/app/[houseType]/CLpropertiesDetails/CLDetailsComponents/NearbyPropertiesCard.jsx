@@ -1,9 +1,17 @@
 import React from 'react'
 import Image from 'next/image';
+import { useRouter } from 'next/navigation'
 
 export default function NearbyPropertiesCard(props) {
+  const router = useRouter()
+
+  function routeProperty(){
+    router.push('/coliving/CLpropertiesDetails')
+    // console.log("fkbsab");
+  }
+
   return (
-    <div className='flex flex-col  relative cursor-pointer'>
+    <div onClick={routeProperty}  className='flex flex-col  relative cursor-pointer'>
       <div className='absolute top-3 left-2'>
 
         <button className={`px-3 py-[5px] font-medium border-[1px] text-[14px]  rounded-[3px]${props.style}`}>Almost Full</button>

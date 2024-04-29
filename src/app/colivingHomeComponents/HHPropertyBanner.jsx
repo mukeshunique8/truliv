@@ -12,12 +12,14 @@ export default function HHPropertyBanner() {
     const router = useRouter()
 
     function routeProperty(){
-      router.push('/coliving/HHpropertiesDetails')
+      router.push('/holidayhomes/HHpropertiesDetails')
     }
   
+ 
+
   return (
     <div 
-    onClick={routeProperty} className="max-w-[920px] max-h-[250px] cursor-pointer border-[1px] shadow-2xl border-[#DBDBDB] bg-wtxt flex  rounded-[10px] p-5   ">
+    onClick={routeProperty} className="max-w-[920px] max-h-[250px] cursor-pointer border-[1px] shadow-xl border-[#DBDBDB] bg-wtxt flex  rounded-[10px] p-5   ">
       <div className="gap-x-8 w-full flex">
         <div className="relative flex w-2/5 object-cover">
           <Image

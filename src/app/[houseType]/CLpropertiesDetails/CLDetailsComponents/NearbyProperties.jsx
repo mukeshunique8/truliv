@@ -3,7 +3,9 @@ import Image from "next/image";
 import NearbyPropertiesCard from "./NearbyPropertiesCard";
 
 
+
 export default function NearbyProperties() {
+  
   return (
     <div className='flex flex-col bg-wtxt w-[1440px] pb-10 pl-12 '>
      

@@ -14,7 +14,7 @@ import Navbar2 from "./colivingHomeComponents/Navbar2";
 export default function Home() {
   return (
  
-      <div className="mx-auto w-full flex flex-col justify-center items-center">
+      <div className="mx-auto max-w-[1440px] flex flex-col justify-center items-center">
         <Header />
       
         <Locations />
@@ -22,7 +22,7 @@ export default function Home() {
         <Quotes />
         <BottomSection/>
         <LifeAtTruliv />
-        <Footer />
+        <Footer logo='/trulivlogoblack.svg' bgstyle='bg-white'/>
       </div>
   
   );

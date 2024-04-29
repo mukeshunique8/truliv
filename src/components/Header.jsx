@@ -24,10 +24,10 @@ export default function Header() {
   
   }
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full max-w-[1440px]  flex flex-col justify-center items-center">
 
 
-      <div className="relative w-[1440px] h-[461px] flex justify-center items-start"
+      <div className="relative max-w-[1440px] h-[461px] flex justify-center items-start"
         style={{
           background:
             "linear-gradient(180deg, #000 -4.84%, rgba(33, 33, 33, 0.00) 136.18%)",

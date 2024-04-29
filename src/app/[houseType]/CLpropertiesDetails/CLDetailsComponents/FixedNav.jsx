@@ -1,44 +1,84 @@
-import React from 'react'
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import React, { useState } from 'react';
+import { Tabs, TabList, Tab } from '@chakra-ui/react';
 
 export default function FixedNav() {
+  const [activeTab, setActiveTab] = useState('');
 
-  
-  const scrollToSection = (id) => { 
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -50; // Adjust the offset as needed
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
-
+  const handleTabClick = (id) => {
+    scrollToSection(id);
+    setActiveTab(id);
+  };
 
   return (
-    <div  className='text-[14px]   rounded-[5px] w-fit sticky top-0 flex justify-center items-center  bg-[#F3F3F3] text-[#737373]'>
-         
-    
-            <Tabs   colorScheme='orange'>
-        <TabList>
-            <Tab onClick={() => {scrollToSection("Photos"); }}>Photos</Tab>
-            <Tab onClick={() => {scrollToSection("Details"); }}>Details</Tab>
-            <Tab onClick={() => {scrollToSection("Availability"); }}>Availability</Tab>
-            <Tab onClick={() => {scrollToSection("Amenities"); }}>Amenities</Tab>
-            <Tab onClick={() => {scrollToSection("Life @ Truliv"); }}>Life @ Truliv</Tab>
-            <Tab onClick={() => {scrollToSection("Reviews"); }}>Reviews</Tab>
-            <Tab onClick={() => {scrollToSection("Location"); }}>Location</Tab>
-        </TabList>
-
-        {/* <TabPanels>
-            <TabPanel>
-            <p>one!</p>
-            </TabPanel>
-            <TabPanel>
-            <p>two!</p>
-            </TabPanel>
-            <TabPanel>
-            <p>three!</p>
-            </TabPanel>
-        </TabPanels> */}
-        </Tabs>
+    <div className='text-[14px] mt-4 rounded-[8px] w-fit sticky top-2 flex justify-center items-center bg-[#F3F3F3] text-[#737373]'>
+      <nav>
+        <ul className='flex py-4 px-7 gap-x-10'>
+          <li>
+            <span
+              onClick={() => handleTabClick('Photos')}
+              style={{ fontWeight: activeTab === 'Photos' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Photos
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => handleTabClick('Details')}
+              style={{ fontWeight: activeTab === 'Details' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Details
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => handleTabClick('Availability')}
+              style={{ fontWeight: activeTab === 'Availability' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Availability
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => handleTabClick('Amenities')}
+              style={{ fontWeight: activeTab === 'Amenities' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Amenities
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => handleTabClick('Life @ Truliv')}
+              style={{ fontWeight: activeTab === 'Life @ Truliv' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Life @ Truliv
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => handleTabClick('Reviews')}
+              style={{ fontWeight: activeTab === 'Reviews' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Reviews
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => handleTabClick('Location')}
+              style={{ fontWeight: activeTab === 'Location' ? 'bold' : 'normal', cursor: 'pointer' }}
+            >
+              Location
+            </span>
+          </li>
+        </ul>
+      </nav>
     </div>
-  )
+  );
 }

@@ -5,7 +5,7 @@
 import React, { useState, useContext } from "react";
 
 import Navbar2 from '../colivingHomeComponents/Navbar2'
-import Footer2 from '../colivingHomeComponents/Footer2'
+import Footer from '../../components/Footer'
 import SearchField from '../colivingHomeComponents/SearchField'
 
 import { FilterProvider } from "../../Contexts/FilterContext";
@@ -19,7 +19,7 @@ export default function page() {
       <Navbar2/>
       <SearchField/>
       
-      <Footer2/>
+      <Footer textstyle='text-white' logo='/Trulivlogo.svg' bgstyle='bg-black text-white '/>
       </div>
      
       

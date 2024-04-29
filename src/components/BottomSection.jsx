@@ -9,7 +9,7 @@ export default function BottomSection() {
   const { houseType } = useContext(HouseContext);
 
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex max-w-[1440px]  flex-col justify-center items-center'>
       {/* Conditional rendering based on houseType */}
       {houseType === 'Co-Living Spaces' && (
         <>

@@ -151,7 +151,7 @@ export default function SearchField() {
 
   return (
     <div className="bg-wbg w-[1440px] pt-[18px] py-12 px-[50px] flex-col flex items-center justify-center">
-      <div className="mt-[38px] min-h-[66px] rounded-md border justify-center items-center border-[#E6E7E9]  flex px-[20px] w-full">
+      <div className="mt-[38px] min-h-[66px] rounded-md border justify-between items-center border-[#E6E7E9]  flex px-[20px] w-full">
         <div className="w-2/12 border-r border-gtxt flex justify-center items-center">
           <Image
             className="cursor-pointer"
@@ -161,13 +161,15 @@ export default function SearchField() {
             height={19}
           />
           <Select
+          // sx={{color:'b.100'}}
+       
             placeholder="Select City"
             className="text-center w-fit text-base text-b1txt"
             variant="unstyled"
             size="lg"
             onChange={handleCitySelect}
           >
-            <option value="Chennai">Chennai</option>
+            <option   value="Chennai">Chennai</option>
             <option value="Bangalore">Bangalore</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Delhi">Delhi</option>
@@ -205,7 +207,7 @@ export default function SearchField() {
             {selectedLocations.map((location, index) => (
               <li
                 key={index}
-                className="flex min-w-fit justify-center items-center rounded bg-white text-b1txt border px-3 py-2 border-ptxt"
+                className="flex min-w-fit justify-center items-center rounded bg-white text-b1txt  px-3 py-2 border-[1px] border-ptxt"
               >
                 {location}
                 <span onClick={() => handleLocationRemove(location)}>
@@ -237,7 +239,7 @@ export default function SearchField() {
       <div className="w-full justify-center items-start gap-x-6 flex mt-6">
         {/* Filters */}
 
-        <div className="w-1/3  border  border-[#E6E7E9]  rounded-[5px] px-[24px] py-[20px] flex flex-col gap-y-6">
+        <div className="w-1/3 sticky top-2  border  border-[#E6E7E9]  rounded-[5px] px-[24px] py-[20px] flex flex-col gap-y-6">
           {/* Occupancy */}
 
           <div className="flex flex-col items-start border-b border-[#E6E7E9]  gap-y-1">
@@ -345,6 +347,12 @@ export default function SearchField() {
            {houseType === 'Co-Living Spaces' &&
           
           <div className="flex flex-col gap-y-5">
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
+            <CLPropertyBanner />
             <CLPropertyBanner />
             <CLPropertyBanner />
             <CLPropertyBanner />

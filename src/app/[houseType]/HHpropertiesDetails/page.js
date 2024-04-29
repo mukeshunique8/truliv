@@ -22,7 +22,7 @@ export default function page() {
       <NearbyProperties/>
 
       
-      <Footer/>
+      <Footer textstyle='text-white' logo='/Trulivlogo.svg' bgstyle='bg-black text-white '/>
       
       </div>
 

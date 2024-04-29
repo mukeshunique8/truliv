@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function HowDoes() {
   return (
     <div className=" w-full   flex flex-col justify-center items-center">
-      <div className="  w-[1440px] mt-[97px] flex flex-col justify-center items-center ">
+      <div className="  max-[1440px] mt-[97px] flex flex-col justify-center items-center ">
 
         <p className='text-[48px] pb-[100px] leading-[72px] font-semibold'>How does it work?</p>
 
@@ -33,7 +33,7 @@ export default function HowDoes() {
 
                   
                 <h2 className='text-[48px] z-50 leading-[72px] font-semibold text-ptxt'>Schedule A Visit</h2>
-                <p className='text-[16px] z-10 pl-[30px] leading-[24px] font-semibold'>Our executives will call to assist in understanding your requirements, identifying properties near your workplace or preferred location.</p>
+                <p className='text-[16px] z-10 pl-[40px] leading-[24px] font-semibold'>Our executives will call to assist in understanding your requirements, identifying properties near your workplace or preferred location.</p>
             </div>
             <div className='w-1/2  pt-[120px] flex justify-center items-center '>
 
@@ -103,7 +103,7 @@ export default function HowDoes() {
         <div className='bg-sbg rounded-b-[25%] flex gap-x-[90px]   pb-[260px] px-[170px] '>
             <div className='w-1/2 relative flex flex-col pt-[220px] items-start '>
             <Image
-                      className="absolute z-40 top-[185px] left-3"
+                      className="absolute z-40 top-[185px] left-4"
                       src="/3.svg"
                       alt="3"
                       width={59}

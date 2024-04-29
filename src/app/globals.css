@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 
+
+
+/* Style the selected option */
+select option:checked {
+    color: orange;
+  }
+  
+  select option{
+    margin-bottom: 20px;
+  }
+
 .navBgBlur{
     background: linear-gradient(180deg, #000 -4.84%, rgba(33, 33, 33, 0.00) 136.18%);
 }
