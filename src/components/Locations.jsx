@@ -11,27 +11,27 @@ export default function Locations() {
    const { houseType } = useContext(HouseContext);
    
   return (
-    <div className="relative  mb-[500px]  w-full flex flex-col justify-center items-center">
+    <div className={`${houseType?"relative bg-sbg pt-[300px] md:pt-0  mb-[500px]  justify-center items-center  w-full flex flex-col":"relative bg-sbg   mb-[500px]  justify-center items-center  w-full flex flex-col"}`}>
       
       {/* Location Font */}
 
-      <div className="w-[1440px]   flex flex-col justify-center items-center ">
+      <div className="w-full  bg-sbg  flex flex-col justify-center items-center ">
         {/* Conditional rendering based on houseType */}
         {houseType === "Co-Living Spaces" && (
-          <h2 className="text-[#000000] bg-[#FFF3EE]  w-full pt-[377px] text-center font-medium text-5xl leading-[72px]">
+          <h2 className="text-[#000000] bg-[#FFF3EE]  w-full    pt-[77px] md:pt-[377px]   text-center font-medium  text-[16px]  md:text-5xl  leading-[20px] md:leading-[72px]">
             We are available in many <br /> places in{" "}
             <span className="border-b-2  border-[#E95F29]">Chennai</span>{" "}
           </h2>
         )}
         {houseType === "Holiday Homes" && (
-         <h2 className="text-[#000000] bg-[#FFF3EE]  w-full pt-[377px] text-center font-medium text-5xl leading-[72px]">
+         <h2 className="text-[#000000] bg-[#FFF3EE]  w-full    pt-[77px] md:pt-[377px]   text-center font-medium  text-[16px]  md:text-5xl  leading-[20px] md:leading-[72px]">
        With 6 locations in <span className="border-b-2  border-[#E95F29]">India,</span> 
        <br />we’re always set to host you.  
        </h2>
         )}
         {/* Default rendering if houseType is neither "Coliving" nor "Home" */}
         {!(houseType === "Co-Living Spaces" || houseType === "Holiday Homes") && (
-        <h2 className="text-[#000000] bg-[#FFF3EE]  w-full pt-[377px] text-center font-medium text-5xl leading-[72px]">
+        <h2 className="text-[#000000] bg-[#FFF3EE]  w-full    pt-[77px] md:pt-[377px]   text-center font-medium  text-[16px]  md:text-5xl  leading-[20px] md:leading-[72px]">
         We are available in many <br /> places in{" "}
         <span className="border-b-2  border-[#E95F29]">Chennai</span>{" "}
       </h2>
@@ -43,9 +43,11 @@ export default function Locations() {
       
       {/*Location Cards Conditional rendering based on houseType */}
       {houseType === "Co-Living Spaces" && (
-        <div className="relative w-[1440px] pb-[175px] bg-sbg z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[33px]  flex-wrap flex  justify-evenly   ">
+       <div className="relative w-full max-w-[1440px] pb-5 md:pb-[175px] bg-sbg z-40 rounded-b-[75px]  md:rounded-b-[25%] pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex-wrap md:flex-nowrap flex  gap-x-3 justify-center md:justify-evenly   ">
 
         <AreaCards
+        simgw="56"
+        simgh="110"
             imgw="79"
             imgh="154"
             area="OMR"
@@ -54,6 +56,8 @@ export default function Locations() {
             areaAlt="OMR"
           />
           <AreaCards
+          simgw="56"
+          simgh="110"
             imgw="104"
             imgh="147"
             area="Shenoy Nagar"
@@ -62,6 +66,8 @@ export default function Locations() {
             areaAlt="Shenoy Nagar"
           />
           <AreaCards
+          simgw="56"
+          simgh="110"
             imgw="115"
             imgh="155"
             area="Anna Nagar"
@@ -70,6 +76,8 @@ export default function Locations() {
             areaAlt="Anna Nagar"
           />
           <AreaCards
+          simgw="56"
+          simgh="110"
             imgw="73"
             imgh="147"
             area="Porur"
@@ -78,6 +86,8 @@ export default function Locations() {
             areaAlt="Porur"
           />
           <AreaCards
+          simgw="56"
+          simgh="110"
             imgw="131"
             imgh="117"
             area="Nungambakkam"
@@ -86,6 +96,8 @@ export default function Locations() {
             areaAlt="Nungambakkam"
           />
           <AreaCards
+          simgw="56"
+          simgh="110"
             imgw="127"
             imgh="155"
             area="Adayar"
@@ -94,6 +106,8 @@ export default function Locations() {
             areaAlt="Adayar"
           />
           <AreaCards
+          simgw="56"
+          simgh="110"
             imgw="110"
             imgh="147"
             area="T. Nagar"
@@ -107,7 +121,7 @@ export default function Locations() {
         
         )}
         {houseType === "Holiday Homes" && (
-       <div className="relative w-[1440px] bg-sbg  pb-[175px] z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[20px]   flex-wrap flex  justify-evenly  bg-yellow-300-400  ">
+    <div className="relative w-full max-w-[1440px] pb-5 md:pb-[175px] bg-sbg z-40 rounded-b-[75px]  md:rounded-b-[25%] pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex-wrap md:flex-nowrap flex  gap-x-3 justify-center md:justify-evenly   ">
 
        <AreaPhotos urlImage='/location1.png' altimg='location1'  />
        <AreaPhotos urlImage='/location2.png' altimg='location2'  />
@@ -124,9 +138,11 @@ export default function Locations() {
         {/* Default rendering if houseType is neither "Coliving" nor "Home" */}
         {!(houseType === "Co-Living Spaces" || houseType === "Holiday Homes") && (
 
-<div className="relative w-[1440px] pb-[175px] bg-sbg z-40 rounded-b-[25%]  pt-[54px] px-[44px] gap-y-[33px]  flex-wrap flex  justify-evenly  bg-yellow-300-400  ">
+<div className="relative w-full max-w-[1440px] pb-5 md:pb-[175px] bg-sbg z-40 rounded-b-[75px]  md:rounded-b-[25%] pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex-wrap md:flex-nowrap flex  gap-x-3 justify-center md:justify-evenly   ">
 
 <AreaCards
+simgw="56"
+simgh="110"
     imgw="79"
     imgh="154"
     area="OMR"
@@ -135,6 +151,8 @@ export default function Locations() {
     areaAlt="OMR"
   />
   <AreaCards
+  simgw="56"
+  simgh="110"
     imgw="104"
     imgh="147"
     area="Shenoy Nagar"
@@ -143,6 +161,8 @@ export default function Locations() {
     areaAlt="Shenoy Nagar"
   />
   <AreaCards
+  simgw="56"
+  simgh="110"
     imgw="115"
     imgh="155"
     area="Anna Nagar"
@@ -151,6 +171,8 @@ export default function Locations() {
     areaAlt="Anna Nagar"
   />
   <AreaCards
+  simgw="56"
+  simgh="110"
     imgw="73"
     imgh="147"
     area="Porur"
@@ -159,6 +181,8 @@ export default function Locations() {
     areaAlt="Porur"
   />
   <AreaCards
+  simgw="56"
+  simgh="110"
     imgw="131"
     imgh="117"
     area="Nungambakkam"
@@ -167,6 +191,8 @@ export default function Locations() {
     areaAlt="Nungambakkam"
   />
   <AreaCards
+  simgw="56"
+  simgh="110"
     imgw="127"
     imgh="155"
     area="Adayar"
@@ -175,6 +201,8 @@ export default function Locations() {
     areaAlt="Adayar"
   />
   <AreaCards
+  simgw="56"
+  simgh="110"
     imgw="110"
     imgh="147"
     area="T. Nagar"
@@ -194,7 +222,7 @@ export default function Locations() {
 
      {/* <div className="absolute top-[880px]"> */}
 
-     <div className={`${houseType === "Holiday Homes" ?"absolute top-[1080px]" :"absolute top-[880px]"}`}>
+     <div className={`${houseType === "Holiday Homes" ?"absolute w-full md:top-[1080px]" :"absolute  w-full top-[880px]"}`}>
 
       <FeatureList/>
      </div>

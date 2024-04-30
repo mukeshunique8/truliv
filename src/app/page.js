@@ -14,12 +14,13 @@ import Navbar2 from "./colivingHomeComponents/Navbar2";
 export default function Home() {
   return (
  
-      <div className="mx-auto max-w-[1440px] flex flex-col justify-center items-center">
+      <div className="mx-auto  flex flex-col justify-center items-center">
         <Header />
+
       
         <Locations />
         <Amenities />
-        <Quotes />
+         <Quotes />
         <BottomSection/>
         <LifeAtTruliv />
         <Footer logo='/trulivlogoblack.svg' bgstyle='bg-white'/>

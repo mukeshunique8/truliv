@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState, useContext } from "react";
 import Image from "next/image";
 import { HouseContext } from "../Contexts/HouseContext";
-import selectOrange from '../../public/selectOrange.svg'
+import selectOrange from "../../public/selectOrange.svg";
 
 export default function HouseCard(props) {
   const [showDescription, setShowDescription] = useState(false);
@@ -12,12 +12,12 @@ export default function HouseCard(props) {
   function handleHouse(type) {
     props.handleHouse(type); // Call the parent component's handleHouse function
     setShowDescription(true);
-    setHouseType(type) 
-    
-     localStorage.setItem("houseType", type);
- 
-   // Set showDescription to true when a card is clicked
-  //  console.log(houseType);
+    setHouseType(type);
+
+    localStorage.setItem("houseType", type);
+
+    // Set showDescription to true when a card is clicked
+    //  console.log(houseType);
   }
 
   // Function to handle mouse enter event
@@ -43,28 +43,57 @@ export default function HouseCard(props) {
         // Toggle image size when clicked
       }}
     >
-     <div className={`relative cursor-pointer rounded-[30px] ${houseType === props.houseType ? " shadow-2xl" : ""}`}>
-  <div className="relative">
-    <Image
-      className={`w-full filter cursor-pointer ${houseType === props.houseType ? "" : ""} ${showDescription ? "houseHover" : "brightness-75"}`}
-      src={props.urlImage}
-      alt={props.alt}
-      width={543}
-      height={323}
-    />
-    {houseType === props.houseType && ( // Render the gradient overlay only if houseType matches props.houseType
-      <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 rounded-[30px]" />
-    )}
-  </div>
-</div>
+      <div
+        className={`relative cursor-pointer md:rounded-[30px] ${
+          houseType === props.houseType ? " shadow-2xl" : ""
+        }`}
+      >
+        <div className="relative hidden md:flex">
+          <Image
+            className={`w-full filter cursor-pointer ${
+              houseType === props.houseType ? "" : ""
+            } ${showDescription ? "houseHover" : "brightness-75"}`}
+            src={props.urlImage}
+            alt={props.alt}
+            width={543}
+            height={323}
+          />
+          
+          {houseType === props.houseType && ( // Render the gradient overlay only if houseType matches props.houseType
+            <div className="absolute  md:inset-0 inset-3 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 md:rounded-[30px]" />
+          )}
+        </div>
+        <div className="relative flex md:hidden">
+          <Image
+            className={`w-full filter cursor-pointer ${
+              houseType === props.houseType ? "" : ""
+            } ${showDescription ? "houseHover" : "brightness-75"}`}
+            src={props.urlImage}
+            alt={props.alt}
+            width={156}
+            height={153}
+          />
+          
+          {houseType === props.houseType && ( // Render the gradient overlay only if houseType matches props.houseType
+            <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 md:rounded-[30px]" />
+          )}
+        </div>
+      </div>
 
-
-      <div className="absolute cursor-pointer bottom-16 px-4 left-10">
-        <p className={`text-[#FFFFFF] cursor-pointer text-4xl leading-[54px] font-bold ${showDescription ? "opacity-100 translate-y-0" : "opacity-100 translate-y-[40px]"} transition-all duration-700 ease-in-out`}>
+      <div className="absolute cursor-pointer bottom-10 md:bottom-16 left-2 md:px-4 md:left-10">
+        <p
+          className={`text-[#FFFFFF] cursor-pointer md:text-4xl md:leading-[54px] md:font-bold ${
+            showDescription
+              ? "opacity-100 translate-y-0"
+              : "opacity-100 translate-y-[40px]"
+          } transition-all duration-700 ease-in-out`}
+        >
           {props.houseType}
         </p>
         {showDescription && (
-          <p className="text-[#FFFFFF] mt-4 text-lg cursor-pointer font-normal">{props.desc}</p>
+          <p className="text-[#FFFFFF] md:mt-4 md:text-lg  cursor-pointer font-normal">
+            {props.desc}
+          </p>
         )}
       </div>
     </div>

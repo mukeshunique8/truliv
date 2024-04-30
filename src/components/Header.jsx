@@ -24,48 +24,60 @@ export default function Header() {
   
   }
   return (
-    <div className="w-full max-w-[1440px]  flex flex-col justify-center items-center">
+    <div className="w-full  flex flex-col ">
 
 
-      <div className="relative max-w-[1440px] h-[461px] flex justify-center items-start"
+      <div className="relative h-[333px] md:h-[461px] flex justify-center items-start"
         style={{
           background:
             "linear-gradient(180deg, #000 -4.84%, rgba(33, 33, 33, 0.00) 136.18%)",
+            backgroundImage: "url('NavImage.svg')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat"
+           
         }}
       >
-        <Image
+
+         {/* Gradient overlay */}
+         <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(180deg, #000 -4.84%, rgba(33, 33, 33, 0.00) 136.18%)",
+          }}
+        ></div>
+        {/* <Image
           className="absolute cursor-pointer -z-10 top-0 left-0"
           src="/NavImage.svg"
           alt="Nav Image"
           width={1440}
           height={461}
-        />
+        /> */}
 
        <Navbar/>
 
         {/* Conditional rendering based on houseType */}
         {houseType === "Co-Living Spaces" && (
-          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] text-[68px] leading-[102px]">
+          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
             Live the Life at Trul<span className="ptxt">i</span> v
           </h1>
         )}
 
         {houseType === "Holiday Homes" && (
-          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] text-[68px] leading-[102px]">
+          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
             Best Holiday Homes in India
           </h1>
         )}
 
         {houseType !== "Co-Living Spaces" && houseType !== "Holiday Homes" && (
-          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] text-[68px] leading-[102px]">
+          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
             Think Home, Think Trul <span className="ptxt">i</span> v
           </h1>
         )}
 
         
         {/* Card Position */}
-        <div className="absolute z-10 w-[80%]  flex-col rounded-[40px] bg-red-400 housecardbg top-[343px] left-1/2 -translate-x-1/2 flex justify-center items-center ">
-          <div className=" flex justify-around w-full px-5 py-5 ">
+        <div className="absolute z-10 w-[90%] md:w-[80%]  md:h-[380px] max-w-[1240px] flex-col rounded-xl md:rounded-[40px] housecardbg top-[265px] md:top-[343px] left-1/2 -translate-x-1/2 flex justify-center items-center ">
+          <div className={`${houseType?'flex justify-around md:gap-x-3 gap-x-3 w-full p-2 md:px-5 md:py-5':"flex   justify-evenly gap-x-3  md:gap-x-3 w-full  p-2 md:px-5 md:py-5"}`}>
             <HouseCard
               desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim molestiae sequi consectetur illo earum quis consequuntur tenetur, ratione laboriosam architecto quas beatae eaque at!"
               houseType="Co-Living Spaces"
@@ -83,11 +95,7 @@ export default function Header() {
           </div>
 
           {/* Conditional rendering of booking component */}
-          <div
-            // onMouseEnter={() => setShowDescription(true)}
-            // onMouseLeave={() => setShowDescription(false)}
-            className="px-5 w-full flex flex-col justify-center items-center"
-          >
+          <div  className="md:px-5 w-full flex flex-col justify-center items-center"   >
             {showDescription && (
               <>
                 {houseType === 'Co-Living Spaces' && <BookingCoLiving />}
@@ -96,7 +104,11 @@ export default function Header() {
             )}
           </div>
         </div>
+
+        
       </div>
+
+      
     </div>
   );
 }

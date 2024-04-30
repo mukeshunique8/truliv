@@ -10,6 +10,7 @@ export default function BottomSection() {
 
   return (
     <div className='flex max-w-[1440px]  flex-col justify-center items-center'>
+      
       {/* Conditional rendering based on houseType */}
       {houseType === 'Co-Living Spaces' && (
         <>
