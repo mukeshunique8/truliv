@@ -19,9 +19,9 @@ export default function BookingCoLiving() {
   }
 
   return (
-    <div className="  w-[1100px]  py-5  flex md:flex-row flex-col gap-y-6 md:gap-y-0 justify-between items-center">
+    <div className=" w-full px-3 md:px-0 md:w-[1100px]  py-5  flex md:flex-row flex-col gap-y-6 md:gap-y-0 justify-between items-center">
 
-      <div className="w-1/4 py-2  rounded-md  border-ptxt border-[1px] md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent   border-r md:py-4 md:border-[#83838352] gap-x-3 flex justify-center items-center">
+      <div className=" w-full  md:w-1/4  py-2  rounded-md  border-ptxt border-[1px] md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent   border-r md:py-4 md:border-[#83838352] gap-x-3 flex justify-center items-center">
         <div className="flex  justify-center items-center">
           <Image
             className=""
@@ -69,7 +69,7 @@ export default function BookingCoLiving() {
         </div>
       </div>
 
-      <div className="w-1/4   py-2  rounded-md  border-ptxt border-[1px] md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  border-r  md:border-[#83838352] gap-x-3 flex justify-center items-center">
+      <div className=" w-full  md:w-1/4    py-2  rounded-md  border-ptxt border-[1px] md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  border-r  md:border-[#83838352] gap-x-3 flex justify-center items-center">
         <div className="flex  justify-center items-center">
           <Image
             className=""
@@ -117,7 +117,7 @@ export default function BookingCoLiving() {
         </div>
       </div>
 
-      <div className="w-1/4  py-2  rounded-md   border-ptxt border-[1px]  md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  border-r  md:border-[#83838352] gap-x-3 flex justify-center items-center">
+      <div className=" w-full  md:w-1/4   py-2  rounded-md   border-ptxt border-[1px]  md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  border-r  md:border-[#83838352] gap-x-3 flex justify-center items-center">
         <div className="flex  justify-center items-center">
           <Image
             className=""
@@ -165,7 +165,7 @@ export default function BookingCoLiving() {
         </div>
       </div>
 
-      <div className="w-1/4  py-2  rounded-md md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  md:border-none  flex justify-center items-center">
+      <div className=" w-full  md:w-1/4   py-2  rounded-md md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  md:border-none  flex justify-center items-center">
         <button
           onClick={handleColiving}
           className="justify-center rounded-[9px] w-full text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg"

@@ -7,7 +7,7 @@ export default function HowDoes() {
       {/* Larger screens */}
       <div className=" w-full  hidden md:flex flex-col justify-center items-center">
         <div className="  mt-[97px] flex flex-col justify-center items-center ">
-          <p className="text-[48px] max-w-[1440px]  pb-[100px] leading-[72px] font-semibold">
+          <p className="text-[48px] max-w-[1440px]  pb-[100px] leading-[72px]  font-semibold ">
             How does it work?
           </p>
 
@@ -31,10 +31,10 @@ export default function HowDoes() {
                   height={225}
                 />
 
-                <h2 className="text-[48px] z-50 leading-[72px] font-semibold text-ptxt">
+                <h2 className="text-[48px] z-50 leading-[72px]  font-normal md:font-semibold  text-ptxt">
                   Schedule A Visit
                 </h2>
-                <p className="text-[16px] z-10 pl-[40px] leading-[24px] font-semibold">
+                <p className="text-[16px] z-10 pl-[40px] leading-[24px]  font-normal md:font-semibold ">
                   Our executives will call to assist in understanding your
                   requirements, identifying properties near your workplace or
                   preferred location.
@@ -70,10 +70,10 @@ export default function HowDoes() {
                   height={225}
                 />
 
-                <h2 className="text-[48px] leading-[72px] z-50 font-semibold text-ptxt">
+                <h2 className="text-[48px] leading-[72px] z-50  font-normal md:font-semibold  text-ptxt">
                   Visit The Property
                 </h2>
-                <p className="text-[16px] pl-[30px]  z-10 leading-[24px] font-semibold">
+                <p className="text-[16px] pl-[30px]  z-10 leading-[24px]  font-normal md:font-semibold ">
                   After speaking with our executives, they will schedule a visit
                   to show you the complete property inside and out.
                 </p>
@@ -109,10 +109,10 @@ export default function HowDoes() {
                   width={59}
                   height={225}
                 />
-                <h2 className="text-[48px] z-50 leading-[72px] font-semibold text-ptxt">
+                <h2 className="text-[48px] z-50 leading-[72px]  font-normal md:font-semibold  text-ptxt">
                   Move In To Your New Home
                 </h2>
-                <p className="text-[16px] pl-[30px] leading-[24px] font-semibold">
+                <p className="text-[16px] pl-[30px] leading-[24px]  font-normal md:font-semibold ">
                   After visiting and booking your desired property, you can
                   seamlessly transition to the Truliv community.
                 </p>
@@ -134,7 +134,7 @@ export default function HowDoes() {
       {/* Mobile screens */}
 
       <div className=" w-full   md:hidden flex flex-col  items-center">
-        <p className="text-[22px] pb-[40px] leading-normal font-semibold">
+        <p className="text-[22px] pb-[40px] leading-normal font-semibold ">
           How does it work?
         </p>
 
@@ -148,7 +148,7 @@ export default function HowDoes() {
               height={176}
             />
               <Image
-                  className="absolute  bottom-[125px] left-1"
+                  className="absolute  bottom-[125px] left-7 md:left-1"
                   src="/1.svg"
                   alt="1"
                   width={38}
@@ -159,7 +159,7 @@ export default function HowDoes() {
             <h2 className="text-[30px] mt-[32px] z-40 leading-normal font-extrabold text-ptxt">
               Schedule A Visit
             </h2>
-            <p className="text-[16px] text-center text-[#3B3B3B] pt-4 leading-[24px] font-semibold">
+            <p className="text-[16px] text-center text-[#3B3B3B] pt-4 leading-[24px]  font-normal md:font-semibold ">
               Our executives will call to assist in understanding your
               requirements, identifying properties near your workplace or
               preferred location.
@@ -174,7 +174,7 @@ export default function HowDoes() {
               height={168}
             />
               <Image
-                  className="absolute  bottom-[125px] left-1"
+                  className="absolute  bottom-[125px] left-6 md:left-1"
                   src="/2.svg"
                   alt="1"
                   width={38}
@@ -184,7 +184,7 @@ export default function HowDoes() {
 
             <h2 className="text-[30px] mt-[32px] z-40 leading-normal font-extrabold text-ptxt">
             Visit The Property            </h2>
-            <p className="text-[16px] text-center text-[#3B3B3B] pt-4 leading-[24px] font-semibold">
+            <p className="text-[16px] text-center text-[#3B3B3B] pt-4 leading-[24px]  font-normal md:font-semibold ">
             Our executives will call to assist in understanding your requirements, identifying properties near your workplace or preferred location.
 
             </p>
@@ -208,7 +208,7 @@ export default function HowDoes() {
 
             <h2 className="text-[30px] mt-[52px] z-40 leading-normal font-extrabold text-ptxt">
             Move In To Your New Home   </h2>
-            <p className="text-[16px] text-center text-[#3B3B3B] pt-4 leading-[24px] font-semibold">
+            <p className="text-[16px] text-center text-[#3B3B3B] pt-4 leading-[24px]  font-normal md:font-semibold ">
             Our executives will call to assist in understanding your requirements, identifying properties near your workplace or preferred location.
 
             </p>

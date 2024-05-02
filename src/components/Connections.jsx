@@ -8,9 +8,11 @@ import ConnectionCards from "../components/ConnectionCards";
 
 export default function Connections() {
   return (
-    <div className=' w-full  flex justify-center items-center'>
+    <div className=' w-full   flex justify-center items-center'>
 
-        <div className='max-w-[1440px] hidden md:flex flex-col justify-center items-center'>
+      {/* {larger Screens} */}
+
+        <div className='max-w-[1440px]  hidden md:flex flex-col justify-center items-center'>
 
        
 
@@ -43,11 +45,12 @@ export default function Connections() {
 
     <div>
       
+      {/* Smaller Screens */}
     <div className=' md:hidden  mb-[45px] flex flex-col justify-center items-center'>
         <p className='md:text-[25px] text-[16px] font-medium uppercase pt-[78px] text-ptxt'>Empowering Lives</p>
         <h2 className='md:text-[48px] text-[22px] md:font-normal  font-semibold text-btxt'>Inspiring Connections.</h2>
 
-        <div className='mx-4 mt-6 bg-[#FFF] rounded-lg gap-y-3'>
+        <div className='mx-4 mt-6 shadow-orange-400 shadow-sm bg-[#FFF] rounded-lg gap-y-3'>
         <Image  className="p-2 rounded-[26px]" src="/map2.svg" alt="mapRectangle" width={342} height={269}/>
 
          

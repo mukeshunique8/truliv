@@ -60,7 +60,7 @@ export default function HouseCard(props) {
           />
           
           {houseType === props.houseType && ( // Render the gradient overlay only if houseType matches props.houseType
-            <div className="absolute  md:inset-0 inset-3 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 md:rounded-[30px]" />
+            <div className="absolute  rounded-[50px] md:inset-0 -inset-4 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 md:rounded-[30px]" />
           )}
         </div>
         <div className="relative flex md:hidden">
@@ -68,21 +68,22 @@ export default function HouseCard(props) {
             className={`w-full filter cursor-pointer ${
               houseType === props.houseType ? "" : ""
             } ${showDescription ? "houseHover" : "brightness-75"}`}
-            src={props.urlImage}
+            src={props.urlImage2}
             alt={props.alt}
             width={156}
             height={153}
           />
           
           {houseType === props.houseType && ( // Render the gradient overlay only if houseType matches props.houseType
-            <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-zinc-900 opacity-50 md:rounded-[30px]" />
+            <div className="absolute  rounded-[15px] inset-0  bg-gradient-to-b border-ptxt border-[1px] from-orange-500 to-zinc-900 opacity-50 md:rounded-[30px]" />
+            
           )}
         </div>
       </div>
 
-      <div className="absolute cursor-pointer bottom-10 md:bottom-16 left-2 md:px-4 md:left-10">
+      <div className="absolute cursor-pointer bottom-[50px] md:bottom-16 left-3 md:px-4 md:left-10">
         <p
-          className={`text-[#FFFFFF] cursor-pointer md:text-4xl md:leading-[54px] md:font-bold ${
+          className={`text-[#FFFFFF] cursor-pointer text-[14px] md:text-4xl md:leading-[54px] md:font-bold ${
             showDescription
               ? "opacity-100 translate-y-0"
               : "opacity-100 translate-y-[40px]"

@@ -34,7 +34,7 @@ export default function Amenities() {
 
   return (
     <div className="w-full max-w-[1440px]  flex flex-col justify-center items-center">
-      <div className="bg-wbg md:px-[87px] max-w-[1440px] pt-9 md:pt-[111px] flex flex-col justify-center items-center">
+      <div className={`${houseType === 'Holiday Homes'?" pt-[100px]  flex flex-col justify-center items-center":"bg-wbg md:px-[87px] max-w-[1440px]  pt-[70px] md:pt-[111px] flex flex-col justify-center items-center"}`}>
         <h2 className="w-full text-center text-[22px] md:text-5xl font-semibold text-btxt">
           Elevating Amenities
         </h2>
