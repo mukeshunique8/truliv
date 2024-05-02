@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Header from "../components/Header";
 import Locations from "../components/Locations";
+import LocationsCopy from "../components/LocationsCopy";
 import Amenities from '../components/Amenities'
 import Quotes from '../components/Quotes'
 import BottomSection from '../components/BottomSection'
@@ -17,8 +18,8 @@ export default function Home() {
       <div className="mx-auto  flex flex-col justify-center items-center">
         <Header />
 
-      
-        <Locations />
+      <LocationsCopy/>
+        {/* <Locations /> */}
         <Amenities />
          <Quotes />
         <BottomSection/>

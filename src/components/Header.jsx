@@ -76,7 +76,7 @@ export default function Header() {
 
         
         {/* Card Position */}
-        <div className="absolute z-10 w-[90%] md:w-[80%]  md:h-[380px] max-w-[1240px] flex-col rounded-xl md:rounded-[40px] housecardbg top-[265px] md:top-[343px] left-1/2 -translate-x-1/2 flex justify-center items-center ">
+        <div className="absolute z-10 w-[90%] md:w-[80%]  md:h-[380px] max-w-[1140px] flex-col rounded-xl md:rounded-[40px] housecardbg top-[265px] md:top-[343px] left-1/2 -translate-x-1/2 flex justify-center items-center ">
           <div className={`${houseType?'flex justify-around md:gap-x-3 gap-x-3 w-full p-3 md:px-5 md:py-5':"flex   justify-evenly gap-x-3  md:gap-x-3 w-full p-3   md:px-5 md:py-5"}`}>
             <HouseCard
               desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim molestiae sequi consectetur illo earum quis consequuntur tenetur, ratione laboriosam architecto quas beatae eaque at!"

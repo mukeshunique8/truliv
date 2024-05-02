@@ -32,7 +32,8 @@ export default function BookingCoLiving() {
           />
         </div>
 
-        <div className="flex flex-col  justify-center items-start">
+        <div className="flex flex-col  justify-center  gap-y-[0px] md:gap-y-[9.5px] items-start">
+          <label className="font-semibold">Location</label>
           <Select
            
             className="text-center "
@@ -80,7 +81,8 @@ export default function BookingCoLiving() {
           />
         </div>
 
-        <div className="flex flex-col gap-y-[9.5px] justify-center items-start">
+        <div className="flex flex-col gap-y-[0px] md:gap-y-[9.5px] justify-center items-start">
+        <label className="font-semibold">Occupancy</label>
           <Select
             className="border-ptxt text-center"
             variant="unstyled"
@@ -128,7 +130,8 @@ export default function BookingCoLiving() {
           />
         </div>
 
-        <div className="flex flex-col gap-y-[9.5px] justify-center items-start">
+        <div className="flex flex-col gap-y-[0px] md:gap-y-[9.5px] justify-center items-start">
+        <label className="font-semibold">Price Range</label>
           <Select
             className="border-ptxt text-center"
             variant="unstyled"
@@ -165,19 +168,22 @@ export default function BookingCoLiving() {
         </div>
       </div>
 
-      <div className=" w-full  md:w-1/4   py-2  rounded-md md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  md:border-none  flex justify-center items-center">
-        <button
+      <div className="w-full md:w-1/4 py-2      rounded-md md:border-l-transparent md:border-r-transparent md:border-b-transparent md:border-t-transparent  md:border-none  flex justify-center items-center">
+      <button
           onClick={handleColiving}
-          className="justify-center rounded-[9px] w-full text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg"
+          className="justify-center md:max-w-[150px]  rounded-[9px] w-full text-white text-[20px] font-medium items-center  flex text-center py-[15px] px-[30px] bg-pbg"
         >
+      <Image
+                    className=""
+                    src="/bookSearch.svg"
+                    alt="bookSearch"
+                    width={28}
+                    height={28}
+                  />
+
+
           <span>
-            <Image
-              className=""
-              src="/bookSearch.svg"
-              alt="bookSearch"
-              width={28}
-              height={28}
-            />
+            
           </span>{" "}
           Search
         </button>
