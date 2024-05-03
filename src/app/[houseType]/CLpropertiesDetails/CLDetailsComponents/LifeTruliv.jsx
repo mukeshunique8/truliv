@@ -4,14 +4,14 @@ import Image from "next/image";
 
 export default function LifeTruliv() {
   return (
-    <div id="Life @ Truliv" className="flex flex-col w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] mt-6">
+    <div id="Life @ Truliv" className="flex flex-col md:w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] md:mt-6">
       <h2 className="font-semibold text-2xl leading-8 text-ptxt">Life @ Truliv</h2>
       <p className=" mt-4 text-base  text-[#404040]">Our property offers three concepts in one: community, coliving, and coworking. We welcome like-minded people from all over the world who are looking to be or are already living
 location-independent lifestyles. Our typical guests are digital nomads, freelancers, entrepreneurs, and others who are just starting this lifestyle. Our lab comes with many benefits, one of which is meeting new friends and making potential new business connections.</p>
 
 
         <h2 className="text-black text-base font-medium mt-9">Community events</h2>      
-        <div className="flex flex-col w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] mt-6">
+        <div className="flex flex-col md:w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] mt-6">
   <h2 className="font-medium text-2xl leading-8 text-ptxt">Activities</h2>
   <div className="text-[14px] grid grid-cols-3 mt-4 gap-6">
     <div className="flex  items-center gap-y-1">
@@ -62,7 +62,7 @@ location-independent lifestyles. Our typical guests are digital nomads, freelanc
 </div>
 
 
-      <div className="mt-9 grid  grid-cols-3 gap-6">
+      <div className="mt-9  overflow-x-scroll flex justify-center md:grid  md:grid-cols-3 gap-6">
 
       <Image className=""src="/life1.png"  alt="life1"  width={245}   height={206}/>
       <Image className=""src="/life2.png"  alt="life2"  width={245}   height={206}/>

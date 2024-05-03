@@ -13,12 +13,15 @@ export const FilterProvider = ({ children }) => {
   const [amenities, setAmenities] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 20000]);
   const [houseTypeFiltered, setHouseTypeFiltered] = useState("");
+  const [sortByPrice, setSortByPrice] = useState("");
 
   return (
     <FilterContext.Provider
       value={{
         gender,
         setGender,
+        sortByPrice,
+        setSortByPrice,
         occupancy,
         setOccupancy,
         services,
@@ -29,6 +32,7 @@ export const FilterProvider = ({ children }) => {
         setPriceRange,
                 houseTypeFiltered,
         setHouseTypeFiltered,
+
       }}
     >
       {children}

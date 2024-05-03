@@ -7,8 +7,14 @@ import OccupancyCard from "./UIElements/OccupancyCard";
 import GenderRadio from "./UIElements/GenderRadio";
 import Amenities from "./UIElements/Amenities";
 import Services from "./UIElements/Services";
+import SortByPrice from "./UIElements/SortByPrice";
 import CLPropertyBanner from "./CLPropertyBanner";
 import HHPropertyBanner from "./HHPropertyBanner";
+import BadgeAL from "./UIElements/BadgeAL";
+import BadgeSO from "./UIElements/BadgeSO";
+import BadgeFF from "./UIElements/BadgeFF";
+import BadgeNA from "./UIElements/BadgeNA";
+import Badge from "./UIElements/BadgeAL";
 
 import PriceRange from "./UIElements/PriceRange";
 
@@ -70,6 +76,7 @@ export default function SearchField() {
   const [suggestions, setSuggestions] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [showFilter, setShowFilter] = useState(false); // State for controlling filter visibility
   // useEffect(() => {
   //   console.log("Gender:", gender);
   // console.log("Occupancy:", occupancy);
@@ -88,7 +95,7 @@ export default function SearchField() {
     }
   }, []);
 
-  console.log("houseTypeFiltered:", houseTypeFiltered);
+  // console.log("houseTypeFiltered:", houseTypeFiltered);
   // console.log("Gender:", gender);
   // console.log("selectedLocations:", selectedLocations);
   // console.log("Occupancy:", occupancy);
@@ -149,10 +156,18 @@ export default function SearchField() {
     // You can access selectedLocations array here
   };
 
+  const filtersearch = () => {
+    setShowFilter(!showFilter); // Toggle the showFilter state
+  };
+
+  const closefilter = () => {
+    setShowFilter(false);
+  };
+
   return (
-    <div className="bg-wbg w-[1440px] pt-[18px] py-12 px-[50px] flex-col flex items-center justify-center">
-      <div className="mt-[38px] min-h-[66px] rounded-md border justify-between items-center border-[#E6E7E9]  flex px-[20px] w-full">
-        <div className="w-2/12 border-r border-gtxt flex justify-center items-center">
+    <div className="bg-wbg   w-full max-w-[1440px] px-3 pt-[18px] py-12 md:px-[50px]  flex-col flex items-center justify-center">
+      <div className="hidden  md:flex mt-[38px] min-h-[66px] rounded-md border justify-between items-center border-[#E6E7E9]   px-[20px] w-full">
+        <div className="md:w-2/12 border-r border-gtxt flex justify-center items-center">
           <Image
             className="cursor-pointer"
             src="/locationOn.svg"
@@ -161,15 +176,15 @@ export default function SearchField() {
             height={19}
           />
           <Select
-          // sx={{color:'b.100'}}
-       
+            // sx={{color:'b.100'}}
+
             placeholder="Select City"
             className="text-center w-fit text-base text-b1txt"
             variant="unstyled"
             size="lg"
             onChange={handleCitySelect}
           >
-            <option   value="Chennai">Chennai</option>
+            <option value="Chennai">Chennai</option>
             <option value="Bangalore">Bangalore</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Delhi">Delhi</option>
@@ -177,7 +192,7 @@ export default function SearchField() {
         </div>
 
         {selectedCity && (
-          <div className="w-3/12  relative flex justify-center items-center">
+          <div className="md:w-3/12  relative flex justify-center items-center">
             <input
               type="text"
               placeholder="Select Location"
@@ -202,12 +217,12 @@ export default function SearchField() {
           </div>
         )}
 
-        <div className="w-6/12 flex justify-start items-center">
-          <ul className="flex flex-wrap justify-center items-center gap-x-2 gap-y-2 py-2 px-3">
+        <div className="md:w-5/12 flex justify-start items-center">
+          <ul className="flex flex-wrap-reverse justify-center items-center gap-x-2 gap-y-2 py-2 px-3">
             {selectedLocations.map((location, index) => (
               <li
                 key={index}
-                className="flex min-w-fit justify-center items-center rounded bg-white text-b1txt  px-3 py-2 border-[1px] border-ptxt"
+                className="flex min-w-fit justify-center items-center rounded bg-white text-b1txt  px-2  border-[1px] border-ptxt"
               >
                 {location}
                 <span onClick={() => handleLocationRemove(location)}>
@@ -218,28 +233,105 @@ export default function SearchField() {
           </ul>
         </div>
 
-        <div className="w-1/12">
+        <div className="md:w-2/12">
           <SearchBtn onClick={handleAddLocation} />
         </div>
       </div>
 
+      {/* Search Box Mobile Screen */}
+
+      <div className="flex relative items-center rounded-[10px] justify-between shadow-xl px-4  w-full  py-4  mt-5 md:hidden">
+        <input
+          className="text-base px-2 py-1 rounded-sm text-[#110229]"
+          type="text"
+          value={"T-Nagar"}
+        />
+        <button>
+          {" "}
+          <Image
+            className="cursor-pointer"
+            src="/searchbutton.svg"
+            alt="searchbutton"
+            width={36}
+            height={36}
+          />
+        </button>
+
+        <Image
+          onClick={filtersearch}
+          className="cursor-pointer absolute top-[80px] right-0"
+          src="/filter.svg"
+          alt="filter"
+          width={45}
+          height={45}
+        />
+      </div>
+
       {/* HouseType */}
 
-      <div className="mt-[25px] rounded-md  justify-start text-center font-semibold text-[28px] text-[#333333] items-center  flex px-[20px] w-full">
-        <span className="text-ptxt mr-3">{houseType}</span>
+      <div className="mt-[25px] rounded-md  justify-start text-center font-semibold text-[20px] md:text-[28px] text-[#333333] items-center  flex w-full">
+        <span className="text-[#110229]  md:mr-3">{houseType}</span>
         <span className="font-light  text-lg">
           {selectedLocations.length > 0
-            ? " @ " + selectedLocations.join(", ")
+            ? " in " + selectedLocations.join(", ")
             : ""}
         </span>
       </div>
 
       {/* Filters and Cards */}
 
-      <div className="w-full justify-center items-start gap-x-6 flex mt-6">
+      <div className="w-full relative md:justify-center md:items-start md:gap-x-6 flex mt-6">
         {/* Filters */}
 
-        <div className="w-1/3 sticky top-2  border  border-[#E6E7E9]  rounded-[5px] px-[24px] py-[20px] flex flex-col gap-y-6">
+        <div
+          className={`md:w-1/3 w-full  md:sticky md:top-2 border border-[#E6E7E9] md:rounded-tr-[0px] rounded-tr-[50px] rounded-tl-[50px] md:rounded-tl-none rounded-[5px] px-[24px] py-[20px] flex flex-col space-y-6 ${
+            showFilter ? "absolute top-[10px] bg-white z-50 " : "hidden md:block"
+          }`}
+        >
+          {/* Add filter */}
+
+          <div className="flex flex-col w-full  pb-5 border-b border-[#E6E7E9]  md:hidden">
+            <div className="flex pb-5  border-b border-ptxt items-center">
+              <Image
+                onClick={closefilter}
+                className="cursor-pointer "
+                src="/closex.svg"
+                alt="close"
+                width={24}
+                height={24}
+              />
+              <Image
+                className="cursor-pointer ml-[80px] "
+                src="/filtersmall.svg"
+                alt="filtersmall"
+                width={17}
+                height={16}
+              />
+              <p className="text-ptxt  ml-[8px] text-[20px] font-semibold">
+                Add Filter
+              </p>
+            </div>
+
+            <div className="flex text-[14px] mt-[40px] flex-col">
+              <div className="flex gap-x-2">
+                <Image
+                  className="cursor-pointer  "
+                  src="/downup.svg"
+                  alt="downup"
+                  width={14}
+                  height={14}
+                />
+
+                <h2 className=" text-ptxt">Sort by Price</h2>
+              </div>
+
+              <div className="flex mt-5 justify-between">
+                <SortByPrice option="Price: High to Low" />
+                <SortByPrice option="Price: Low to High" />
+              </div>
+            </div>
+          </div>
+
           {/* Occupancy */}
 
           <div className="flex flex-col items-start border-b border-[#E6E7E9]  gap-y-1">
@@ -326,41 +418,45 @@ export default function SearchField() {
             <div className="flex flex-wrap justify-center gap-5 items-center pb-6">
               <Services />
             </div>
+
+            <div className="flex w-full border-t py-5  justify-between items-center md:hidden">
+              <p className="border-b-[1px] border-black">Clear All</p>
+              <button className="bg-ptxt rounded-md text-white text-[14px] font-medium leading-[17px] px-[28px] py-[10px]">
+                Save Changes
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Cards */}
-        <div className="w-2/3">
-          
+        <div className={`${showFilter? "opacity-0":"w-full md:w-2/3"}`}>
+          {houseType === "Holiday Homes" && (
+            <div className="flex flex-col gap-y-5">
+              <HHPropertyBanner badge={BadgeAL} />
+              <HHPropertyBanner badge={BadgeSO} />
+              <HHPropertyBanner badge={BadgeFF} />
+              <HHPropertyBanner badge={BadgeNA} />
+              <HHPropertyBanner badge={Badge} />
+              <HHPropertyBanner badge={BadgeFF} />
+            </div>
+          )}
 
-          {houseType === 'Holiday Homes' &&
-          
-          <div className="flex flex-col gap-y-5">
-            <HHPropertyBanner />
-            <HHPropertyBanner />
-            <HHPropertyBanner />
-            <HHPropertyBanner />
-            <HHPropertyBanner />
-            <HHPropertyBanner />
-          </div>}
-
-           {houseType === 'Co-Living Spaces' &&
-          
-          <div className="flex flex-col gap-y-5">
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-            <CLPropertyBanner />
-          </div>}
-          
+          {houseType === "Co-Living Spaces" && (
+            <div className="flex flex-col items-center gap-y-5">
+              <CLPropertyBanner badge={BadgeAL} />
+              <CLPropertyBanner badge={BadgeSO} />
+              <CLPropertyBanner badge={BadgeFF} />
+              <CLPropertyBanner badge={BadgeNA} />
+              <CLPropertyBanner badge={Badge} />
+              <CLPropertyBanner badge={BadgeFF} />
+              <CLPropertyBanner badge={BadgeAL} />
+              <CLPropertyBanner badge={BadgeSO} />
+              <CLPropertyBanner badge={BadgeFF} />
+              <CLPropertyBanner badge={BadgeNA} />
+              <CLPropertyBanner badge={Badge} />
+              <CLPropertyBanner badge={BadgeFF} />
+            </div>
+          )}
         </div>
       </div>
     </div>

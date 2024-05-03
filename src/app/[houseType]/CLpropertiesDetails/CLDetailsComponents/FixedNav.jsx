@@ -18,9 +18,9 @@ export default function FixedNav() {
   };
 
   return (
-    <div className='text-[14px] mt-4 rounded-[8px] w-fit sticky top-2 flex justify-center items-center bg-[#F3F3F3] text-[#737373]'>
+    <div className='text-[14px] mt-4 rounded-[8px] md:w-fit sticky top-2 flex w-full  justify-center items-center bg-[#F3F3F3] text-[#737373]'>
       <nav>
-        <ul className='flex py-4 px-7 gap-x-10'>
+        <ul className='flex flex-wrap py-1 px-1 items-center justify-center md:py-4 md:px-7 md:gap-y-4  gap-y-2 gap-x-3 md:gap-x-10'>
           <li>
             <span
               onClick={() => handleTabClick('Photos')}

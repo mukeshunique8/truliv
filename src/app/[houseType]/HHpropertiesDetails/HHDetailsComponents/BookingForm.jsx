@@ -9,7 +9,7 @@ export default function BookingForm() {
   const [isActive, setIsActive] = useState(true);
   const [checked, setChecked] = useState(true);
 
-  const toggleIcon = () => {
+  const toggleIcon = () => {s
     setIsActive(!isActive);
   };
 
@@ -17,7 +17,7 @@ export default function BookingForm() {
     setChecked(!checked);
   };
   return (
-    <div className=" w-[465px] absolute  mt-[110px]  ml-[900px] ">
+    <div className="hidden md:block w-[465px] absolute  mt-[110px]  ml-[900px] ">
       <div className="px-5 border-[1px] border-[#E8E8E8] bg-[#FFFDFD] rounded py-5 flex flex-col gap-y-4 ">
         <p className="text-ptxt font-bold leading-6 text-[26px] ">
           ₹1,999

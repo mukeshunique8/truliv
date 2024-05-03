@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function OurPolicy() {
   return (
-    <div id='Our Policy' className='flex flex-col  w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] mt-6'>
-        <h2 className='font-semibold text-2xl leading-8 text-ptxt'>Our Policy</h2>
+    <div id='Our Policy' className='flex flex-col w-full  md:w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] md:mt-6'>
+        <h2 className='font-semibold  text-2xl leading-8 text-ptxt'>Our Policy</h2>
 
         <div className='mt-[20px] flex gap-x-[50px]'>
 

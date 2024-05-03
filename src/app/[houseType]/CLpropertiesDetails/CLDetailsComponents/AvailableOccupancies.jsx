@@ -3,15 +3,15 @@ import Image from "next/image";
 
 export default function AvailableOccupancies() {
   return (
-    <div  id='Availability'  className="flex flex-col w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] mt-6">
+    <div  id='Availability'  className="flex flex-col w-full md:w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0]  md:mt-6">
       <h2 className="font-semibold text-2xl leading-8 text-ptxt">
         Available Occupancies
       </h2>
 
       <div className="flex mt-4 flex-col">
-        <div className="flex w-[580px] gap-y-3  flex-col ">
+        <div className="flex md:w-[580px] gap-y-3  flex-col ">
 
-          <div className="flex justify-between">
+          <div className="flex flex-wrap gap-y-3 justify-between">
             <div className="bg-[#FFFBF7] gap-y-1 rounded-xl px-5 py-2 flex flex-col justify-center items-center">
               <div className="flex items-center gap-x-2 justify-center">
                 <Image
@@ -79,8 +79,9 @@ export default function AvailableOccupancies() {
           </p>
         </div>
 
-        <div className="flex border-[1px] border-ptxt mt-6 px-[24px] py-[21px] w-[520px] justify-around rounded-[8px] ">
-          <div className="flex flex-col border-r-[1px] pr-[45px] border-[#BFBFBF]">
+        <div className="flex border-[1px] border-ptxt mt-6 px-[18px] py-4  md:px-[24px] md:py-[21px] md:w-[520px] justify-around rounded-[8px] ">
+
+          <div className="flex flex-col border-r-[1px] pr-[15px] md:pr-[45px] border-[#BFBFBF]">
             <p className="text-[#686A79] leading-[26px] text-[14px] ">
               Deposit
             </p>
@@ -89,7 +90,7 @@ export default function AvailableOccupancies() {
             </p>
           </div>
 
-          <div className="flex flex-col border-r-[1px] pr-[45px] border-[#BFBFBF]">
+          <div className="flex flex-col border-r-[1px] pr-[15px] md:pr-[45px] border-[#BFBFBF]">
             <p className="text-[#686A79] leading-[26px] text-[14px] ">
               Minimum Lock-in
             </p>

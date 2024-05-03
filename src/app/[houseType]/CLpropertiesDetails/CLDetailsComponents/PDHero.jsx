@@ -9,13 +9,13 @@ export default function PDHero() {
   const [activeTab, setActiveTab] = useState("Facade");
 
   return (
-    <div className="flex flex-col px-10 pt-10 pb-5 bg-[#232323] w-[1440px] text-wtxt">
+    <div className="flex flex-col md:px-10  px-2 pt-10 pb-5 bg-[#232323] max-w-[1440px] text-wtxt">
       <LocationView />
-      <div className="flex gap-x-5">
-        <div className="w-3/5  relative flex flex-col justify-between items-center">
-          <div className="flex w-full justify-between">
-            <div className="flex flex-col">
-              <h2 className="text-ptxt text-[40px] font-bold leading-[60px]">
+      <div className="flex  gap-x-5">
+        <div className="md:w-3/5 w-full   relative flex flex-col md:justify-between items-center">
+          <div className="flex flex-col md:flex-row w-full justify-between">
+            <div className="flex flex-col space-y-2 md:space-y-0 md:mt-0 mt-3">
+              <h2 className="text-ptxt md:text-[40px] leading-[24px] text-[24px] font-bold md:leading-[60px]">
                 Truliv DRA Olympus
               </h2>
 
@@ -36,7 +36,7 @@ export default function PDHero() {
                 <a className="underline ml-2">View on Map</a>
               </div>
 
-              {/* <div className="flex justify-start items-center">
+              <div className="flex md:hidden justify-start items-center">
                 <p className="pr-2">4.0</p>
                 <Image
                   className="mr-2"
@@ -46,34 +46,51 @@ export default function PDHero() {
                   height={17}
                 />
                 <p className="underline">(7 Reviews)</p>
-              </div> */}
+              </div>
             </div>
 
-            <div className="flex flex-col gap-y-2">
-              <p className="text-wtxt text-base">Starts from</p>
-              <p className="text-wtxt justify-center flex items-center text-[26px] leading-[24px]">
-                ₹3,000<span className="text-wtxt text-base">/month</span>
-              </p>
-              <button className="py-[5px] px-[12px] rounded-md w-fit h-fit border-[1px] border-ptxt text-ptxt text-[13px] leading-[17px] ">
-                Almost Full
-              </button>
-            </div>
-          </div>
-
-          <Image
-            className="mr-2 mt-4 rounded-lg  "
+            <Image
+            className="mr-2 flex md:hidden mt-4 rounded-lg  "
             src="/nearbysize.svg"
             alt="pdhero"
             width={750}
             height={410}
           />
 
-          <div onClick={() => setShowModal(true)} className="absolute bottom-4 right-8">
+            <div className="flex md:flex-col items-center md:items-start justify-between flex-row md:mt-0 mt-3 gap-y-2">
+
+                  <div className="items-center justify-center">
+                  <p className="text-wtxt text-base">Starts from</p>
+              <p className="text-wtxt justify-start md:justify-center mt-2 flex items-center text-[26px] leading-[24px]">
+                ₹3,000<span className="text-wtxt text-base">/month</span>
+              </p>
+                  </div>
+
+              
+              <div className="items-center justify-center">
+              <button className="py-[5px] px-[12px] rounded-md w-fit h-fit border-[1px] border-ptxt text-ptxt text-[13px] leading-[17px] ">
+                Almost Full
+              </button>
+
+              </div>
+             
+            </div>
+          </div>
+
+          <Image
+            className="mr-2 mt-4 hidden md:flex rounded-lg  "
+            src="/nearbysize.svg"
+            alt="pdhero"
+            width={750}
+            height={410}
+          />
+
+          <div onClick={() => setShowModal(true)} className="absolute hidden md:flex bottom-4 right-8">
             <ShowAllPhotos  />
           </div>
         </div>
 
-        <div className="w-2/5 justify-center items-center  h-full rounded-lg flex ">
+        <div className="md:w-2/5 hidden md:flex w-full justify-center items-center  h-full rounded-lg  ">
           <VisitForm />
         </div>
       </div>

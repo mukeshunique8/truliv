@@ -1,41 +1,47 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Badge from "./UIElements/BadgeAL";
-import { useRouter } from 'next/navigation'
 
+import BadgeAL from "./UIElements/BadgeAL";
+import BadgeSO from "./UIElements/BadgeSO";
+import BadgeFF from "./UIElements/BadgeFF";
+import BadgeNA from "./UIElements/BadgeNA";
 
-export default function CLPropertyBanner() {
+export default function CLPropertyBanner({ badge: Badge }) {
+  const router = useRouter();
 
-    const router = useRouter()
+  function routeProperty() {
+    router.push("/coliving/CLpropertiesDetails");
+  }
 
-    function routeProperty(){
-      router.push('/coliving/CLpropertiesDetails')
-    }
-  
   return (
-    <div 
-    onClick={routeProperty} className="max-w-[920px] max-h-[356px] cursor-pointer border-[1px] shadow-2xl border-[#DBDBDB] bg-wtxt flex  rounded-[10px] p-5   ">
-      <div className="gap-x-8 w-full flex">
-        <div className="relative flex w-1/3 object-cover">
-          <Image
-            className=" rounded-md"
-            src="/Nearby2.png"
-            alt="rightArrow"
-            width={300}
-            height={200}
-          />
+    <div
+      onClick={routeProperty}
+      className="w-[330px] h-auto md:w-[920px] md:h-[356px] cursor-pointer border-[1px] shadow-2xl border-[#DBDBDB] bg-wtxt flex md:flwo rounded-[10px] md:p-5 "
+    >
+      <div className="gap-x-8 w-full flex flex-col md:flex-row">
+        <div className="relative flex md:w-1/3 w-full  object-cover">
+          <div className="w-[330px] h-[250px] md:w-[300px] md:h-[200px]">
+            <Image
+              className=" rounded-md"
+              src="/Nearby2.png"
+              alt="rightArrow"
+              fill={true}
+            />
+          </div>
           <div className="absolute top-0 -left-[15px] ">
-          <Badge/>
+          <Badge />
           </div>
         </div>
 
-        <div className=" flex  w-2/3 flex-col ">
-          <div className="flex  pb-6 border-b border-[#E6E7E9] justify-between">
-            <div className="flex  flex-col ">
-              <h2 className=" text-[#333] text-2xl font-semibold">
+        <div className=" flex px-5 md:px-0   md:w-2/3 w-full flex-col ">
+          <div className="flex flex-col md:flex-row  md:pb-6 md:border-b md:border-[#E6E7E9] justify-between">
+            <div className="flex mt-4 md:mt-0  flex-col ">
+              <h2 className=" text-[#333]  md:text-2xl text-[28px] font-semibold">
                 Truliv DRA Olympus
               </h2>
-              <div className="flex justify-start">
+              <div className="flex  justify-start">
                 <Image
                   className="mr-2"
                   src="/locationOn.svg"
@@ -49,7 +55,7 @@ export default function CLPropertyBanner() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-start items-center">
+            <div className=" flex-col hidden md:flex justify-start items-center">
               <div className="flex ">
                 <p className="pr-2">4.0</p>
                 <Image
@@ -64,28 +70,28 @@ export default function CLPropertyBanner() {
             </div>
           </div>
 
-          <div className="flex flex-col border-b border-[#E6E7E9]">
-            <div className="flex flex-wrap gap-y-2 gap-x-[30px] mb-5 mt-[23px] ">
+          <div className="flex flex-col md:border-b md:border-[#E6E7E9]">
+            <div className="flex flex-wrap gap-y-2 gap-x-[30px] my-3 md:mb-5  md:mt-[23px] ">
               <li className="flex justify-center gap-x-2 items-center">
                 <span>
                   {" "}
                   <Image
                     className=""
-                    src="/wifi2.svg"
+                    src="/furniture3.svg"
                     alt="wifi2"
                     width={20}
                     height={20}
                   />
                 </span>
-                Wi-fi
+                Single, Double & Triple
               </li>
               <li className="flex justify-center gap-x-2 items-center">
                 <span>
                   {" "}
                   <Image
                     className=""
-                    src="/wifi2.svg"
-                    alt="wifi2"
+                    src="/unisex.svg"
+                    alt="Unisex"
                     width={20}
                     height={20}
                   />
@@ -94,8 +100,8 @@ export default function CLPropertyBanner() {
               </li>
             </div>
 
-            <div className="flex flex-col mb-5">
-              <h2>Featured Amenities</h2>
+            <div className="md:flex hidden flex-col mb-5">
+              <h2 className="font-semibold">Featured Amenities</h2>
 
               <div className="flex flex-wrap gap-y-2 gap-x-[30px] mt-[13px] ">
                 <li className="flex justify-center gap-x-2 items-center">
@@ -157,18 +163,17 @@ export default function CLPropertyBanner() {
             </div>
           </div>
 
-          <div className="flex items-center mt-6 justify-between">
+          <div className="flex md:flex-row flex-col items-start md:items-center mb-5 md:mb-0 md:mt-6 justify-between">
             <div className="flex flex-col gap-y-2">
-              <p className="text-btxt text-base">Starts from</p>
-              <p className="text-btxt justify-center font-bold flex items-center text-[26px] leading-[24px]">
-                ₹3,000<span className="text-btxt text-base">/month</span>
+              <p className="text-btxt hidden md:flex text-base">Starts from</p>
+              <p className="text-ptxt md:text-btxt justify-center font-bold flex items-center text-[26px] leading-[24px]">
+                ₹3,000<span className=" ml-2 text-btxt text-base">/ month</span>
               </p>
             </div>
-            
-              <button className="flex text-base font-medium text-ptxt py-[10px] px-6 w-[155px] cursor-pointer border-[1px] border-ptxt  justify-center rounded-xl  items-center ">
-                Reserve Now
-              </button>
-          
+
+            <button className="flex text-base font-medium text-ptxt mt-5 md:mt-0 py-[10px] px-6  cursor-pointer border-[1px] border-ptxt  justify-center rounded-xl  items-center ">
+              Reserve Now
+            </button>
           </div>
         </div>
       </div>

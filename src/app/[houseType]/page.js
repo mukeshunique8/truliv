@@ -19,7 +19,7 @@ export default function page() {
       <Navbar2/>
       <SearchField/>
       
-      <Footer textstyle='text-white' logo='/Trulivlogo.svg' bgstyle='bg-black text-white '/>
+      <Footer textstyle='text-white' logo='/Trulivlogo.svg' bgstyle='pt-8 bg-black text-white '/>
       </div>
      
       

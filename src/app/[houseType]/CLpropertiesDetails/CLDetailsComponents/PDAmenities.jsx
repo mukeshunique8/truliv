@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PDAmenities() {
   return (
-    <div id="Amenities" className="flex flex-col w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] mt-6">
+    <div id="Amenities" className="flex flex-col md:w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] md:mt-6">
       <h2 className="font-semibold text-2xl leading-8 text-ptxt">Amenities</h2>
       <div className="text-[14px] grid grid-cols-3 mt-4 gap-6">
   <div className="flex gap-x-2">

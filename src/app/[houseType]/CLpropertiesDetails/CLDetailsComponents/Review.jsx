@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function LifeTruliv() {
   return (
-    <div  className="flex flex-col  gap-y-[16px] py-[50px] border-b-[1px] border-[#E0E0E0] ">
+    <div  className="flex flex-col  md:gap-y-[16px] gap-y-[8px] py-6 md:py-[50px] border-b-[1px] border-[#E0E0E0] ">
       <div className="flex justify-start gap-x-4">
         <Image
           className=""
@@ -32,7 +32,7 @@ export default function LifeTruliv() {
         </div>
       </div>
       <div>
-        <p className="text-[#525252] w-[480px] italic leading-6 text-[16px]">
+        <p className="text-[#525252] md:w-[480px] italic leading-6 md:text-[16px] text-[12px]">
           Great coliving with big and comfortable rooms, a spacious and
           well-equipped coworking space, and a gym with everything I needed. The
           team is very friendly. I had a great....
