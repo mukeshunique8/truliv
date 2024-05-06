@@ -102,7 +102,7 @@ export default function LifeAtTruliv() {
           <h2 className="font-semibold text-[22px] pt-5 text-btxt">
             Life at Truliv
           </h2>
-          <p className="text-[16px] px-[48px] pb-8 text-center mt-6 text-btxt">
+          <p className="text-[16px] px-[20px] pb-8 text-center mt-6 text-btxt">
             Lorem ipsum dolor sit amet consectetur. Ac pellentesque adipiscing
             cras nisl morbi pellentesque vulputate amet. Nibh tincidunt ipsum
             sem egestas ut. Eu urna consectetur vel hendrerit turpis nullam. Id

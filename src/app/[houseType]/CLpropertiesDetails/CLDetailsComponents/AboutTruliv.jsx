@@ -195,7 +195,7 @@ export default function AboutTruliv() {
             <Input sx={{ color: "b.100" }} placeholder="Last Name" />
           </div>
 
-          <div className=" ">
+          <div className="w-full ">
             <InputGroup>
               <InputLeftAddon sx={{ color: "b.100" }}>+91</InputLeftAddon>
               <Input
@@ -277,7 +277,7 @@ export default function AboutTruliv() {
                 height={18}
               />
               <button className="text-ptxt ml-4 text-[24px] font-bold">
-                Book Noow
+                Book Now
               </button>
             </div>
           </div>
@@ -287,7 +287,7 @@ export default function AboutTruliv() {
             <Input sx={{ color: "b.100" }} placeholder="Last Name" />
           </div>
 
-          <div className=" ">
+          <div className="w-full ">
             <InputGroup>
               <InputLeftAddon sx={{ color: "b.100" }}>+91</InputLeftAddon>
               <Input

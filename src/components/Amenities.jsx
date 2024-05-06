@@ -41,7 +41,7 @@ export default function Amenities() {
 
         <div className="flex w-full gap-x-7  mt-5 md:mt-[49px]">
           <Image
-            className="cursor-pointer md:flex hidden"
+            className="cursor-pointer sm:hidden md:hidden  lg:flex hidden"
             src={getImageSrc()} // Set the image source dynamically based on houseType
             alt="amenitiesImage"
             width={486}
@@ -51,7 +51,7 @@ export default function Amenities() {
           <div className="bg-pbg w-full mx-4 md:mx-0 justify-center flex items-center text-center rounded-[21px]">
             <ul className="md:gap-y-[45px] px-5 py-8 md:px-[55px] md:py-[53px] text-[13px] md:text-[20px] grid grid-rows-5 grid-cols-2  md:gap-x-[60px] gap-x-[10px] gap-y-[10px] font-normal text-wtxt">
               {amenitiesList.map((amenity, index) => (
-                <li key={index} className="flex items-center text-center gap-x-1 md:gap-x-[20px]">
+                <li key={index} className="flex items-center  text-center gap-x-1 md:gap-x-[20px]">
                   <span>
                     <Image className="" src={amenity.imageUrl} alt={amenity.text} width={35} height={35} />
                   </span>{" "}

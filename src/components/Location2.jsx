@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import AreaCards from "./AreaCards";
 import AreaPhotos from "./AreaPhotos";
 import FeatureCard from "./FeatureCard";
-import FeatureCard2 from "./FeatureCard2";
 import Navbar2 from "../app/colivingHomeComponents/Navbar2";
 
 import { HouseContext } from "../Contexts/HouseContext";
@@ -226,22 +225,22 @@ const holidayHomesFeaturesData = [
   {
     featalt: "cleanRooms",
     featUrl: "/cleanRooms.svg",
-    featDesc: "Clean rooms",
+    feathead: "Clean rooms",
   },
   {
     featalt: "affordablePrice",
     featUrl: "/affordablePrice.svg",
-    featDesc: "Affordable prices",
+    feathead: "Affordable prices",
   },
   {
     featalt: "culturalExperiences",
     featUrl: "/culturalExperiences.svg",
-    featDesc: "Cultural experiences",
+    feathead: "Cultural experiences",
   },
   {
     featalt: "petFriendly",
     featUrl: "/petFriendly.svg",
-    featDesc: "Pet friendly",
+    feathead: "Pet friendly",
   },
 ];
 const defaultFeaturesData = [
@@ -277,23 +276,35 @@ const locationTitle = {
   default: (
     <>
       We are available in many <br /> places in{" "}
-      <span className=" underline-offset-[8px] underline decoration-ptxt   ">Chennai</span>{" "}
+      <span className=" underline-offset-[8px] underline decoration-ptxt   ">
+        Chennai
+      </span>{" "}
     </>
   ),
   coliving: (
     <>
       We are available in many <br /> places in{" "}
-      <span className=" underline-offset-[8px] underline decoration-ptxt   ">Chennai</span>{" "}
+      <span className=" underline-offset-[8px] underline decoration-ptxt   ">
+        Chennai
+      </span>{" "}
     </>
   ),
   holidayhomes: (
     <>
       With 6 locations in{" "}
-      <span className=" underline-offset-[8px] underline decoration-ptxt   ">India,</span>
+      <span className=" underline-offset-[8px] underline decoration-ptxt   ">
+        India,
+      </span>
       <br />
       we’re always set to host you.
     </>
   ),
+};
+
+const FeatureTitle = {
+  default: <>Your Perfect Co - living Partner</>,
+  coliving: <>Your Perfect Co - living Partner</>,
+  holidayhomes: <>Here’s why you should pick Truliv!</>,
 };
 
 export default function Locations() {
@@ -316,8 +327,8 @@ export default function Locations() {
   });
 
   return (
-    <div className="relative w-full flex justify-center items-center flex-col">
-      <Image
+    <div className="relative  w-full flex justify-center items-center flex-col">
+      {/* <Image
         className=" hidden md:flex absolute top-0 -z-40"
         src="./BottomArch.svg"
         alt=""
@@ -336,36 +347,43 @@ export default function Locations() {
         alt=""
         width={390}
         height={788}
-      />
+      /> */}
 
-      <div className="w-full  hidden md:flex absolute bg-pbg top-0 -z-50 h-[1365px]"></div>
-      <div className="w-full hidden md:flex   absolute bg-sbg top-0 -z-40 h-[950px]"></div>
+      {/* <div className="w-full  hidden md:flex absolute bg-pbg top-0 -z-50 h-[1365px]"></div>
+      <div className="w-full hidden md:flex   absolute bg-sbg top-0 -z-40 h-[950px]"></div> */}
 
       {/*\\\\\\\\\ Location Font ///////////////////////////*/}
 
-      <div className="max-w-[1440px] w-full  flex flex-col justify-center items-center ">
+      <div className="w-full bg-sbg   flex flex-col justify-center items-center ">
         {/* Conditional rendering based on houseType */}
 
-        <h2 className="text-[#000000] bg-[#FFF3EE]  w-full mt-[400px] md:mt-0   pt-[120px] md:pt-[360px]   text-center md:font-medium font-semibold  text-[22px]  md:text-5xl  leading-[35px] md:leading-[72px]">
+        <h2
+          className={`${
+            houseType === "Co-Living Spaces"
+              ? "mt-[420px] md:mt-0"
+              : houseType === "Holiday Homes"
+              ? "mt-[500px] md:mt-0"
+              : ""
+          } text-[#000000] w-full mt-[40px] md:mt-0 pt-[120px] md:pt-[360px] text-center md:font-medium font-semibold text-[22px] md:text-5xl leading-[35px] md:leading-[72px]`}
+        >
           {houseType === "Co-Living Spaces"
             ? locationTitle.coliving
             : houseType === "Holiday Homes"
             ? locationTitle.holidayhomes
             : locationTitle.default}
-         
         </h2>
       </div>
 
       {/*//////////// Location Cards////////////////////////// */}
 
-      <div className="w-full md:max-w-[1440px] mt-[60px] ">
+      <div className="w-full bg-sbg flex justify-center pt-10 md:pt-[60px] ">
         {/* Default rendering if houseType is neither "Coliving" nor "Home" */}
         {!(
           houseType === "Co-Living Spaces" || houseType === "Holiday Homes"
         ) && (
           <div
             ref={sliderRef}
-            className="keen-slider  relative w-full max-w-[1440px] pb-5 md:pb-[175px] px-8 z-40  md:pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
+            className="keen-slider  relative w-full max-w-[1440px] px-8 md:max-w-[1440px]   md:pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
           >
             {areasData.map((area, index) => (
               <div
@@ -392,7 +410,7 @@ export default function Locations() {
         {houseType === "Co-Living Spaces" && (
           <div
             ref={sliderRef}
-            className="keen-slider  relative w-full max-w-[1440px] pb-5 md:pb-[175px] px-8  z-40 md:pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
+            className="keen-slider  relative w-full max-w-[1440px] px-8  md:pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
           >
             {coLivingSpacesData.map((area, index) => (
               <div
@@ -415,7 +433,7 @@ export default function Locations() {
         )}
 
         {houseType === "Holiday Homes" && (
-          <div className="relative w-full max-w-[1440px] pb-[125px] md:pb-[175px] px-8   z-40  pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px] md:flex-wrap flex gap-x-3 justify-center md:justify-evenly h-fit overflow-y-hidden flex-row">
+          <div className="relative w-full max-w-[1440px] pb-[55px] md:pb-[175px] px-8    pt-[54px] md:px-[44px] gap-y-4 md:gap-y-[33px] md:flex-wrap flex gap-x-3 justify-center md:justify-evenly h-fit overflow-y-hidden flex-row">
             <div ref={sliderRef} className="keen-slider">
               {holidayHomesData.map((area, index) => (
                 <div key={index} className="keen-slider__slide">
@@ -427,33 +445,52 @@ export default function Locations() {
         )}
       </div>
 
-      <div className="w-full -z-30  bg-pbg mt-10 md:mt-[60px] ">
-        {/* Conditional rendering based on houseType */}
-        {houseType === "Co-Living Spaces" && (
-          <h2 className=" font-normal md:font-semibold text-center  pt-[60px]    text-wtxt md:leading-[72px] text-[22px] md:text-[48px]">
-            Your Perfect Co - living Partner
-          </h2>
-        )}
-        {houseType === "Holiday Homes" && (
-          <h2 className=" font-normal md:font-semibold text-center  pt-[60px]  text-wtxt md:leading-[72px] text-[22px] md:text-[48px]">
-            Here’s why you should pick Truliv!{" "}
-          </h2>
-        )}
-        {/* Default rendering if houseType is neither "Coliving" nor "Home" */}
-        {!(
-          houseType === "Co-Living Spaces" || houseType === "Holiday Homes"
-        ) && (
-          <h2 className=" font-normal md:font-semibold  text-center pt-[60px]    text-wtxt leading-[72px] text-[22px] md:text-[48px]">
-            Your Perfect Co - living Partner
-          </h2>
-        )}
+      {/* Conditional rendering based on houseType */}
+      <div className="w-full flex flex-col relative items-center bg-sbg justify-center   ">
+        <div className="flex justify-center items-center">
+          <Image
+            className="hidden md:flex absolute top-0 w-full "
+            src="./organeKey.svg"
+            alt=""
+            width={0}
+            height={445}
+          />
+
+          <Image
+            className="flex md:hidden absolute top-0 "
+            src="./bgorange.svg"
+            alt=""
+            width={1440}
+            height={445}
+          />
+
+          {/* <picture>
+            <source media="(max-width:640px )" srcset="./bgorange.svg" />
+            <source media="(min-width:641px )" srcset="./organeKey.svg" />
+            <Image
+              className="w-full "
+              src="./organeKey.svg"
+              alt=""
+              width={0}
+              height={445}
+            />
+          </picture> */}
+        </div>
+
+        <h2 className=" font-normal md:font-semibold pt-[43px]  md:pt-[200px]  text-center z-50 text-white md:leading-[72px] text-[22px] md:text-[48px]">
+          {houseType === "Co-Living Spaces"
+            ? FeatureTitle.coliving
+            : houseType === "Holiday Homes"
+            ? FeatureTitle.holidayhomes
+            : FeatureTitle.default}
+        </h2>
       </div>
 
       {/* FeatureCard rendering based on houseType */}
 
-      <div className="w-full relative  ">
+      <div className="w-full relative bg-pbg lg:bg-transparent  ">
         {houseType === "Co-Living Spaces" && (
-          <div className="w-full md:bg-transparent bg-ptxt place-items-center  py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap  md:flow-row grid grid-cols-2">
+          <div className="w-full  place-items-center  py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap  md:flow-row grid grid-cols-2">
             {coLivingFeaturesData.map((feature, index) => (
               <FeatureCard
                 key={index}
@@ -467,13 +504,13 @@ export default function Locations() {
         )}
 
         {houseType === "Holiday Homes" && (
-          <div className="w-full md:bg-transparent place-items-center bg-ptxt py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap md:flow-row grid grid-cols-2">
+          <div className="w-full md:bg-transparent place-items-center  py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap md:flow-row grid grid-cols-2">
             {holidayHomesFeaturesData.map((feature, index) => (
-              <FeatureCard2
+              <FeatureCard
                 key={index}
                 featalt={feature.featalt}
                 featUrl={feature.featUrl}
-                featDesc={feature.featDesc}
+                feathead={feature.feathead}
               />
             ))}
           </div>
@@ -481,7 +518,7 @@ export default function Locations() {
         {!(
           houseType === "Co-Living Spaces" || houseType === "Holiday Homes"
         ) && (
-          <div className="w-full md:bg-transparent bg-ptxt place-items-center py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap md:flow-row grid grid-cols-2 ">
+          <div className="w-full  place-items-center py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap md:flow-row grid grid-cols-2 ">
             {defaultFeaturesData.map((feature, index) => (
               <FeatureCard
                 key={index}

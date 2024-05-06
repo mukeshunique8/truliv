@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer(props) {
   return (
     <div className={`${props.bgstyle}   w-full flex flex-col justify-center items-center `}>
-      <div className="max-w-[1440px] w-full pb-[102px]  md:pt-[206px] flex md:flex-row flex-col md:px-[30px]   ">
+      <div className="max-w-[1440px] w-full pb-[102px]  md:pt-[206px] flex  md:flex-row flex-col md:px-[30px]   ">
         <div className="  flex flex-col items-center md:items-start">
           <Image
             className="cursor-pointer"
@@ -55,7 +55,7 @@ export default function Footer(props) {
         </div>
       
         <div className=" flex justify-evenly md:justify-center md:items-start ">
-        <div className="md:pl-[116px] pt-[60px] md:pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
+        <div className="lg:pl-[116px] pt-[60px] md:pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
           {/* <h3 className="font-semibold text-[#110229] text-[20px] leading-9"> */}
           <h3 className={`${props.textstyle} font-semibold text-[20px] leading-9`}>
             Take a tour
@@ -70,7 +70,7 @@ export default function Footer(props) {
           </ul>
         </div>
 
-        <div className="pt-[60px] md:pt-6 md:pl-[56px] flex flex-col items-center justify-center md:justify-start md:items-start">
+        <div className="pt-[60px] md:pt-6 lg:pl-[56px] flex flex-col items-center justify-center md:justify-start md:items-start">
           <h3 className="font-semibold text-[20px] leading-9">
             Our Company
           </h3>
@@ -85,7 +85,7 @@ export default function Footer(props) {
         </div>
         </div>
 
-        <div className=" md:pl-[50px] mx-5 md:mx-0   pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
+        <div className=" lg:pl-[50px] mx-5 md:mx-0   pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
           <h3 className="font-semibold  text-[20px] leading-9">
             Subscribe
           </h3>

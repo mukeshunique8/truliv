@@ -13,6 +13,26 @@ import { HouseContext } from "../Contexts/HouseContext"; // Import the HouseCont
 
 export default function Header() {
 
+  const headerTitle = {
+    default: (
+      <>
+        Think Home, Think Trul <span className="ptxt">i</span> v
+      </>
+    ),
+    coliving: (
+      <>
+        Live the Life at Trul<span className="ptxt">i</span> v
+      </>
+    ),
+    holidayhomes: (
+      <>
+        Best Holiday Homes in India
+      </>
+    )
+  };
+
+
+
   // Consume the HouseContext
   const { houseType, setHouseType, showDescription, setShowDescription } = useContext(HouseContext);
 
@@ -55,24 +75,21 @@ export default function Header() {
 
        <Navbar/>
 
+       
         {/* Conditional rendering based on houseType */}
-        {houseType === "Co-Living Spaces" && (
-          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
-            Live the Life at Trul<span className="ptxt">i</span> v
-          </h1>
-        )}
 
-        {houseType === "Holiday Homes" && (
-          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
-            Best Holiday Homes in India
-          </h1>
-        )}
+       <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
+  {houseType === "Co-Living Spaces"
+    ? headerTitle.coliving
+    : houseType === "Holiday Homes"
+    ? headerTitle.holidayhomes
+    : headerTitle.default}
+</h1>
 
-        {houseType !== "Co-Living Spaces" && houseType !== "Holiday Homes" && (
-          <h1 className="centerElement z-30 w-full justify-center flex absolute font-medium text-[#FFF] px-3 text-center text-[28px] md:text-[68px] leading-normal md:leading-[102px]">
-            Think Home, Think Trul <span className="ptxt">i</span> v
-          </h1>
-        )}
+
+
+
+      
 
         
         {/* Card Position */}
