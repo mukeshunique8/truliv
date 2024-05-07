@@ -1,3 +1,6 @@
+
+"use client"
+
 import React, { useContext } from 'react';
 import Connections from '../components/Connections';
 import HowDoes from '../components/HowDoes';
@@ -15,7 +18,7 @@ export default function BottomSection() {
       {houseType === 'Co-Living Spaces' && (
         <>
           <Connections />
-          <HowDoes />
+          <HowDoes  />
         </>
       )}
       {houseType === 'Holiday Homes' && <HolidayHomes />}

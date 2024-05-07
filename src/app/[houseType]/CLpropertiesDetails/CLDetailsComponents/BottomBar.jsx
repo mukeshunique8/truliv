@@ -21,7 +21,7 @@ import { FaToggleOn, FaToggleOff } from "react-icons/fa";
 import { IoIosCheckbox, IoIosCheckboxOutline } from "react-icons/io";
 import { color } from "framer-motion";
 
-export default function AboutTruliv() {
+export default function BottomBar() {
   const [showSchedule, SetshowSchedule] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
 
@@ -115,32 +115,9 @@ export default function AboutTruliv() {
   );
 
   return (
-    <div
-      id="Details"
-      className="flex flex-col w-full md:w-[800px] gap-y-2 py-[50px] border-b-[1px] border-[#E0E0E0] md:mt-6"
-    >
-      <h2 className="font-semibold md:text-2xl text-[20px] leading-8 text-ptxt">
-        About Truliv Olympus
-      </h2>
-      <p className="text-[#232323]  text-[14px] md:text-base leading-[28px]">
-        Truliv Olympus-Porur is located in the southwestern part of Chennai & it
-        is well connected to other parts of the city such as Guindy, Vadapalani,
-        and Poonamallee through various modes of transportation.{" "}
-        <span className="flex text-ptxt cursor-pointer">
-          {" "}
-          Read More
-          <Image
-            className="cursor-pointer"
-            src="/rightarrow2.svg"
-            alt="dishwasher"
-            width={16}
-            height={16}
-          />
-        </span>
-      </p>
-
+    <div className="flex flex-col w-full md:w-[800px] gap-y-2  border-b-[1px] border-[#E0E0E0] md:mt-6">
       {/* Schedule A Visit */}
-      {/* <div className="flex gap-x-[10px] md:hidden justify-between rounded-[10px] bg-[#e95f291a] w-full p-[10px] ">
+      <div className="flex gap-x-[10px] md:hidden justify-between  bg-[#e95f291a] w-full p-[10px] ">
         <div
           onClick={() => SetshowSchedule(true)}
           className="w-1/2 flex bg-white px-[10px] py-[10px] rounded-[10px] gap-x-2"
@@ -163,11 +140,11 @@ export default function AboutTruliv() {
             Book Now
           </button>
         </div>
-      </div> */}
+      </div>
 
       {/* Modal Forms */}
 
-      {/* {showSchedule && (
+      {showSchedule && (
         // NavBar
 
         <div className="fixed top-0 left-0 w-full h-full flex flex-col  items-center justify-start px-5 gap-y-7 overflow-y-auto bg-white z-50">
@@ -305,7 +282,7 @@ export default function AboutTruliv() {
               placeholder="E-mail Address"
             />
           </div>
-          
+
           <div className=" flex w-full flex-col">
             <label className="text-[#1D273B] font-bold pb-3" htmlFor="">
               I am a
@@ -325,10 +302,6 @@ export default function AboutTruliv() {
               </Stack>
             </RadioGroup>
           </div>
-
-          
-
-          
 
           <div className="flex w-full gap-x-4 ">
             <div className="flex w-1/2 ">
@@ -359,13 +332,10 @@ export default function AboutTruliv() {
             </div>
           </div>
 
-         
-
-
-         
-
           <div className="w-full">
-            <label className="font-bold" htmlFor="">Expected Move-in Date</label>
+            <label className="font-bold" htmlFor="">
+              Expected Move-in Date
+            </label>
             <Input
               sx={{ color: "b.100" }}
               className="mt-2"
@@ -378,18 +348,18 @@ export default function AboutTruliv() {
           {jsxVariable}
 
           <div className="w-full">
-          <button className="text-base w-full rounded-md bg-wtxt text-ptxt font-medium py-4">
+            <button className="text-base w-full rounded-[10px] border-[1px] border-ptxt bg-wtxt text-ptxt font-medium py-4">
               Reserve Now @ 3000/-
             </button>
           </div>
 
           <div className="w-full">
-            <button className="text-base w-full rounded-md bg-ptxt text-wtxt font-medium py-4">
+            <button className="text-base w-full rounded-[10px] bg-ptxt text-wtxt font-medium py-4">
               Schedule a Visit
             </button>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

@@ -1,11 +1,14 @@
+
+"use client"
+
 import React from "react";
 import Image from "next/image";
 
 export default function Footer(props) {
   return (
-    <div className={`${props.bgstyle}   w-full flex flex-col justify-center items-center `}>
-      <div className="max-w-[1440px] w-full pb-[102px]  md:pt-[206px] flex  md:flex-row flex-col md:px-[30px]   ">
-        <div className="  flex flex-col items-center md:items-start">
+    <div className={`${props.bgstyle} b  w-full flex flex-col justify-center items-center `}>
+      <div className="max-w-[1440px] w-full pb-[102px] gap-x-7 md:pt-[206px] flex sm:flex-col  md:flex-row flex-col lg:px-[30px]   ">
+        <div className="lg:w-1/3 md:w-2/8 w-full  flex  flex-col items-center md:items-start">
           <Image
             className="cursor-pointer"
             // src="/trulivLogoFooter.svg"
@@ -54,8 +57,8 @@ export default function Footer(props) {
           </p>
         </div>
       
-        <div className=" flex justify-evenly md:justify-center md:items-start ">
-        <div className="lg:pl-[116px] pt-[60px] md:pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
+        <div className="lg:w-1/3 md:w-3/8 w-full flex  justify-evenly md:justify-center md:items-start ">
+        <div className=" pt-[60px] md:pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
           {/* <h3 className="font-semibold text-[#110229] text-[20px] leading-9"> */}
           <h3 className={`${props.textstyle} font-semibold text-[20px] leading-9`}>
             Take a tour
@@ -85,7 +88,7 @@ export default function Footer(props) {
         </div>
         </div>
 
-        <div className=" lg:pl-[50px] mx-5 md:mx-0   pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
+        <div className="lg:w-1/3  md:w-3/8 w-full  px-5 md:px-0   pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
           <h3 className="font-semibold  text-[20px] leading-9">
             Subscribe
           </h3>

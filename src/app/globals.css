@@ -2,7 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.divClass {
+    background-image: url('../../public/organeKey.svg');
+    background-repeat: no-repeat;    
+  }
+  
+  /* When the viewport is 600px or less, use 'small-background.jpg' */
+  @media (max-width: 600px) {
+    .divClass {
+      background-image: url('../../public/bgorange.svg');
+      background-repeat: no-repeat;
+    }
+  }
+  
+  /* When the viewport is between 601px and 1200px, use 'medium-background.jpg' */
+  @media (min-width: 601px) {
+    .divClass {
+      background-image: url('../../public/organeKey.svg');
+      background-repeat: no-repeat;
+    }
+  }
+  
 
 
 /* Style the selected option */

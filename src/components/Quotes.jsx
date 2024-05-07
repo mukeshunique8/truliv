@@ -1,3 +1,5 @@
+
+"use client"
 import {React,useState} from 'react';
 import Image from "next/image";
 import { useKeenSlider } from "keen-slider/react";
@@ -27,16 +29,51 @@ const communityText = [
 export default function Quotes() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
-  const [sliderRef, instanceRef] = useKeenSlider({
-    // loop: true,
+  const [sliderRef, instanceRef] = useKeenSlider(
+ 
+
+  {
+    loop: true,
     initial: 0,
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
     },
-    created() {
-      setLoaded(true)
-    },
-  })
+    
+  },
+  [
+    (slider)=>{
+      let timeout;
+      let mouseOver = false;
+      function clearNextTimeout(){
+        clearTimeout(timeout);
+      }
+      function nextTimeout(){
+        clearTimeout(timeout);
+        if(mouseOver)return;
+        timeout = setTimeout(()=>{
+          slider.next()
+        },3000);
+        }
+        slider.on("created",()=>{
+          slider.container.addEventListener("mouseover",()=>{
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener("mouseout",()=>{
+            mouseOver =false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on("dragStarted",clearNextTimeout);
+        slider.on("animationEnded",nextTimeout);
+        slider.on("updated",nextTimeout);
+    }
+  ]
+
+
+
+)
   return (
     <div className="w-full bg-[#FFF3EE] mt-7  pb-6  md:mt-[60px] flex flex-col items-center justify-center">
       <div ref={sliderRef} className="keen-slider max-w-[1440px]  ">
@@ -73,15 +110,15 @@ export default function Quotes() {
       </div>
 
       {loaded && instanceRef.current && (
-          <div className="dots flex gap-x-3 mt-4">
+          <div className="dots w-full  justify-center flex gap-x-3 mt-4">
           {[...Array(communityText.length).keys()].map((idx) => (
             <button
               key={idx}
               onClick={() => {
                 instanceRef.current.moveToSlideRelative(idx);
               }}
-              className={`h-4 w-4 rounded-full bg-white ${
-                currentSlide === idx ? 'bg-orange-500' : ''
+              className={`h-4 w-4 rounded-full ${
+                currentSlide === idx ? 'bg-orange-500' : 'bg-orange-200'
               }`}
             ></button>
           ))}

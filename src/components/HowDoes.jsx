@@ -87,14 +87,7 @@ export default function HowDoes() {
                   height={344}
                 />
 
-                {/* <Image
-          className="absolute stroke-3  top-[330px] -left-[140px]"
-          src="/vectorCurve1.svg"
-          alt="vectorCurve" 
-          width={659}
-          height={565}
-   
-        /> */}
+               
               </div>
             </div>
 

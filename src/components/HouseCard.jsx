@@ -34,7 +34,7 @@ export default function HouseCard(props) {
 
   return (
     <div
-      className="relative cursor-pointer border-none"
+      className="relative w-full cursor-pointer border-none"
       onMouseEnter={handleMouseEnter} // Handle mouse enter event
       onMouseLeave={handleMouseLeave} // Handle mouse leave event
       onClick={() => {
@@ -83,7 +83,7 @@ export default function HouseCard(props) {
 
       <div className="absolute cursor-pointer bottom-[50px] md:bottom-16 left-3 md:px-4 md:left-10">
         <p
-          className={`text-[#FFFFFF] cursor-pointer text-[14px] md:text-4xl md:leading-[54px] md:font-bold ${
+          className={`text-[#FFFFFF] cursor-pointer text-[14px] sm:text-2xl md:text-4xl md:leading-[54px] md:font-bold ${
             showDescription
               ? "opacity-100 translate-y-0"
               : "opacity-100 translate-y-[40px]"
