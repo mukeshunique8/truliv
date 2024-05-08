@@ -9,7 +9,7 @@ export default function AreaCards(props) {
   return (
 
 
-    <div className={`w-[140px] h-[179px] md:w-[180px]  md:h-[250px]  hover:shadow-ptxt hover:shadow-md transition-all duration-700  cursor-pointer pb-2 rounded-xl bg-wbg hover:border-ptxt border hover:border-[1px] flex flex-col justify-between items-center ${houseType === 'Holiday Homes'? "w-[280px] border-none pb-0 justify-center items-center md:w-[390px] h-auto md:h-fit " :""} `}>
+    <div className={`w-[140px] h-[179px] md:w-[180px]  md:h-[250px]  hover:shadow-ptxt hover:shadow-md transition-all duration-700  cursor-pointer md:pb-2 rounded-xl bg-wbg hover:border-ptxt border hover:border-[1px] flex flex-col justify-between items-center ${houseType === 'Holiday Homes'? "w-[280px] border-none pb-0 justify-center items-center md:w-[390px] h-auto md:h-fit " :""} `}>
       
 
 
@@ -20,9 +20,10 @@ export default function AreaCards(props) {
         </div>
         }
 
-        <div className={`relative w-[56px] h-[110px] md:w-[80px] md:h-[155px] ${houseType === 'Holiday Homes'? "w-[280px] h-auto  md:w-[390px] md:h-[215px] " :""} `}>
+        <div className={`relative w-[56px] h-[110px] md:w-[80px] md:h-[155px] ${houseType === 'Holiday Homes'?
+         "w-full  md:w-full h-[160px]   md:h-[215px] " :""} `}>
         <Image
-        className='object-cover '
+        className=''
           src={props.areaUrl}
           alt={props.areaAlt}
           

@@ -326,76 +326,7 @@ export default function Locations() {
             ))}
           </div>
 
-        {/* {!(
-          houseType === "Co-Living Spaces" || houseType === "Holiday Homes"
-        ) && (
-          <div
-            ref={sliderRef}
-            className="keen-slider  relative w-full max-w-[1440px] px-4 md:max-w-[1440px]
-            pt-[60px]    md:pt-[54px]  gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
-          >
-            {areasData.map((area, index) => (
-              <div
-                key={index}
-                className={`keen-slider__slide number-slide${index + 1}`}
-              >
-                <AreaCards
-                  simgw={area.simgw}
-                  simgh={area.simgh}
-                  imgw={area.imgw}
-                  imgh={area.imgh}
-                  area={area.area}
-                  desc={area.desc}
-                  areaUrl={area.areaUrl}
-                  areaAlt={area.areaAlt}
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
       
-
-        {houseType === "Co-Living Spaces" && (
-          <div
-            ref={sliderRef}
-            className="keen-slider  relative w-full max-w-[1440px] px-4 md:max-w-[1440px]
-         pt-[60px]    md:pt-[54px]  gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
-          >
-            {coLivingSpacesData.map((area, index) => (
-              <div
-                key={index}
-                className={`keen-slider__slide number-slide${index + 1}`}
-              >
-                <AreaCards
-                  simgw={area.simgw}
-                  simgh={area.simgh}
-                  imgw={area.imgw}
-                  imgh={area.imgh}
-                  area={area.area}
-                  desc={area.desc}
-                  areaUrl={area.areaUrl}
-                  areaAlt={area.areaAlt}
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
-        {houseType === "Holiday Homes" && (
-          <div
-            ref={sliderRef}
-            className="keen-slider  relative w-full max-w-[1440px] px-4 md:max-w-[1440px] pt-[60px]    md:pt-[54px]  gap-y-4 md:gap-y-[33px]  flex justify-start md:justify-evenly"
-          >
-            <div ref={sliderRef} className="keen-slider">
-              {holidayHomesData.map((area, index) => (
-                <div key={index} className="keen-slider__slide">
-                  <AreaPhotos urlImage={area.urlImage} altimg={area.altimg} />
-                </div>
-              ))}
-            </div>
-          </div>
-        )} */}
 
         <div className="w-full  ">
           <picture className="w-full bg-sbg">
@@ -413,7 +344,6 @@ export default function Locations() {
           {/* FeatureCard rendering based on houseType */}
 
           <div className="flex flex-col items-center justify-center -mt-[70px] md:-mt-[170px] lg:-mt-[280px] lg:-mb-[150px]">
-            {/* <div className={`${houseType === 'Holiday Homes'?"absolute -bottom-[540px] bg-ptxt":"w-full bg-ptxt md:bg-transparent absolute -bottom-[520px]  sm:-bottom-[500px] md:-bottom-[550px] lg:-bottom-[140px] items-center justify-center flex flex-col lg:bg-transparent  "}`}> */}
 
             <h2 className=" font-normal  md:font-semibold w-fit text-center z-50 text-white md:leading-[72px] text-[22px] md:text-[48px]">
               {houseType === "Co-Living Spaces"
@@ -422,7 +352,7 @@ export default function Locations() {
                 ? FeatureTitle.holidayhomes
                 : FeatureTitle.default}
             </h2>
-            {houseType === "Co-Living Spaces" && (
+            {houseType !== "Holiday Homes" && (
               <div className="w-full bg-ptxt md:bg-transparent  place-items-center  py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap  md:flow-row grid grid-cols-2">
                 {coLivingFeaturesData.map((feature, index) => (
                   <FeatureCard
@@ -448,21 +378,7 @@ export default function Locations() {
                 ))}
               </div>
             )}
-            {!(
-              houseType === "Co-Living Spaces" || houseType === "Holiday Homes"
-            ) && (
-              <div className="w-full bg-ptxt md:bg-transparent place-items-center py-[38px] md:gap-x-8 gap-x-2 gap-y-2 justify-center px-3 md:flex md:flex-wrap md:flow-row grid grid-cols-2 ">
-                {defaultFeaturesData.map((feature, index) => (
-                  <FeatureCard
-                    key={index}
-                    featalt={feature.featalt}
-                    featUrl={feature.featUrl}
-                    feathead={feature.feathead}
-                    featDesc={feature.featDesc}
-                  />
-                ))}
-              </div>
-            )}
+            
           </div>
         </div>
       </div>

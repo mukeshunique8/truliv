@@ -110,7 +110,7 @@ export default function Quotes() {
       </div>
 
       {loaded && instanceRef.current && (
-          <div className="dots w-full  justify-center flex gap-x-3 mt-4">
+          <div className="dots w-full bg-red-600 justify-center flex gap-x-3 mt-4">
           {[...Array(communityText.length).keys()].map((idx) => (
             <button
               key={idx}

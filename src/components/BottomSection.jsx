@@ -1,6 +1,7 @@
 
 "use client"
 
+
 import React, { useContext } from 'react';
 import Connections from '../components/Connections';
 import HowDoes from '../components/HowDoes';
@@ -11,19 +12,12 @@ export default function BottomSection() {
   // Consume the HouseContext
   const { houseType } = useContext(HouseContext);
 
+  // Render HolidayHomes if houseType is 'Holiday Homes', otherwise render Connections and HowDoes
   return (
-    <div className='flex max-w-[1440px]  flex-col justify-center items-center'>
-      
-      {/* Conditional rendering based on houseType */}
-      {houseType === 'Co-Living Spaces' && (
-        <>
-          <Connections />
-          <HowDoes  />
-        </>
-      )}
-      {houseType === 'Holiday Homes' && <HolidayHomes />}
-      {/* Render Connections and HowDoes if neither condition is true */}
-      {houseType !== 'Co-Living Spaces' && houseType !== 'Holiday Homes' && (
+    <div className='flex max-w-[1440px] flex-col justify-center items-center'>
+      {houseType === 'Holiday Homes' ? (
+        <HolidayHomes />
+      ) : (
         <>
           <Connections />
           <HowDoes />
@@ -32,3 +26,4 @@ export default function BottomSection() {
     </div>
   );
 }
+

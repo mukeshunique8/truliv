@@ -11,7 +11,6 @@ export default function Footer(props) {
         <div className="lg:w-1/3 md:w-2/8 w-full  flex  flex-col items-center md:items-start">
           <Image
             className="cursor-pointer"
-            // src="/trulivLogoFooter.svg"
             src={props.logo}
             alt="trulivLogoFooter"
             width={235}
@@ -59,7 +58,6 @@ export default function Footer(props) {
       
         <div className="lg:w-1/3 md:w-3/8 w-full flex  justify-evenly md:justify-center md:items-start ">
         <div className=" pt-[60px] md:pt-6 flex flex-col items-center justify-center md:justify-start md:items-start">
-          {/* <h3 className="font-semibold text-[#110229] text-[20px] leading-9"> */}
           <h3 className={`${props.textstyle} font-semibold text-[20px] leading-9`}>
             Take a tour
           </h3>
