@@ -23,8 +23,8 @@ export default function BookingHolidayHomes() {
   const router = useRouter();
   function handleHoliday() {
     
-    router.push(HOUSETYPE_DETAIL_ROUTE("holidayhomes"));
-    // router.push("properties");
+    // router.push(HOUSETYPE_DETAIL_ROUTE("holidayhomes"));
+    router.push("properties");
   }
 
   // if (type === "Holiday Homes") {

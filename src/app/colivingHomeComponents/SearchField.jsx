@@ -221,7 +221,7 @@ export default function SearchField() {
 
       {/* Search Box Mobile Screen */}
 
-      <div className="flex md:hidden relative items-center rounded-[10px] justify-between shadow-xl px-4  w-full  py-4  mt-5 ">
+      <div className="flex lg:hidden relative items-center rounded-[10px] justify-between shadow-xl px-4  w-full  py-4  mt-5 ">
         <input
           className="text-base px-2 py-1 rounded-sm text-[#110229]"
           type="text"
@@ -266,10 +266,10 @@ export default function SearchField() {
         {/* Filters */}
 
         <div
-          className={`md:w-1/3 w-full  md:sticky md:top-2 border border-[#E6E7E9] md:rounded-tr-[0px] rounded-tr-[50px] rounded-tl-[50px] md:rounded-tl-none rounded-[5px] px-[24px] py-[20px] flex flex-col space-y-6 ${
+          className={`lg:w-1/3 w-full  md:sticky md:top-2 border border-[#E6E7E9] md:rounded-tr-[0px] rounded-tr-[50px] rounded-tl-[50px] md:rounded-tl-none rounded-[5px] px-[24px] py-[20px] flex flex-col space-y-6 ${
             showFilter
-              ? "absolute top-[10px] bg-white z-50 "
-              : "hidden md:block"
+              ? "absolute -top-[15px] bg-white z-50 "
+              : "hidden lg:block"
           }`}
         >
           {/* Add filter */}
@@ -413,13 +413,17 @@ export default function SearchField() {
         </div>
 
         {/* Cards */}
-        <div className={`${showFilter ? "opacity-0" : "w-full md:w-2/3"}`}>
+        <div className={`${showFilter ? "opacity-0" : "w-full lg:w-2/3"}`}>
 
             
-            <div className="flex flex-col justify-center items-center  gap-y-5">
-            <PropertyBanner/>
-            <PropertyBanner/>
-            <PropertyBanner/>
+            <div className="flex flex-wrap gap-x-4 justify-center items-center  gap-y-5">
+            <PropertyBanner badge={BadgeAL}/>
+            <PropertyBanner badge={BadgeSO}/>
+            <PropertyBanner badge={BadgeFF}/>
+            <PropertyBanner badge={BadgeNA}/>
+            <PropertyBanner badge={Badge}/>
+            <PropertyBanner badge={BadgeFF}/>
+            <PropertyBanner badge={BadgeNA}/>
             </div>
 
           {/* {houseType === "Holiday Homes" && (
