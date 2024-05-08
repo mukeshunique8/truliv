@@ -22,12 +22,9 @@ export default function BookingHolidayHomes() {
 
   const router = useRouter();
   function handleHoliday() {
-    // Navigate to the respective page based on house type
-
-    // setHouseType(houseType);
-    // localStorage.setItem("houseType", houseType);
-
+    
     router.push(HOUSETYPE_DETAIL_ROUTE("holidayhomes"));
+    // router.push("properties");
   }
 
   // if (type === "Holiday Homes") {

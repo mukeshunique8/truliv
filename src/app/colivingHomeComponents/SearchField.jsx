@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import SearchBtn from "../colivingHomeComponents/SearchBtn";
 import { HouseContext } from "../../Contexts/HouseContext";
 import { useFilterContext } from "../../Contexts/FilterContext"; // Import the FilterContext
-import HotelBanner from "../../components/HotelBanner";
 import OccupancyCard from "./UIElements/OccupancyCard";
 import GenderRadio from "./UIElements/GenderRadio";
 import Amenities from "./UIElements/Amenities";
@@ -10,6 +9,7 @@ import Services from "./UIElements/Services";
 import SortByPrice from "./UIElements/SortByPrice";
 import CLPropertyBanner from "./CLPropertyBanner";
 import HHPropertyBanner from "./HHPropertyBanner";
+import PropertyBanner from "./PropertyBanner";
 import BadgeAL from "./UIElements/BadgeAL";
 import BadgeSO from "./UIElements/BadgeSO";
 import BadgeFF from "./UIElements/BadgeFF";
@@ -22,7 +22,6 @@ import { Select } from "@chakra-ui/react";
 import Image from "next/image";
 import { CloseButton } from "@chakra-ui/react";
 
-// Sample suggestions for different cities
 const citySuggestions = {
   Chennai: [
     "OMR",
@@ -69,22 +68,23 @@ export default function SearchField() {
     setPriceRange,
     houseTypeFiltered,
     setHouseTypeFiltered,
-  } = useFilterContext(); // Destructure the filter context values
-  // console.log("houseTypeFiltered:", houseTypeFiltered);
+  } = useFilterContext();
+
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [showFilter, setShowFilter] = useState(false); // State for controlling filter visibility
-  // useEffect(() => {
-  //   console.log("Gender:", gender);
+  const [showFilter, setShowFilter] = useState(false);
+
+  // console.log("Gender:", gender);
   // console.log("Occupancy:", occupancy);
-  //   console.log("Amenities:", amenities);
-  //   console.log("Services:", services);
-  //   console.log("Price Range:", priceRange);
-  //   console.log("houseTypeFiltered:", houseTypeFiltered);
-  // }, [gender, occupancy, amenities, services, priceRange]);
+  // console.log("Amenities:", amenities);
+  // console.log("Services:", services);
+  // console.log("Price Range:", priceRange);
+  // console.log("houseTypeFiltered:", houseTypeFiltered);
+  // console.log("selectedLocations:", selectedLocations);
+  
 
   useEffect(() => {
     // Retrieve house type from local storage when component mounts
@@ -94,21 +94,6 @@ export default function SearchField() {
       setHouseTypeFiltered(storedHouseType); // Set houseTypeFiltered with the stored value
     }
   }, []);
-
-  // console.log("houseTypeFiltered:", houseTypeFiltered);
-  // console.log("Gender:", gender);
-  // console.log("selectedLocations:", selectedLocations);
-  // console.log("Occupancy:", occupancy);
-  // console.log("Amenities:", amenities);
-  // console.log("Services:", services);
-  // console.log("Price Range:", priceRange);
-  // console.log("houseTypeFiltered:", houseTypeFiltered);
-
-  // useEffect(() => {
-  //   // Store house type in local storage when it changes
-  //   localStorage.setItem("houseType", houseType);
-  //   setHouseTypeFiltered(houseType); // Update houseTypeFiltered when houseType changes
-  // }, [houseType, setHouseTypeFiltered]);
 
   const handleCitySelect = (e) => {
     const city = e.target.value;
@@ -151,13 +136,9 @@ export default function SearchField() {
     setSelectedLocations(updatedLocations);
   };
 
-  const handleAddLocation = () => {
-    // Add selected locations to your application's logic
-    // You can access selectedLocations array here
-  };
 
   const filtersearch = () => {
-    setShowFilter(!showFilter); // Toggle the showFilter state
+    setShowFilter(!showFilter); 
   };
 
   const closefilter = () => {
@@ -234,13 +215,13 @@ export default function SearchField() {
         </div>
 
         <div className="md:w-2/12">
-          <SearchBtn onClick={handleAddLocation} />
+          <SearchBtn  />
         </div>
       </div>
 
       {/* Search Box Mobile Screen */}
 
-      <div className="flex relative items-center rounded-[10px] justify-between shadow-xl px-4  w-full  py-4  mt-5 md:hidden">
+      <div className="flex md:hidden relative items-center rounded-[10px] justify-between shadow-xl px-4  w-full  py-4  mt-5 ">
         <input
           className="text-base px-2 py-1 rounded-sm text-[#110229]"
           type="text"
@@ -269,13 +250,14 @@ export default function SearchField() {
 
       {/* HouseType */}
 
-      <div className="mt-[25px] rounded-md  justify-start text-center font-semibold text-[20px] md:text-[28px] text-[#333333] items-center  flex w-full">
+      <div className="mt-[25px] rounded-md flex-col items-start justify-start text-center font-semibold text-[20px] md:text-[28px] text-[#333333]  flex w-full">
         <span className="text-[#110229]  md:mr-3">{houseType}</span>
         <span className="font-light  text-lg">
           {selectedLocations.length > 0
             ? " in " + selectedLocations.join(", ")
             : ""}
         </span>
+        <p className="flex text-[#8F90A6] font-normal text-base md:hidden" >5 Results</p>
       </div>
 
       {/* Filters and Cards */}
@@ -285,7 +267,9 @@ export default function SearchField() {
 
         <div
           className={`md:w-1/3 w-full  md:sticky md:top-2 border border-[#E6E7E9] md:rounded-tr-[0px] rounded-tr-[50px] rounded-tl-[50px] md:rounded-tl-none rounded-[5px] px-[24px] py-[20px] flex flex-col space-y-6 ${
-            showFilter ? "absolute top-[10px] bg-white z-50 " : "hidden md:block"
+            showFilter
+              ? "absolute top-[10px] bg-white z-50 "
+              : "hidden md:block"
           }`}
         >
           {/* Add filter */}
@@ -325,7 +309,7 @@ export default function SearchField() {
                 <h2 className=" text-ptxt">Sort by Price</h2>
               </div>
 
-              <div className="flex mt-5 justify-between">
+              <div className="flex mt-5 justify-around">
                 <SortByPrice option="Price: High to Low" />
                 <SortByPrice option="Price: Low to High" />
               </div>
@@ -429,8 +413,16 @@ export default function SearchField() {
         </div>
 
         {/* Cards */}
-        <div className={`${showFilter? "opacity-0":"w-full md:w-2/3"}`}>
-          {houseType === "Holiday Homes" && (
+        <div className={`${showFilter ? "opacity-0" : "w-full md:w-2/3"}`}>
+
+            
+            <div className="flex flex-col justify-center items-center  gap-y-5">
+            <PropertyBanner/>
+            <PropertyBanner/>
+            <PropertyBanner/>
+            </div>
+
+          {/* {houseType === "Holiday Homes" && (
             <div className="flex flex-col gap-y-5">
               <HHPropertyBanner badge={BadgeAL} />
               <HHPropertyBanner badge={BadgeSO} />
@@ -438,6 +430,17 @@ export default function SearchField() {
               <HHPropertyBanner badge={BadgeNA} />
               <HHPropertyBanner badge={Badge} />
               <HHPropertyBanner badge={BadgeFF} />
+              <HHPropertyBanner badge={BadgeNA} />
+              <HHPropertyBanner badge={Badge} />
+              <HHPropertyBanner badge={BadgeFF} />
+              <HHPropertyBanner badge={BadgeNA} />
+              <HHPropertyBanner badge={Badge} />
+              <HHPropertyBanner badge={BadgeFF} />
+              <HHPropertyBanner badge={Badge} />
+              <HHPropertyBanner badge={BadgeFF} />
+              <HHPropertyBanner badge={BadgeFF} />
+              <HHPropertyBanner badge={Badge} />
+              <HHPropertyBanner badge={BadgeNA} />
             </div>
           )}
 
@@ -456,7 +459,7 @@ export default function SearchField() {
               <CLPropertyBanner badge={Badge} />
               <CLPropertyBanner badge={BadgeFF} />
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>

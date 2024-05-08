@@ -14,6 +14,7 @@ export default function BookingCoLiving() {
   function handleColiving() {
     
     router.push(HOUSETYPE_DETAIL_ROUTE("coliving")); // Navigate to coliving page
+    // router.push("properties"); // Navigate to coliving page
   }
 
   return (

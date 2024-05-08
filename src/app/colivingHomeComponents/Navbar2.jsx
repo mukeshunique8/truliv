@@ -6,9 +6,7 @@ import { HouseContext } from "../../Contexts/HouseContext"; // Import the HouseC
 
 
 export default function Navbar() {
-   // Consume the HouseContext
    const { houseType, setHouseType, showDescription, setShowDescription } = useContext(HouseContext);
-  //  console.log(houseType);
 
   return (
     <div id='Photos' className="hidden md:flex bg-[#232323] w-full py-[18px] pl-[41px] pr-[61px]    items-center justify-center " >
@@ -62,10 +60,7 @@ export default function Navbar() {
             </a>
           </ul>
         </div>
-        {/* <button onClick={()=> setHouseType("TESTEDDDDDD")}>check</button> */}
-
-        {/* <p className="text-4xl text-white"> This is {houseType}</p> */}
-  
+      
         </div>
   
     </div>
