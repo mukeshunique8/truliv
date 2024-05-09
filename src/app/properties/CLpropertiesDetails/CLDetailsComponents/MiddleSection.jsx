@@ -10,7 +10,7 @@ import HouseRules from './HouseRules'
 
 export default function MiddleSection() {
   return (
-    <div className='flex px-2 md:px-5 relative  w-full flex-col justify-center items-center md:items-start  bg-wtxt md:w-[1440px]   md:pl-12 '>
+    <div className='flex px-4 md:px-5 relative  w-full flex-col justify-center items-center md:items-start  bg-wtxt md:max-w-[1440px]   md:pl-12 '>
       <FixedNav/>
       <AboutTruliv/>
       <AvailableOccupancies/>

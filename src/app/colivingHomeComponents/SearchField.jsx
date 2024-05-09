@@ -240,7 +240,9 @@ export default function SearchField() {
 
         <Image
           onClick={filtersearch}
-          className="cursor-pointer absolute top-[80px] right-0"
+          className={`cursor-pointer absolute top-[80px] right-0 transition-opacity ${
+            showFilter ? "opacity-0" : "opacity-100"
+          }`}
           src="/filter.svg"
           alt="filter"
           width={45}
@@ -265,17 +267,18 @@ export default function SearchField() {
       <div className="w-full relative md:justify-center md:items-start md:gap-x-6 flex mt-6">
         {/* Filters */}
 
+        
+
         <div
-          className={`lg:w-1/3 w-full  md:sticky md:top-2 border border-[#E6E7E9] md:rounded-tr-[0px] rounded-tr-[50px] rounded-tl-[50px] md:rounded-tl-none rounded-[5px] px-[24px] py-[20px] flex flex-col space-y-6 ${
-            showFilter
-              ? "absolute -top-[15px] bg-white z-50 "
-              : "hidden lg:block"
-          }`}
-        >
+  className={`lg:w-1/3 w-full md:sticky md:top-2 border border-[#E6E7E9] lg:rounded-[5px] rounded-[50px]  px-[24px] py-[20px] flex flex-col space-y-6 ${
+    showFilter ? "bg-white z-50 transition-all duration-500 ease-in-out transform translate-y-0 opacity-100" : "hidden lg:block"
+  }`}
+>
+
           {/* Add filter */}
 
-          <div className="flex flex-col w-full  pb-5 border-b border-[#E6E7E9]  md:hidden">
-            <div className="flex pb-5  border-b border-ptxt items-center">
+          <div className="flex flex-col w-full   border-b border-[#E6E7E9]  lg:hidden">
+            <div className="flex pb-5  items-center">
               <Image
                 onClick={closefilter}
                 className="cursor-pointer "
@@ -295,8 +298,8 @@ export default function SearchField() {
                 Add Filter
               </p>
             </div>
-
-            <div className="flex text-[14px] mt-[40px] flex-col">
+            {/* Sort by Price */}
+            {/* <div className="flex  border-t border-ptxt text-[14px] pt-[40px] flex-col">
               <div className="flex gap-x-2">
                 <Image
                   className="cursor-pointer  "
@@ -313,83 +316,94 @@ export default function SearchField() {
                 <SortByPrice option="Price: High to Low" />
                 <SortByPrice option="Price: Low to High" />
               </div>
-            </div>
+            </div> */}
           </div>
 
-          {/* Occupancy */}
+          {houseType !== "Holiday Homes" && (
+  
+  <>
+  {/* Occupancy */}
+  <div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
+    <div>
+      <label
+        className="font-semibold text-base leading-[30px]"
+        htmlFor="occupancy"
+      >
+        Occupancy
+      </label>
+    </div>
 
-          <div className="flex flex-col items-start border-b border-[#E6E7E9]  gap-y-1">
-            <div>
-              <label
-                className="font-semibold text-base leading-[30px]"
-                htmlFor="occupancy"
-              >
-                Occupancy
-              </label>
-            </div>
+    <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
+      <OccupancyCard occupancy="Single Occupancy" />
+      <OccupancyCard occupancy="Double Occupancy" />
+      <OccupancyCard occupancy="Triple Occupancy" />
+      <OccupancyCard occupancy="Quadruple Occupancy" />
+      <OccupancyCard occupancy="Quintuple Occupancy" />
+    </div>
+  </div>
 
-            <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
-              <OccupancyCard occupancy="Single Occupancy" />
-              <OccupancyCard occupancy="Double Occupancy" />
-              <OccupancyCard occupancy="Triple Occupancy" />
-              <OccupancyCard occupancy="Quadruple Occupancy" />
-              <OccupancyCard occupancy="Quintuple Occupancy" />
-            </div>
-          </div>
 
-          {/* Gender */}
 
-          <div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
-            <div>
-              <label
-                className="font-semibold text-base leading-[30px]"
-                htmlFor="Gender"
-              >
-                Gender
-              </label>
-            </div>
+{/* Gender */}
+<div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
+  <div>
+    <label
+      className="font-semibold text-base leading-[30px]"
+      htmlFor="Gender"
+    >
+      Gender
+    </label>
+  </div>
 
-            <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
-              <GenderRadio />
-            </div>
-          </div>
+  <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
+    <GenderRadio />
+  </div>
+</div>
 
-          {/* PriceRange */}
+{/* PriceRange */}
+<div className={`flex flex-col items-start gap-y-1 ${houseType === 'Holiday Homes' ? 'border-b border-[#E6E7E9]' : ''}`}>
+  <div>
+    <label
+      className="font-semibold text-base leading-[30px]"
+      htmlFor="PriceRange"
+    >
+      PriceRange
+    </label>
+  </div>
+  <div className="flex mt-3 w-full flex-wrap justify-start gap-5 items-center">
+    <PriceRange />
+  </div>
+</div>
+  </>
 
-          <div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
-            <div>
-              <label
-                className="font-semibold text-base leading-[30px]"
-                htmlFor="PriceRange"
-              >
-                PriceRange
-              </label>
-            </div>
-            <div className="flex mt-3 w-full flex-wrap justify-start gap-5 items-center">
-              <PriceRange />
-            </div>
-          </div>
+
+
+
+)}
+
+
+
 
           {/* Amenities */}
-
-          <div className="flex flex-col items-start border-b border-[#E6E7E9] gap-y-1">
-            <div>
-              <label
-                className="font-semibold text-base leading-[30px]"
-                htmlFor="Amenities"
-              >
-                Amenities
-              </label>
-            </div>
-
-            <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
-              <Amenities />
-            </div>
+         {houseType === 'Holiday Homes' &&
+          <div className="flex flex-col items-start  gap-y-1">
+          <div>
+            <label
+              className="font-semibold text-base leading-[30px]"
+              htmlFor="Amenities"
+            >
+              Amenities
+            </label>
           </div>
+
+          <div className="flex flex-wrap justify-start gap-5 items-center pb-6">
+            <Amenities />
+          </div>
+        </div>}
 
           {/* Services */}
 
-          <div className="flex flex-col items-start  gap-y-1">
+          {/* <div className="flex flex-col items-start  gap-y-1">
             <div>
               <label
                 className="font-semibold text-base leading-[30px]"
@@ -409,11 +423,11 @@ export default function SearchField() {
                 Save Changes
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Cards */}
-        <div className={`${showFilter ? "opacity-0" : "w-full lg:w-2/3"}`}>
+        <div className={`${showFilter ? "hidden" : "w-full lg:w-2/3"}`}>
 
             
             <div className="flex flex-wrap gap-x-4 justify-center items-center  gap-y-5">
@@ -426,44 +440,7 @@ export default function SearchField() {
             <PropertyBanner badge={BadgeNA}/>
             </div>
 
-          {/* {houseType === "Holiday Homes" && (
-            <div className="flex flex-col gap-y-5">
-              <HHPropertyBanner badge={BadgeAL} />
-              <HHPropertyBanner badge={BadgeSO} />
-              <HHPropertyBanner badge={BadgeFF} />
-              <HHPropertyBanner badge={BadgeNA} />
-              <HHPropertyBanner badge={Badge} />
-              <HHPropertyBanner badge={BadgeFF} />
-              <HHPropertyBanner badge={BadgeNA} />
-              <HHPropertyBanner badge={Badge} />
-              <HHPropertyBanner badge={BadgeFF} />
-              <HHPropertyBanner badge={BadgeNA} />
-              <HHPropertyBanner badge={Badge} />
-              <HHPropertyBanner badge={BadgeFF} />
-              <HHPropertyBanner badge={Badge} />
-              <HHPropertyBanner badge={BadgeFF} />
-              <HHPropertyBanner badge={BadgeFF} />
-              <HHPropertyBanner badge={Badge} />
-              <HHPropertyBanner badge={BadgeNA} />
-            </div>
-          )}
-
-          {houseType === "Co-Living Spaces" && (
-            <div className="flex flex-col items-center gap-y-5">
-              <CLPropertyBanner badge={BadgeAL} />
-              <CLPropertyBanner badge={BadgeSO} />
-              <CLPropertyBanner badge={BadgeFF} />
-              <CLPropertyBanner badge={BadgeNA} />
-              <CLPropertyBanner badge={Badge} />
-              <CLPropertyBanner badge={BadgeFF} />
-              <CLPropertyBanner badge={BadgeAL} />
-              <CLPropertyBanner badge={BadgeSO} />
-              <CLPropertyBanner badge={BadgeFF} />
-              <CLPropertyBanner badge={BadgeNA} />
-              <CLPropertyBanner badge={Badge} />
-              <CLPropertyBanner badge={BadgeFF} />
-            </div>
-          )} */}
+         
         </div>
       </div>
     </div>

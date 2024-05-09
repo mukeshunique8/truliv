@@ -12,71 +12,40 @@ export default function FixedNav() {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
   const handleTabClick = (id) => {
     scrollToSection(id);
     setActiveTab(id);
   };
 
+  // Define the array of tab details
+  const tabs = [
+    { id: 'Photos', label: 'Photos' },
+    { id: 'Details', label: 'Details' },
+    { id: 'Availability', label: 'Availability' },
+    { id: 'Amenities', label: 'Amenities' },
+    { id: 'Life @ Truliv', label: 'Life @ Truliv' },
+    { id: 'Reviews', label: 'Reviews' },
+    { id: 'Location', label: 'Location' },
+  ];
+
   return (
-    <div className='text-[14px] mt-4 rounded-[8px] md:w-fit sticky top-2 flex w-full  justify-center items-center bg-[#F3F3F3] text-[#737373]'>
+    <div className='text-[14px] mt-4 rounded-[8px] md:w-fit sticky top-2 flex w-full justify-center items-center bg-[#F3F3F3] text-[#737373]'>
       <nav>
-        <ul className='flex flex-wrap py-1 px-1 items-center justify-center md:py-4 md:px-7 md:gap-y-4  gap-y-2 gap-x-3 md:gap-x-10'>
-          <li>
-            <span
-              onClick={() => handleTabClick('Photos')}
-              style={{ fontWeight: activeTab === 'Photos' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Photos
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => handleTabClick('Details')}
-              style={{ fontWeight: activeTab === 'Details' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Details
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => handleTabClick('Availability')}
-              style={{ fontWeight: activeTab === 'Availability' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Availability
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => handleTabClick('Amenities')}
-              style={{ fontWeight: activeTab === 'Amenities' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Amenities
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => handleTabClick('Life @ Truliv')}
-              style={{ fontWeight: activeTab === 'Life @ Truliv' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Life @ Truliv
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => handleTabClick('Reviews')}
-              style={{ fontWeight: activeTab === 'Reviews' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Reviews
-            </span>
-          </li>
-          <li>
-            <span
-              onClick={() => handleTabClick('Location')}
-              style={{ fontWeight: activeTab === 'Location' ? 'bold' : 'normal', cursor: 'pointer' }}
-            >
-              Location
-            </span>
-          </li>
+        <ul className='flex flex-wrap py-1 px-1 items-center justify-center md:py-4 md:px-7 md:gap-y-4 gap-y-2 gap-x-3 md:gap-x-10'>
+          {tabs.map((tab) => (
+            <li key={tab.id}>
+              <span
+                onClick={() => handleTabClick(tab.id)}
+                style={{
+                  fontWeight: activeTab === tab.id ? 'bold' : 'normal',
+                  cursor: 'pointer',
+                }}
+              >
+                {tab.label}
+              </span>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

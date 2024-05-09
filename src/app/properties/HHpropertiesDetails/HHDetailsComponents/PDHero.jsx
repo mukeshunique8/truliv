@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 import LocationView from "./LocationView";
-import VisitForm from "./VisitForm";
 import Image from "next/image";
 import ShowAllPhotos from "../../../colivingHomeComponents/UIElements/ShowAllPhotos";
-import Slider from "react-slick";
+import { MdClose } from "react-icons/md";
 
 export default function PDHero() {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +18,9 @@ export default function PDHero() {
   };
 
   return (
-<div className="flex flex-col md:px-10  px-2 pt-10 pb-5 bg-[#232323] md:w-[1440px] text-wtxt">      <LocationView />
+    <div className="flex flex-col md:px-10  px-2 pt-10 pb-5 bg-[#232323] md:max-w-[1440px] text-wtxt">
+      {" "}
+      <LocationView />
       <div className=" flex gap-x-5 ">
         <div className="w-full relative flex flex-col justify-between items-center ">
           <div className=" flex w-full flex-col md:flex-row  justify-between ">
@@ -57,23 +58,21 @@ export default function PDHero() {
             </div>
 
             <div className="flex md:flex-col items-center md:items-start justify-between flex-row md:mt-0 mt-3 gap-y-2">
+              <div className="items-center justify-center">
+                <p className="text-wtxt hidden md:flex text-base">
+                  Starts from
+                </p>
+                <p className="text-wtxt justify-start md:justify-center mt-2 flex items-center text-[26px] leading-[24px]">
+                  ₹1,999<span className="text-wtxt text-base">/room/month</span>
+                </p>
+              </div>
 
-<div className="items-center justify-center">
-<p className="text-wtxt hidden md:flex text-base">Starts from</p>
-<p className="text-wtxt justify-start md:justify-center mt-2 flex items-center text-[26px] leading-[24px]">
-₹1,999<span className="text-wtxt text-base">/room/month</span>
-</p>
-</div>
-
-
-<div className="items-center justify-center">
-<button className="py-[5px] px-[12px] rounded-md w-fit h-fit border-[1px] border-ptxt text-ptxt text-[13px] leading-[17px] ">
-Almost Full
-</button>
-
-</div>
-
-</div>
+              <div className="items-center justify-center">
+                <button className="py-[5px] px-[12px] rounded-md w-fit h-fit border-[1px] border-ptxt text-ptxt text-[13px] leading-[17px] ">
+                  Almost Full
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="flex mt-6 gap-x-4 w-full">
@@ -90,28 +89,28 @@ Almost Full
             <div className="w-1/2 hidden  items-center md:grid grid-cols-2">
               <Image
                 className=" rounded-lg  "
-                src="/nearbysize.svg"
+                src="/showall1.png"
                 alt="pdhero"
                 width={310}
                 height={250}
               />
               <Image
                 className=" rounded-lg  "
-                src="/nearbysize.svg"
+                src="/showall2.png"
                 alt="pdhero"
                 width={310}
                 height={250}
               />
               <Image
                 className=" rounded-lg  "
-                src="/nearbysize.svg"
+                src="/showall3.png"
                 alt="pdhero"
                 width={310}
                 height={250}
               />
               <Image
                 className=" rounded-lg   "
-                src="/nearbysize.svg"
+                src="/showall4.png"
                 alt="pdhero"
                 width={310}
                 height={250}
@@ -125,7 +124,6 @@ Almost Full
             <ShowAllPhotos />
           </div>
         </div>
-        {/* Modal for showing all photos */}
         {/* Modal for showing all photos */}
         {showModal && (
           <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50">
@@ -154,7 +152,7 @@ Almost Full
                     className="text-ptxt cursor-pointer bg-white px-2 py-2 rounded-lg"
                     onClick={() => setShowModal(false)}
                   >
-                    Close
+                    <MdClose size={30} />
                   </button>
                 </div>
               </div>

@@ -17,8 +17,8 @@ export default function BookingForm() {
     setChecked(!checked);
   };
   return (
-   <div className="hidden md:block absolute top-10">
-     <div className="hidden md:block w-[465px] sticky top-[350px] p-4 rounded-md z-50 bg-[#FFFDFD] mt-[110px]  ml-[900px] ">
+   <div className="hidden lg:block ">
+     <div className="hidden md:block w-[465px] sticky top-2 p-4 rounded-md  bg-[#FFFDFD]  ">
       <div className="px-5 border-[1px] border-[#E8E8E8] bg-[#FFFDFD] rounded py-5 flex flex-col gap-y-4 ">
         <p className="text-ptxt font-bold leading-6 text-[26px] ">
           ₹1,999

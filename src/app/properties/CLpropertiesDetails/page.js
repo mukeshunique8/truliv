@@ -5,7 +5,6 @@ import React, { useState, useContext } from "react";
 import Navbar2 from "../../colivingHomeComponents/Navbar2";
 import Footer from "../../../components/Footer";
 import BottomBar from "../CLpropertiesDetails/CLDetailsComponents/BottomBar";
-// import Footer2 from '../colivingHomeComponents/Footer2'
 import PDHero from "./CLDetailsComponents/PDHero";
 import MiddleSection from "./CLDetailsComponents/MiddleSection";
 import NearbyProperties from "./CLDetailsComponents/NearbyProperties";
@@ -19,7 +18,7 @@ export default function page() {
       <MiddleSection />
       <NearbyProperties />
 
-      {/* <Footer2/> */}
+      
      <Footer
         textstyle="text-white"
         logo="/Trulivlogo.svg"
