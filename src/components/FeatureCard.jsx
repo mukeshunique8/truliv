@@ -6,13 +6,13 @@ export default function FeatureCard(props) {
   const { houseType } = useContext(HouseContext);
 
   return (
-    <div className="w-full h-full md:w-[212px] md:h-[277px] flex featCardbg">
+    <div className="w-full h-[230px] md:w-[212px] md:h-[277px] flex featCardbg">
       <div className="featCardbg1 w-full h-auto gap-y-5 hover:scale-105 items-center justify-center     cursor-pointer transition-all duration-700 mx-2 my-2 md:my-[10px] flex flex-col p-2 sm:py-4  ">
         <div
         // className="relative w-[60px] h-[60px]"
           className={`relative   ${
-            houseType === "Holiday Homes" ? "w-[120px]" : "w-[60px]"
-          } ${houseType === "Holiday Homes" ? "h-[120px]" : "h-[60px]"}`}
+            houseType === "Holiday Homes" ? "w-[120px] h-[120px]" : ""
+          } w-[60px] h-[60px]`}
         >
           <Image
             className="flex"
@@ -35,7 +35,3 @@ export default function FeatureCard(props) {
     </div>
   );
 }
-
-// className={`relative   w-${
-//   houseType === "Holiday Homes" ? "[120px]" : "[60px]"
-// } h-${houseType === "Holiday Homes" ? "[120px]" : "[60px]"}`}
