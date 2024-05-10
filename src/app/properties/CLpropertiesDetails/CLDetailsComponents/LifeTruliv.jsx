@@ -47,7 +47,7 @@ const communityEvents = [
 const imagessrc = [
   { src: "/life1.png", alt: "Life" },
   { src: "/life2.png", alt: "Life" },
-  { src: "/life3.png", alt: "/life1.png" },
+  { src: "/life3.png", alt: "life" },
   { src: "/life4.png", alt: "Life" },
   { src: "/life5.png", alt: "Life" },
 ];
@@ -76,8 +76,8 @@ export default function LifeTruliv() {
       </h2>
       <div className="flex flex-col md:w-[800px] gap-y-2  mt-6">
         <div className="text-[14px]  grid md:grid-cols-3 grid-cols-2  gap-6">
-          {communityEvents.map((event) => (
-            <div className="flex  items-center gap-y-1" key={event.alt}>
+          {communityEvents.map((event, index) => (
+            <div className="flex  items-center gap-y-1" key={event.alt + index}>
               <Image
                 className="cursor-pointer"
                 src={event.icon}
@@ -92,12 +92,12 @@ export default function LifeTruliv() {
       </div>
 
       <div className="mt-9  flex-wrap flex justify-center md:grid  md:grid-cols-3 gap-6">
-        {imagessrc.map((image) => (
-          <div className="relative w-[350px] h-[250px] md:w-[250px] md:h-[220px]">
+        {imagessrc.map((each, index) => (
+          <div className="relative w-[350px] h-[250px] md:w-[250px] md:h-[220px]" key={each.alt + index}>
             <Image
               className=""
-              src={image.src}
-              alt={image.alt}
+              src={each.src}
+              alt={each.alt}
               fill
               sizes="100%"
             />
