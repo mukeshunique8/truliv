@@ -7,7 +7,7 @@ import BadgeAL from "./UIElements/BadgeAL";
 import BadgeSO from "./UIElements/BadgeSO";
 import BadgeFF from "./UIElements/BadgeFF";
 import BadgeNA from "./UIElements/BadgeNA";
-import { HouseContext } from "../../Contexts/HouseContext";
+import { HouseContext } from "../../providers/HouseContext";
 
 export default function PropertyBanner({ badge: Badge }) {
   const { houseType } = useContext(HouseContext);

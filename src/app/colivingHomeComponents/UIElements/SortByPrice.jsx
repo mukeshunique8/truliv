@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useFilterContext } from '../../../Contexts/FilterContext';
+import { useFilterContext } from '../../../providers/FilterContext';
 
 export default function SortByPrice({ option }) {
   const { sortByPrice, setSortByPrice } = useFilterContext();

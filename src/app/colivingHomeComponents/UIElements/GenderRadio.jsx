@@ -1,6 +1,6 @@
 import React from 'react';
 import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
-import { useFilterContext } from '../../../Contexts/FilterContext';
+import { useFilterContext } from '../../../providers/FilterContext';
 
 export default function GenderRadio() {
   const { gender, setGender } = useFilterContext();

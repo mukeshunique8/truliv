@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkbox, CheckboxGroup, Stack } from '@chakra-ui/react';
-import { useFilterContext } from '../../../Contexts/FilterContext';
+import { useFilterContext } from '../../../providers/FilterContext';
 
 export default function Services() {
   const { services, setServices } = useFilterContext();

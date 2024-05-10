@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import SearchBtn from "../colivingHomeComponents/SearchBtn";
-import { HouseContext } from "../../Contexts/HouseContext";
-import { useFilterContext } from "../../Contexts/FilterContext"; // Import the FilterContext
+import { HouseContext } from "../../providers/HouseContext";
+import { useFilterContext } from "../../providers/FilterContext"; // Import the FilterContext
 import OccupancyCard from "./UIElements/OccupancyCard";
 import GenderRadio from "./UIElements/GenderRadio";
 import Amenities from "./UIElements/Amenities";

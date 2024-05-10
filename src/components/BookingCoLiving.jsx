@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Select } from "@chakra-ui/react";
-import { HouseContext } from "../Contexts/HouseContext";
+import { HouseContext } from "../providers/HouseContext";
 import { HOUSETYPE_DETAIL_ROUTE } from "../routes/url";
 
 export default function BookingCoLiving() {

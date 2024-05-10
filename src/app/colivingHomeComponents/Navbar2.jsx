@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import Btn1 from "../../components/Btn1";
 import Image from "next/image";
 import Link from "next/link"; 
-import { HouseContext } from "../../Contexts/HouseContext"; // Import the HouseContext
+import { HouseContext } from "../../providers/HouseContext"; // Import the HouseContext
 
 
 export default function Navbar() {

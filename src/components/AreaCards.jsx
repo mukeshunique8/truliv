@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import { HouseContext } from "../Contexts/HouseContext";
+import { HouseContext } from "../providers/HouseContext";
 
 
 

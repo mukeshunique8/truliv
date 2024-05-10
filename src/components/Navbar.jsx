@@ -4,7 +4,7 @@ import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import Link from "next/link";
-import { HouseContext } from "../Contexts/HouseContext";
+import { HouseContext } from "../providers/HouseContext";
 export default function Navbar() {
   const { houseType, setHouseType, showDescription, setShowDescription } =
     useContext(HouseContext);

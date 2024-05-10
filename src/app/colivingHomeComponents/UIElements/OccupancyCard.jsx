@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useFilterContext } from '../../../Contexts/FilterContext';
+import { useFilterContext } from '../../../providers/FilterContext';
 
 export default function OccupancyCard({ occupancy }) {
   const { occupancy: selectedOccupancy, setOccupancy } = useFilterContext();

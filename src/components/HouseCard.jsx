@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useContext } from "react";
 import Image from "next/image";
-import { HouseContext } from "../Contexts/HouseContext";
+import { HouseContext } from "../providers/HouseContext";
 import selectOrange from "../../public/selectOrange.svg";
 
 export default function HouseCard(props) {

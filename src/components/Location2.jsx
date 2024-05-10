@@ -6,7 +6,7 @@ import AreaPhotos from "./AreaPhotos";
 import FeatureCard from "./FeatureCard";
 import Navbar2 from "../app/colivingHomeComponents/Navbar2";
 
-import { HouseContext } from "../Contexts/HouseContext";
+import { HouseContext } from "../providers/HouseContext";
 import Image from "next/image";
 import "keen-slider/keen-slider.min.css";
 import KeenSlider from "keen-slider";

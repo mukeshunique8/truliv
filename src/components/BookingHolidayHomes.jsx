@@ -15,7 +15,7 @@ import DatePicker from "../app/colivingHomeComponents/UIElements/DatePicker";
 import GuestSelect from "../app/colivingHomeComponents/UIElements/GuestSelect";
 import { HOUSETYPE_DETAIL_ROUTE } from "../routes/url";
 
-import { HouseContext } from "../Contexts/HouseContext";
+import { HouseContext } from "../providers/HouseContext";
 
 export default function BookingHolidayHomes() {
   const { houseType, setHouseType } = useContext(HouseContext);

@@ -6,7 +6,7 @@ import HouseCard from "./HouseCard";
 import Navbar from "./Navbar";
 import BookingCoLiving from "./BookingCoLiving";
 import BookingHolidayHomes from "./BookingHolidayHomes";
-import { HouseContext } from "../Contexts/HouseContext"; // Import the HouseContext
+import { HouseContext } from "../providers/HouseContext"; // Import the HouseContext
 
 export default function Header() {
   const headerTitle = {

@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import {theme} from '../chakraTheme'
-import { HouseProvider } from "../Contexts/HouseContext";
-import { FilterProvider } from "../Contexts/FilterContext";
+import { HouseProvider } from "../providers/HouseContext";
+import { FilterProvider } from "../providers/FilterContext";
 
 
 const poppins = Poppins(

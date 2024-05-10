@@ -13,7 +13,7 @@ import {
   RangeSliderFilledTrack,
   RangeSliderThumb,
 } from "@chakra-ui/react";
-import { useFilterContext } from "../../../Contexts/FilterContext"; // Import the FilterContext
+import { useFilterContext } from "../../../providers/FilterContext"; // Import the FilterContext
 
 export default function PriceRange() {
   const { priceRange, setPriceRange } = useFilterContext(); // Access priceRange state and setPriceRange function from FilterContext
